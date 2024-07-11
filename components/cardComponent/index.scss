@@ -1,0 +1,65 @@
+.cardComponentWrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  // max with
+  img {
+    max-width: 317px;
+    max-height: 169px;
+    border-radius: 5px;
+  }
+
+  .cardComponent {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  &[data-size="medium"] {
+    width: 357px;
+    height: 440px;
+    border-radius: 8px;
+  }
+
+  &[data-size="large"] {
+    width: 400px;
+    height: 500px;
+    border-radius: 15px;
+  }
+
+  &[data-size="small"] {
+    width: 200px;
+    height: 300px;
+    border-radius: 7px;
+  }
+
+  //  type
+  &[data-status="primary"] {
+    background-color: rgba(250, 251, 241, 1);
+    color: rgb(0, 0, 0);
+    text-align: center;
+
+    &:hover {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+  }
+
+  &[data-status="second_color"] {
+    background-color: rgba(250, 225, 196, 0.96);
+
+    &:hover {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+  }
+
+  &[data-status="possible"] {
+    background-color: rgb(255, 255, 255);
+
+    &:hover {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+  }
+}
