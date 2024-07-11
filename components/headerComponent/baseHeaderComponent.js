@@ -28,8 +28,6 @@ function headerGenerator({
   //   anchorLink = "#",
   eventListeners = {},
   logo = "",
-  profile = "",
-  boxBuy = "",
 }) {
   let header = domGenerator({
     tag: "div",
