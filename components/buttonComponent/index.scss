@@ -1,0 +1,199 @@
+.buttonComponentInsurance {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+
+  // max with
+  img {
+    max-width: 20px;
+  }
+
+  .buttonCarInsurance {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  // size
+  &[data-size="medium"] {
+    width: 189px;
+    height: 64px;
+    border-radius: 7px;
+    font-size: 20px;
+  }
+
+  &[data-size="large"] {
+    width: 235px;
+    height: 70px;
+    border-radius: 7px;
+    font-size: 22px;
+  }
+
+  &[data-size="small"] {
+    width: 141px;
+    height: 48px;
+    border-radius: 7px;
+    font-size: 16px;
+  }
+
+  &[data-size="extraSmall"] {
+    width: 67px;
+    height: 46px;
+    border-radius: 8px;
+    font-size: 15.63px;
+  }
+
+
+  &[data-size="breadth"] {
+    width: 233px;
+    height: 49px;
+    border-radius: 7px;
+    font-size: 17px;
+  }
+
+  // type
+  &[data-status="primary_orang"] {
+
+    background-color: rgba(155, 189, 3, 1);
+    color: #ececec;
+    text-align: center;
+
+    &:hover {
+      background-color: rgba(161, 197, 0, 1);
+    }
+
+    &:focus,
+    &:active {
+      background-color: rgba(135, 164, 2, 1);
+    }
+
+    &:disabled {
+      color: #8c8c8c;
+      background-color: #ececec;
+    }
+  }
+
+  &[data-status="primary_green"] {
+    background-color: rgba(252, 155, 40, 1);
+    color: #ececec;
+    text-align: center;
+
+    &:hover {
+      background-color: rgba(255, 181, 39, 1);
+    }
+
+    &:focus,
+    &:active {
+      background-color: rgba(253, 137, 0, 1);
+    }
+
+    &:disabled {
+      color: #8c8c8c;
+      background-color: #ececec;
+    }
+  }
+
+  &[data-status="signIn_up"] {
+    background-color: transparent;
+    color: #0b0b0b;
+    text-align: center;
+    width: 212px;
+    height: 70px;
+    border-radius: 50px;
+    border: 5px solid rgba(155, 189, 3, 1);
+
+
+    &:hover {
+      background-color: rgba(249, 255, 224, 0.79);
+    }
+
+    &:focus,
+    &:active {
+      background-color: rgba(249, 255, 224, 0.79);
+    }
+
+    &:disabled {
+      color: #8c8c8c;
+    }
+  }
+
+  &[data-status="love"] {
+    color: #1c1c1c;
+    width: 40px;
+    height: 35px;
+    text-align: center;
+    align-self: center;
+
+    // &:hover {
+    //   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    // }
+
+    // &:focus,
+    // &:active {
+    //   background-color: transparent;
+    // }
+
+    &:disabled {
+      color: #8c8c8c;
+    }
+  }
+
+  &[data-status="delete"] {
+    width: 23px;
+    height: 23px;
+
+    &:hover {
+      border: rgba(252, 155, 40, 1);
+    }
+
+    &:focus,
+    &:active {
+      fill: rgba(255, 216, 170, 1);
+      border: rgba(252, 155, 40, 1);
+    }
+
+    &:disabled {
+      color: #8c8c8c;
+    }
+  }
+
+  &[data-status="seen"] {
+    width: 24px;
+    height: 24px;
+
+    &:hover {
+      border: rgba(252, 155, 40, 1);
+    }
+
+    &:focus,
+    &:active {
+      border: rgba(252, 155, 40, 1);
+    }
+
+    &:disabled {
+      color: #8c8c8c;
+    }
+  }
+
+  &[data-status="edit"] {
+    width: 20px;
+    height: 20px;
+
+    &:hover {
+      border: rgba(252, 155, 40, 1);
+    }
+
+    &:focus,
+    &:active {
+      fill: rgba(255, 216, 170, 1);
+      border: rgba(252, 155, 40, 1);
+    }
+
+    &:disabled {
+      color: #8c8c8c;
+    }
+  }
+}
