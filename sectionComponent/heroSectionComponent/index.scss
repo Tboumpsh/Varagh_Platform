@@ -1,0 +1,76 @@
+.heroSectionWrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+
+    .heroSection {
+        border: none;
+        color: inherit;
+        cursor: pointer;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    // size
+    &[data-size="medium"] {
+        width: 98%;
+        height: 500px;
+        font-size: 20px;
+    }
+
+    &[data-size="large"] {
+        width: 100vw;
+        height: 400px;
+    }
+
+    &[data-size="small"] {
+        width: 98vw;
+        height: 300px;
+        font-size: 16px;
+    }
+
+
+
+    // type
+    &[data-status="default"] {
+        background-color: transparent;
+        color: #151515;
+        text-align: center;
+
+
+    }
+
+    &[data-status="primary_green"] {
+        background-color: rgb(251, 253, 233);
+        color: #151515;
+        text-align: center;
+
+
+    }
+
+    #heroDescription {
+        width: 30%;
+
+        h2{
+            font-size: 60px;
+        }
+    }
+
+    #imageSectionHero {
+        width: 49%;
+        display: flex;
+        justify-content: left;
+        flex-direction: row;
+        align-items: center;
+        #imageHero {
+            width: 50%;
+        }
+    }
+
+
+}
