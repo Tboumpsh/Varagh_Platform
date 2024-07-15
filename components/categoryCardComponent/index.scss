@@ -6,8 +6,7 @@
 
   // max with
   img {
-    max-width: 558px;
-    max-height: 400px;
+    max-width: 250px;
   }
 
   .titleCategory {
@@ -18,12 +17,12 @@
   }
 
   &[data-size="medium"] {
-    width: 200px;
+    width: 400px;
     height: 350px;
   }
 
   &[data-size="large"] {
-    width: 300px;
+    width: 500px;
     height: 450px;
   }
 
