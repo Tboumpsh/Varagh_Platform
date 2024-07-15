@@ -19,7 +19,7 @@ import "./index.scss";
 function buttonGenerator({
   content,
   size = "medium",
-  statues = "primary",
+  status = "primaryOrang",
   type = "button",
   className = "",
   anchorLink = "#",
@@ -33,7 +33,7 @@ function buttonGenerator({
     attributes: {
       class: `buttonComponentInsurance  ${className}`,
     },
-    dataAttributes: { size: size, status: statues },
+    dataAttributes: { size: size, status: status },
     eventListeners,
     children: [
       {
