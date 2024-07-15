@@ -1,4 +1,5 @@
 import domGenerator from "dom-generator";
+import axios from "axios";
 import "./index.scss";
 
 import buttonGenerator from "../buttonComponent/buttonComponent";
@@ -18,8 +19,33 @@ import buttonGenerator from "../buttonComponent/buttonComponent";
  * @param {string} [options.iconEnd=""] - The URL of the image icon to display at the end of the button.
  * @returns {HTMLDivElement} - The generated button element.
  */
+
+// (async () => {
+  // let {data: books} = await axios.get("http://localhost:3000/books");
+  // console.log(books);
+  // let {data: book} = await axios.delete("http://localhost:3000/books/2",);
+  //   let {data: user} = await axios.get("http://localhost:3000/user/2");
+  //   user.loveList.push(1)
+  //   console.log(user);
+  //  await axios.put("http://localhost:3000/user/2",user);
+// })();
+
+// let array = [{ id: 1, title: "one" },{ id: 1, title: "two" }];
+// array.forEach(item => {
+//   console.log(item);
+//   cardGenerator({
+//     titleContent:item.title
+//   })
+// });
+
+
+let dayNow = new Date().toLocaleDateString("fa-IR-u-nu");
+console.log(dayNow);
+// let final = persianDates.slice(0, 4);
+
+
+
 function cardGenerator({
-  ButtonContent,
   titleContent,
   paragraphContent,
   size = "medium",
@@ -28,7 +54,6 @@ function cardGenerator({
   anchorLink = "#",
   eventListeners = {},
   upImage = "",
-  downImage = "",
 }) {
   let cardComponent = domGenerator({
     tag: "div",
@@ -63,17 +88,29 @@ function cardGenerator({
         attributes: { id: "buttonGroups" },
         children: [
           {
-            tag: buttonGenerator({}),
+            tag: buttonGenerator({
+              content: "fffff",
+              size: "large",
+              status: "primaryOrang",
+            }),
           },
           {
             tag: "div",
             attributes: { id: "access" },
             children: [
               {
-                tag: buttonGenerator({}),
+                tag: buttonGenerator({
+                  content: "fffff",
+                  status: "love",
+                  iconStart: "/public/images/footer/rectangle12.png",
+                }),
               },
               {
-                tag: buttonGenerator({}),
+                tag: buttonGenerator({
+                  content: "fffff",
+                  status: "seen",
+                  iconStart: "/public/images/footer/rectangle12.png",
+                }),
               },
             ],
           },
@@ -82,7 +119,8 @@ function cardGenerator({
     ],
   });
 
-  return cardComponent;
+  // return cardComponent;
+  document.body.append(cardComponent);
 }
 
 export default cardGenerator;

@@ -2,13 +2,12 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  gap: 50px;
   align-items: center;
 
   // max with
   img {
-    max-width: 317px;
-    max-height: 169px;
-    border-radius: 5px;
+    width: 216px;
   }
 
   .cardComponent {
@@ -20,14 +19,16 @@
 
   &[data-size="medium"] {
     width: 357px;
-    height: 440px;
+    height: max-content;
     border-radius: 8px;
+    padding: 1%;
   }
 
   &[data-size="large"] {
     width: 400px;
     height: 500px;
     border-radius: 15px;
+    padding: 2%;
   }
 
   &[data-size="small"] {
@@ -60,6 +61,21 @@
 
     &:hover {
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+  }
+#contents{
+  text-align: right;
+}
+  #buttonGroups {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+
+    #access {
+      width: fit-content;
+      display: flex;
+      justify-content: space-between;
     }
   }
 }
