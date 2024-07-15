@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #232323;
+}
+
+.headerWrapper {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    inset: 0;
+    top: 2%;
+    background-color: rgba(253, 254, 245, 1);
+
+    // max with
+    img {
+        width: 200px;
+    }
+
+    .headerSection {
+        outline: none;
+        border: none;
+        color: inherit;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+
+
+
+        a {
+            width: fit-content;
+
+            &:hover {
+                border: 3px solid rgb(196, 250, 101);
+
+            }
+
+            &:focus,
+            &:active {
+                background-color: rgb(233, 255, 194);
+                border: none;
+            }
+        }
+    }
+
+    // size
+    &[data-size="medium"] {
+        width: 98vw;
+        height: 100px;
+        border-radius: 15px;
+        font-size: 20px;
+    }
+
+    &[data-size="large"] {
+        width: 100vw;
+        height: 100px;
+        border-radius: 15px;
+        font-size: 22px;
+    }
+
+    &[data-size="small"] {
+        width: 98%;
+        height: 100px;
+        border-radius: 15px;
+        font-size: 16px;
+    }
+
+
+    // type
+    &[data-status="default"] {
+
+        background-color: rgba(253, 254, 245, 1);
+        color: #232323;
+        text-align: center;
+    }
+
+    &[data-status="scend_mode"] {
+        background-color: rgb(248, 252, 220);
+        color: #ececec;
+        text-align: center;
+
+    }
+
+    #userProfile {
+        display: flex;
+        justify-content: space-around;
+        width: 10%;
+        height: 80px;
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+
+    #userProfile>img {
+        width: 20px;
+        height: 50px;
+    }
+
+    #profile {
+        width: 50px;
+        height: 50px;
+        background-color: #232323;
+        border-radius: 50px;
+    }
+}
