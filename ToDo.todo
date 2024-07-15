@@ -1,0 +1,47 @@
+- [ ] Do something
+- [x] Something I've done
+
+1. [ ] Do this first
+2. [ ] Followed by this
+"BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]"
+
+        [ ]FVGBGBNJ
+
+
+
+        Box: - ❍ ❑ ■ ⬜ □ ☐ ▪ ▫ – — ≡ → › [] [ ]
+Done: ✔ ✓ ☑ + [x] [X] [+]
+Cancelled: ✘ x X [-]
+
+
+
+@context
+- Priority
+
+
+
+
+
+
+
+
+#TODO
+
+#FOOTER
+- [ ] dynamic text list in footer >>> createList
+
+
+
+#CATEGORYSECTION
+- [ ] check catgory section
+
+
+"start": "concurrently \"npm run dev\" \"npm run json-server\"",
+
+- [x] Table component
