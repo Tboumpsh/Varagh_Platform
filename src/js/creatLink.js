@@ -1,21 +1,22 @@
-function generateLinks(input) {
-  const { numberOfAs, texts } = input;
+function createLinks(number, texts) {
+  // Create an array to store the tooltips
+  if (texts.length < number) {
+    console.error('number of text is lesses')
+    return;
+  }
+  const links = [];
 
-  if (texts.length !== numberOfAs) {
-    throw new Error("The number of texts should match the number of <a> tags");
+  // Loop through the specified number of tooltips
+  for (let i = 0; i < number; i++) {
+    // Create a new tooltip
+   const link = document.createElement('a');
+   link.textContent =texts[i]
+    // Add the tooltip to the array
+    links.push(link);
   }
 
-  let result = "";
-  for (let i = 0; i < numberOfAs; i++) {
-    result += `<a>${texts[i]}</a>`;
-  }
-
-  return result;
+  // Return the array of tooltips
+  return links;
 }
 
-//   const input = {
-//     numberOfAs: 3,
-//     texts: ["Link 1", "Link 2", "Link 3"]
-//   };
-
-export default generateLinks;
+export default createLinks;
