@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'titleFont';
+    src: url('/public/fonts/craft/DigiCraftUltraBlack.ttf');
+}
+
+@font-face {
+    font-family: 'dana-black';
+    src: url('/public/fonts/dana/dana\ black.ttf');
+}
+
+@font-face {
+    font-family: 'dana-medium';
+    src: url('/public/fonts/dana/dana\ medium.ttf');
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'titleFont';
+}
+
+
+p,
+a,
+li {
+    font-family: 'dana-medium';
+}
+
+
+body{
+background-image: url('/public/images/bacground/تصویرزمینه.png');
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+}
