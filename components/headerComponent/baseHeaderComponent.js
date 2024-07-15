@@ -2,7 +2,7 @@ import domGenerator from "dom-generator";
 import "./index.scss";
 
 import buttonGenerator from "../buttonComponent/buttonComponent";
-import generateLinks from "../../src/js/creatLink";
+import createLinks from "/src/js/creatLink";
 
 /**
  * Generates a base button element with optional properties.
@@ -20,8 +20,7 @@ import generateLinks from "../../src/js/creatLink";
  * @returns {HTMLDivElement} - The generated button element.
  */
 
-function headerGenerator({
-  content,
+function baseHeaderGenerator({
   size = "medium",
   statues = "primaryFill",
   className = "",
@@ -29,6 +28,16 @@ function headerGenerator({
   eventListeners = {},
   logo = "",
 }) {
+
+  const number = 4;
+  const linkTexts = ['صفحه اصلی','درباره ما','فروشگاه','علاقه مندی ها']
+  
+  let links = createLinks(number,linkTexts).map(item =>{
+    return{
+      tag:item
+    }
+  })
+
   let header = domGenerator({
     tag: "div",
     attributes: {
@@ -47,12 +56,7 @@ function headerGenerator({
           class: `headerSection`,
         },
         children: [
-          {
-            tag: generateLinks({
-              numberOfAs: 3,
-              texts: ["Link 1", "Link 2", "Link 3"],
-            }),
-          },
+          ...links
         ],
       },
       {
@@ -64,4 +68,4 @@ function headerGenerator({
   return header;
 }
 
-export default headerGenerator;
+export default baseHeaderGenerator;

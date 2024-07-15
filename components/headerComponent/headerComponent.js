@@ -1,7 +1,7 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
-import generateLinks from "../../src/js/creatLink";
+import createLinks from "/src/js/creatLink";
 
 /**
  * Generates a base button element with optional properties.
@@ -20,16 +20,25 @@ import generateLinks from "../../src/js/creatLink";
  */
 
 function headerGenerator({
-  content,
   size = "medium",
   statues = "primaryFill",
   className = "",
-//   anchorLink = "#",
+  //   anchorLink = "#",
   eventListeners = {},
+  eventProfileListeners = {},
   logo = "",
-  profile = "",
   boxBuy = "",
-}) {
+})
+ {
+  const number = 4;
+  const linkTexts = ['صفحه اصلی','درباره ما','فروشگاه','علاقه مندی ها']
+  
+  let links = createLinks(number,linkTexts).map(item =>{
+    return{
+      tag:item
+    }
+  })
+
   let header = domGenerator({
     tag: "div",
     attributes: {
@@ -48,24 +57,24 @@ function headerGenerator({
           class: `headerSection`,
         },
         children: [
-          {
-            tag: generateLinks({
-              numberOfAs: 3,
-              texts: ["Link 1", "Link 2", "Link 3"],
-            }),
-          },
+          //
+          // ...link,
+          ...links,
         ],
       },
       {
         tag: "div",
         attributes: {
-          class: `userProfile`,
+          id: `userProfile`,
         },
-       
+
         children: [
           {
-            tag: "img",
-            attributes: { src: profile },
+            tag: "div",
+            eventProfileListeners,
+            attributes: {
+              id: `profile`,
+            },
           },
           {
             tag: "img",
@@ -78,6 +87,7 @@ function headerGenerator({
   });
 
   return header;
+  // document.body.append(header);
 }
 
 export default headerGenerator;
