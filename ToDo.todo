@@ -1,30 +1,11 @@
 - [ ] Do something
 - [x] Something I've done
 
-1. [ ] Do this first
-2. [ ] Followed by this
-"BUG",
-        "HACK",
-        "FIXME",
-        "TODO",
-        "XXX",
-        "[ ]",
-        "[x]"
+#Use:
 
-        [ ]FVGBGBNJ
-
-
-
-        Box: - ❍ ❑ ■ ⬜ □ ☐ ▪ ▫ – — ≡ → › [] [ ]
-Done: ✔ ✓ ☑ + [x] [X] [+]
-Cancelled: ✘ x X [-]
-
-
-
-@context
-- Priority
-
-
+- Box: - ❍ ❑ ■ ⬜ □ ☐ ▪ ▫ – — ≡ → › [] [ ]
+- Done: ✔ ✓ ☑ + [x] [X] [+]
+- Cancelled: ✘ x X [-]
 
 
 
@@ -35,13 +16,54 @@ Cancelled: ✘ x X [-]
 
 #FOOTER
 - [ ] dynamic text list in footer >>> createList
-
-
-
 #CATEGORYSECTION
-- [ ] check catgory section
+- [ ] check catgory section ✔
+- [x] Table component  ✔
 
 
+
+
+@memory
 "start": "concurrently \"npm run dev\" \"npm run json-server\"",
+- [ ] better search component
+- [ ] comment all section edit
+- [ ] commite 
+- [ ] change preview repository
+- [ ] create type script file 
+- [ ] create vue file 
 
-- [x] Table component
+
+
+#landinPage
+- [ ] create bestSeller section ✔
+- [ ] create newest section ✔
+- [ ] create cheapest section ✔
+- [ ] create hearo section ✔
+- [ ] create footer section ✔
+
+
+#adminPage
+- [x] isert information on table
+- [ ] Table component  ✔
+- [ ] footer section ✔
+- [ ] hearo section ✔
+
+
+#Log or Sign
+- [x] sign in or sign up
+
+
+#shop page
+- [x] filter products
+- [✔] search component by gener and name books
+- [ ] show products  ✔
+- [ ] footer section ✔
+
+
+#comment edite
+- [ ] button component ✔
+- [ ] input component ✔
+
+
+#dataBase
+- [ ] picture books
