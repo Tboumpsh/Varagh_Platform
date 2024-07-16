@@ -28,7 +28,7 @@ function categoryCard({
   let cardCategory = domGenerator({
     tag: "div",
     attributes: {
-      class: `cardComponentWrapper  ${className}`,
+      class: `cardCategoryComponentWrapper  ${className}`,
     },
     dataAttributes: { size: size, status: statues },
     eventListeners,
