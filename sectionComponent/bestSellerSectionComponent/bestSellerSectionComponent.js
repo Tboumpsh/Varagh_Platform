@@ -1,8 +1,8 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
-import categoryCard from "../components/categoryCardComponent/cardCategoryComponent";
-import listGenerator from "../../src/js/creatList";
+import buttonGenerator from "../../components/buttonComponent/buttonComponent";
+import fetchBooksAndProcess from "../../src/js/createBestSellerCard";
 
 /**
  * Generates a base button element with optional properties.
@@ -20,20 +20,17 @@ import listGenerator from "../../src/js/creatList";
  * @returns {HTMLDivElement} - The generated button element.
  */
 
-function footerSectionComponent({
-  contentAboutSection,
+async function bestSellerSectionComponent({
+  titleBestSeller,
   size = "medium",
   statues = "primaryFill",
   className = "",
   eventListeners = {},
-  iconStart = "",
-  iconEnd = "",
-  upImage = "",
 }) {
-  let footer = domGenerator({
+  let bestSellerSection = domGenerator({
     tag: "div",
     attributes: {
-      class: `footerSection ${className}`,
+      class: `bestSellerSectionWrapper ${className}`,
     },
     dataAttributes: { size: size, status: statues },
     eventListeners,
@@ -41,55 +38,39 @@ function footerSectionComponent({
       {
         tag: "div",
         attributes: {
-          class: `informationSection ${className}`,
-        },
-        children: [
-          {
-            tag: categoryCard({
-              content: "درباره فروشگاه ورق",
-              size: "medium",
-              status: "default",
-              upImage: upImage,
-            }),
-          },
-        ],
-      },
-      {
-        tag: "div",
-        attributes: {
-          class: `aboutSection ${className}`,
+          class: `bestSellerSection ${className}`,
         },
         children: [
           {
             tag: "h2",
-            properties: { textContent: contentAboutSection },
+            properties: { textContent: titleBestSeller },
           },
           {
-            tag: listGenerator(),
-          },
-        ],
-      },
-      {
-        tag: "div",
-        attributes: {
-          class: `symbolSection ${className}`,
-        },
-        children: [
-          {
-            tag: "img",
-            attributes: { src: iconStart },
+            tag: "div",
+            attributes: {
+              id: "cardBestSellerList",
+            },
           },
           {
-            tag: "img",
-            attributes: { src: iconEnd },
+            tag: buttonGenerator({
+              content: "بریم به فروشگاه",
+              size: "medium",
+              status: "primaryGreen",
+              anchorLink: "",
+              eventListeners: {},
+            }),
           },
         ],
       },
     ],
   });
 
-  // return footer;
-  document.body.append(footer);
+  document.body.append(bestSellerSection);
+  let card = await fetchBooksAndProcess();
+
+  card.forEach((cardElement) => {
+    cardBestSellerList.appendChild(cardElement);
+  });
 }
 
-export default footerSectionComponent;
+export default bestSellerSectionComponent;

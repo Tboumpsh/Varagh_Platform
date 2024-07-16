@@ -1,0 +1,63 @@
+.bestSellerSectionWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+ 
+
+    // max with
+
+
+    .bestSellerSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 98%;
+        // height: 500px;
+        gap: 30px;
+
+        h2 {
+            font-size: 36px;
+        }
+
+        #cardBestSellerList {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+        }
+    }
+
+
+    &[data-size="medium"] {
+        width: 96%;
+        height: 440px;
+    }
+
+    &[data-size="large"] {
+        width: 100vw;
+        height: 500px;
+    }
+
+    &[data-size="small"] {
+        width: 100%;
+        height: 300px;
+    }
+
+    //  type
+    &[data-status="default"] {
+        background-color: transparent;
+        color: rgb(0, 0, 0);
+        text-align: center;
+
+    }
+
+    &[data-status="secondary"] {
+        background-color: rgb(233, 253, 203);
+        color: rgb(0, 0, 0);
+        text-align: center;
+    }
+
+
+}
