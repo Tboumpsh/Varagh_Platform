@@ -1,0 +1,73 @@
+.buttonComponentInsurance {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+    cursor: pointer;
+
+    // max with
+    img {
+        max-width: 20px;
+    }
+
+
+    // size
+    &[data-size="medium"] {
+        width: 90vw;
+        height: max-content;
+        border-radius: 7px;
+        font-size: 20px;
+        align-items: center;
+    }
+
+    &[data-size="large"] {
+        width: 80%;
+        height: max-content;
+        border-radius: 7px;
+        font-size: 22px;
+    }
+
+    &[data-size="small"] {
+        width: 95%;
+        height: max-content;
+        border-radius: 7px;
+        font-size: 16px;
+    }
+
+
+    #tableSection {
+        background-color: transparent;
+        border: none;
+        color: inherit;
+        cursor: pointer;
+        background-color: rgba(250, 251, 241, 1);
+
+
+        thead {
+            background-color: rgb(250, 250, 249);
+        }
+
+        tfoot {
+            background-color: rgb(250, 250, 249);
+        }
+
+        tbody {
+            tr {
+                border-bottom: 1px solid #dddddd;
+            }
+
+            tr:last-of-type {
+                border-bottom: 2px solid #ffffff;
+            }
+        }
+
+        th,
+        td {
+            padding: 12px 30px;
+        }
+
+
+    }
+
+
+}
