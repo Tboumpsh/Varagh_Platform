@@ -39,8 +39,8 @@ import buttonGenerator from "../buttonComponent/buttonComponent";
 // });
 
 
-let dayNow = new Date().toLocaleDateString("fa-IR-u-nu");
-console.log(dayNow);
+// let dayNow = new Date().toLocaleDateString("fa-IR-u-nu");
+// console.log(dayNow);
 // let final = persianDates.slice(0, 4);
 
 
@@ -119,8 +119,8 @@ function cardGenerator({
     ],
   });
 
-  // return cardComponent;
-  document.body.append(cardComponent);
+  return cardComponent;
+  // document.body.append(cardComponent);
 }
 
 export default cardGenerator;

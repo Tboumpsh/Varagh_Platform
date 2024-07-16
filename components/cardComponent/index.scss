@@ -7,7 +7,7 @@
 
   // max with
   img {
-    width: 216px;
+    width: 150px;
   }
 
   .cardComponent {
@@ -18,14 +18,14 @@
   }
 
   &[data-size="medium"] {
-    width: 357px;
-    height: max-content;
+    width: 360px;
+    height: 550px;
     border-radius: 8px;
     padding: 1%;
   }
 
   &[data-size="large"] {
-    width: 400px;
+    width: 350px;
     height: 500px;
     border-radius: 15px;
     padding: 2%;
@@ -63,9 +63,25 @@
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
   }
-#contents{
-  text-align: right;
-}
+
+  #contents {
+    text-align: right;
+
+    // #paragraph{
+    //   height: 53px;
+    //   overflow: hidden;
+    // }
+    #paragraph {
+      max-height: 100px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #paragraph.collapsed {
+      max-height: initial;
+    }
+  }
+
   #buttonGroups {
     display: flex;
     justify-content: space-between;
