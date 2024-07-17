@@ -29,7 +29,7 @@
 - [ ] comment all section edit
 - [ ] commite 
 - [ ] change preview repository
-- [ ] create type script file 
+- [ ] create type script file ✔
 - [ ] create vue file 
 
 
@@ -43,26 +43,30 @@
 
 
 #adminPage
-- [x] isert information on table
+- [x] isert information on table   user ✔     books✔
 - [ ] Table component  ✔
 - [ ] footer section ✔
 - [ ] hearo section ✔
+- [ ] change menu by login admin
 
 
 #Log or Sign
-- [x] sign in or sign up
+- [x] sign in or sign up ✔
 
 
 #shop page
-- [x] filter products
+- [x] filter products ✔
 - [✔] search component by gener and name books
 - [ ] show products  ✔
 - [ ] footer section ✔
+- [ ] add books to favorate list
+- [ ] add books to sell(سبد خرید)
 
 
 #comment edite
 - [ ] button component ✔
 - [ ] input component ✔
+- [ ] search Box component ✔
 
 
 #dataBase
