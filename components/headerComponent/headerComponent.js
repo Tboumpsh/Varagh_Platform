@@ -1,6 +1,8 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
+import showRegisterForm from "../../src/js/RegisterFormValidation/registerValidationForm";
+import buttonGenerator from "../buttonComponent/buttonComponent";
 import createLinks from "/src/js/creatLink";
 
 /**
@@ -28,16 +30,15 @@ function headerGenerator({
   eventProfileListeners = {},
   logo = "",
   boxBuy = "",
-})
- {
+}) {
   const number = 4;
-  const linkTexts = ['صفحه اصلی','درباره ما','فروشگاه','علاقه مندی ها']
-  
-  let links = createLinks(number,linkTexts).map(item =>{
-    return{
-      tag:item
-    }
-  })
+  const linkTexts = ["صفحه اصلی", "درباره ما", "فروشگاه", "علاقه مندی ها"];
+
+  let links = createLinks(number, linkTexts).map((item) => {
+    return {
+      tag: item,
+    };
+  });
 
   let header = domGenerator({
     tag: "div",
@@ -69,25 +70,33 @@ function headerGenerator({
         },
 
         children: [
-          {
-            tag: "div",
-            eventProfileListeners,
-            attributes: {
-              id: `profile`,
-            },
-          },
+          // {
+          //   tag: "div",
+          //   eventProfileListeners,
+          //   attributes: {
+          //     id: `profile`,
+          //   },
+          // },
           {
             tag: "img",
             eventListeners,
             attributes: { src: boxBuy },
+          },
+          {
+            tag: buttonGenerator({
+              content: "ورود/عضویت",
+              size: "medium",
+              status: "signIn_up",
+              eventListeners: { click: showRegisterForm },
+            }),
           },
         ],
       },
     ],
   });
 
-  return header;
-  // document.body.append(header);
+  // return header;
+  document.body.append(header);
 }
 
 export default headerGenerator;
