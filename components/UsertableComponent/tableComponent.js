@@ -6,6 +6,13 @@ import buttonGenerator from "../buttonComponent/buttonComponent";
 
 const apiUrl = "http://localhost:3000/user";
 
+/**
+ * Fetches users from the API and renders the user table.
+ * @async
+ * @function fetchUsersAndRenderTable
+ * @returns {Promise<void>}
+ */
+
 async function fetchUsersAndRenderTable() {
   try {
     const response = await axios.get(apiUrl);
@@ -16,13 +23,43 @@ async function fetchUsersAndRenderTable() {
   }
 }
 
+/**
+ * Deletes a user from the API.
+ * @function deleteUser
+ * @param {number|string} userId - The ID of the user to delete.
+ * @returns {Promise<void>}
+ */
+
 function deleteUser(userId) {
   return axios.delete(`${apiUrl}/${userId}`);
 }
 
+/**
+ * Edits a user in the API.
+ * @function editUser
+ * @param {number|string} userId - The ID of the user to edit.
+ * @param {Object} updatedData - The updated user data.
+ * @param {string} updatedData.name - The updated name of the user.
+ * @param {string} updatedData.password - The updated password of the user.
+ * @param {string} updatedData.profile - The updated profile of the user.
+ * @param {string} updatedData.membership - The updated membership status of the user.
+ * @returns {Promise<void>}
+ */
+
 function editUser(userId, updatedData) {
   return axios.put(`${apiUrl}/${userId}`, updatedData);
 }
+
+/**
+ * Creates a new user in the API.
+ * @function createUser
+ * @param {Object} userData - The data of the new user.
+ * @param {string} userData.name - The name of the new user.
+ * @param {string} userData.password - The password of the new user.
+ * @param {string} userData.profile - The profile of the new user.
+ * @param {string} userData.membership - The membership status of the new user.
+ * @returns {Promise<void>}
+ */
 
 function createUser(userData) {
   return axios.post(apiUrl, userData);
@@ -173,9 +210,15 @@ function showAddUserForm() {
             click: (e) => {
               e.preventDefault();
               const userName = document.getElementById("userName").value.trim();
-              const userPassword = document.getElementById("userPassword").value.trim();
-              const userProfile = document.getElementById("userProfile").value.trim();
-              const userMembership = document.getElementById("userMembership").value.trim();
+              const userPassword = document
+                .getElementById("userPassword")
+                .value.trim();
+              const userProfile = document
+                .getElementById("userProfile")
+                .value.trim();
+              const userMembership = document
+                .getElementById("userMembership")
+                .value.trim();
 
               if (userName && userPassword && userProfile && userMembership) {
                 const userData = {
@@ -204,6 +247,16 @@ function showAddUserForm() {
   tableContainer.appendChild(formContainer);
 }
 
+/**
+ * Adds a new user by sending a POST request to the API.
+ * @function addUser
+ * @param {Object} userData - The data of the new user.
+ * @param {string} userData.name - The name of the new user.
+ * @param {string} userData.password - The password of the new user.
+ * @param {string} userData.profile - The profile of the new user.
+ * @param {string} userData.membership - The membership status of the new user.
+ */
+
 function addUser(userData) {
   createUser(userData)
     .then(() => {
@@ -220,6 +273,17 @@ function handleDeleteUser(userId) {
       .catch((error) => console.error("Error deleting user:", error));
   }
 }
+
+/**
+ * Handles the editing of a user.
+ * @function handleEditUser
+ * @param {Object} user - The user object to edit.
+ * @param {number|string} user.id - The ID of the user.
+ * @param {string} user.name - The name of the user.
+ * @param {string} user.password - The password of the user.
+ * @param {string} user.profile - The profile of the user.
+ * @param {string} user.membership - The membership status of the user.
+ */
 
 function handleEditUser(user) {
   const newName = prompt("Enter new name:", user.name);
