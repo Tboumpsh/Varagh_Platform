@@ -21,6 +21,10 @@ import { Mobile } from "../../constants/informationUS";
  * @returns {HTMLDivElement} - The generated button element.
  */
 function contactUsComponent({
+  contactTitle,
+  mobileTitle,
+  addressTitle,
+  telephoneTitle,
   size = "medium",
   statues = "primary",
   className = "",
@@ -36,30 +40,58 @@ function contactUsComponent({
     eventListeners,
     children: [
       {
-        tag: "div",
-        attributes: { id: "informationContact" },
-        children: [
-          {
-            tag: "p",
-            properties: { textContent: `تلفن : ${Telephone} `},
-          },
-          {
-            tag: "p",
-            properties: { textContent:` ${Mobile}` },
-          },
-          {
-            tag: "p",
-            properties: { textContent: Address },
-          },
-        ],
+        tag: "h2",
+        properties: { textContent: contactTitle },
       },
       {
         tag: "div",
-        attributes: { id: "imageSection" },
+        attributes: { id: "contactSectionContent" },
         children: [
           {
-            tag: "img",
-            attributes: { src: imageSrc },
+            tag: "div",
+            attributes: { id: "informationContact" },
+            children: [
+              {
+                tag: "h3",
+                properties: { textContent: mobileTitle },
+                children: [
+                  {
+                    tag: "p",
+                    properties: { textContent: Telephone },
+                  },
+                ],
+              },
+              {
+                tag: "h3",
+                properties: { textContent:  telephoneTitle },
+                children: [
+                  {
+                    tag: "p",
+                    properties: { textContent: Mobile },
+                  },
+                ],
+              },
+              {
+                tag: "h3",
+                properties: { textContent:   addressTitle, },
+                children: [
+                  {
+                    tag: "p",
+                    properties: { textContent: Address },
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            tag: "div",
+            attributes: { id: "imageSection" },
+            children: [
+              {
+                tag: "img",
+                attributes: { src: imageSrc },
+              },
+            ],
           },
         ],
       },
