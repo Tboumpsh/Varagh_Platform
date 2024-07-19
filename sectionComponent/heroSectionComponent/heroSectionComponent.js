@@ -70,8 +70,8 @@ function heroSectionComponent({
     ],
   });
 
-  // return footer;
-  document.body.append(heroSection);
+  return heroSection;
+  // document.body.append(heroSection);
 }
 
 export default heroSectionComponent;
