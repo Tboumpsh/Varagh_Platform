@@ -2,7 +2,7 @@ import domGenerator from "dom-generator";
 import "./index.scss";
 
 import buttonGenerator from "../../components/buttonComponent/buttonComponent";
-import fetchBooksCheapest from "../../src/js/createCheapestCard";
+import fetchBooksCheapest from "../../src/js/dataBaseApi/createCheapestCard";
 
 /**
  * Generates a base button element with optional properties.

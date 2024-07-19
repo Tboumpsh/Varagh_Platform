@@ -1,8 +1,8 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
+import fetchBooksAndProcess from "../../src/js/dataBaseApi/createBestSellerCard";
 import buttonGenerator from "../../components/buttonComponent/buttonComponent";
-import fetchBooksAndProcess from "../../src/js/createBestSellerCard";
 
 /**
  * Generates a base button element with optional properties.
