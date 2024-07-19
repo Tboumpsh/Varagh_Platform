@@ -1,12 +1,10 @@
 import domGenerator from "dom-generator";
-import axios from "axios";
 import "./index.scss";
 
+import filterByAllBooks from "../../src/js/dataBaseApi/filterByAllBooks";
+import filterByPrice from "../../src/js/dataBaseApi/filterByPrice";
 import buttonGenerator from "../buttonComponent/buttonComponent";
-import filterByAllBooks from "../../src/js/filterByAllBooks";
-import toggleDropdown from "../../src/js/toggleDropDown";
-import filterByPrice from "../../src/js/filterByPrice";
-import filterByDate from "../../src/js/filterByDate";
+import filterByDate from "../../src/js/dataBaseApi/filterByDate";
 
 /**
  * Generates a filter component with optional properties.
