@@ -1,6 +1,8 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
+import heroSectionComponent from "../heroSectionComponent/heroSectionComponent";
+
 /**
  * Generates a base button element with optional properties.
  * @param {Object} options - The options for generating the button.
@@ -18,12 +20,12 @@ import "./index.scss";
  */
 function aboutSectionComponent({
   contentTitle,
-  paragraphContent,
+  // paragraphContent,
   size = "medium",
   statues = "primary",
   className = "",
-  eventListeners = {},
-  gifSrc = "",
+  // eventListeners = {},
+  // gifSrc = "",
 }) {
   let aboutSections = domGenerator({
     tag: "div",
@@ -31,37 +33,24 @@ function aboutSectionComponent({
       class: `aboutSection  ${className}`,
     },
     dataAttributes: { size: size, status: statues },
-    eventListeners,
     children: [
       {
-        tag: "div",
-        attributes: { id: "paragraphAbout" },
-        children: [
-            {
-                tag: "h2",
-                properties: { textContent: contentTitle },
-            },
-          {
-            tag: "p",
-            properties: { textContent: paragraphContent },
-          },
-        ],
+        tag: "h2",
+        properties: { textContent: contentTitle },
       },
       {
-        tag: "div",
-        attributes: { id: "gifSection" },
-        children: [
-          {
-            tag: "img",
-            attributes: { src: gifSrc },
-          },
-        ],
+        tag: heroSectionComponent({
+          contentHero:"در دنیای پرشتاب امروز، همه ما به دنبال یافتن لحظاتی هستیم که بتوانیم به آرامش برسیم و در دنیای کتاب‌ها غوطه‌ور شویم. کتابخانه آنلاین ورق با این هدف راه‌اندازی شده است که دسترسی به دنیایی از دانش، تخیل و الهام را برای شما آسان‌تر کند. ما در ورق بر این باوریم که هر کتاب یک سفر است و هر سفر داستانی دارد که منتظر است تا کشف شود. از داستان‌های هیجان‌انگیز و عاشقانه گرفته تا کتاب‌های علمی و آموزشی، مجموعه‌ای بی‌نظیر از بهترین عناوین را گردآوری کرده‌ایم تا نیازهای مختلف شما را برآورده کنیم.",
+          size: "large",
+          status: "default",
+          srcHero: "/public/images/aboutPage/Group-24.gif",
+        })
       },
-    ],
+    ]
   });
 
-//   return aboutSections;
-document.body.append(aboutSections)
+  //   return aboutSections;
+  document.body.append(aboutSections);
 }
 
 export default aboutSectionComponent;

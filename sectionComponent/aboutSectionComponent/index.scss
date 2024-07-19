@@ -1,14 +1,18 @@
 .aboutSection {
     display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: start;
     margin: 0 auto;
 
     // max with
+    h2 {
+        font-size:50px;
+        width: 16%;
+        text-align: center;
+    }
 
     &[data-size="medium"] {
-        width: 85vw;
+        width: 90vw;
         height: 440px;
     }
 
@@ -36,34 +40,39 @@
         text-align: center;
     }
 
-    #paragraphAbout {
-        width: 50%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        p {
-            width: 66%;
-            font-size: 30px
-        }
 
-        h2 {
-            font-size: 50px;
-        }
-    }
-
-    #gifSection {
+    #aboutSectionContent{
         display: flex;
-        justify-content: left;
+        justify-content: space-evenly;
         flex-direction: row;
-        align-items: end;
-        width: 50%;
-        height: 100%;
-
-        img {
-            width: 500px;
-            height: 500px;
+        align-items: center;
+        #paragraphAbout {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            p {
+                width: 75%;
+                font-size:25px
+            }
+        }
+    
+        #gifSection {
+            display: flex;
+            justify-content: left;
+            flex-direction: row;
+            align-items: end;
+            width: 50%;
+            height: 100%;
+    
+            img {
+                width: 500px;
+                height: 500px;
+            }
         }
     }
+
+
 
 }
