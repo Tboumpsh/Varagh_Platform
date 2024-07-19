@@ -16,6 +16,11 @@
     height: 60px;
     border-radius: 2px;
   }
+  &[data-size="extraSmall"] {
+    width: 50px;
+    height: 10px;
+    border-radius: 2px;
+  }
 
   &[data-fontSize="medium"] {
     font-size: 20px;
