@@ -1,7 +1,7 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
-import categoryCard from "../components/categoryCardComponent/cardCategoryComponent";
+import categoryCard from "../../components/categoryCardComponent/cardCategoryComponent";
 import listGenerator from "../../src/js/creatList";
 
 /**
@@ -88,8 +88,8 @@ function footerSectionComponent({
     ],
   });
 
-  // return footer;
-  document.body.append(footer);
+  return footer;
+  // document.body.append(footer);
 }
 
 export default footerSectionComponent;
