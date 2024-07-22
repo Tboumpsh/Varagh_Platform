@@ -19,8 +19,8 @@ import fetchBooksNewest from "../../src/js/dataBaseApi/createNewestCard";
  * @param {string} [options.iconEnd=""] - The URL of the image icon to display at the end of the button.
  * @returns {HTMLDivElement} - The generated button element.
  */
-
-async function newestCardSectionComponent({
+// async
+ function newestCardSectionComponent({
   titleNewest,
   size = "medium",
   statues = "primaryFill",
@@ -65,12 +65,8 @@ async function newestCardSectionComponent({
     ],
   });
 
-  document.body.append(newestCardSection);
-  let card = await fetchBooksNewest();
 
-  card.forEach((cardElement) => {
-    cardNewestList.appendChild(cardElement);
-  });
+  return newestCardSection;
 }
 
 export default newestCardSectionComponent;
