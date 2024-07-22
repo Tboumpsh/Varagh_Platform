@@ -19,8 +19,8 @@ import fetchBooksCheapest from "../../src/js/dataBaseApi/createCheapestCard";
  * @param {string} [options.iconEnd=""] - The URL of the image icon to display at the end of the button.
  * @returns {HTMLDivElement} - The generated button element.
  */
-
-async function cheapestCardSectionComponent({
+// async
+ function cheapestCardSectionComponent({
   titleCheapest,
   size = "medium",
   statues = "primaryFill",
@@ -65,12 +65,8 @@ async function cheapestCardSectionComponent({
     ],
   });
 
-  document.body.append(cheapestCardSection);
-  let card = await fetchBooksCheapest();
 
-  card.forEach((cardElement) => {
-    cardCheapestList.appendChild(cardElement);
-  });
+  return cheapestCardSection;
 }
 
 export default cheapestCardSectionComponent;
