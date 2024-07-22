@@ -119,7 +119,7 @@ function renderBookTable(books) {
     ],
   });
 
-  const container = document.getElementById("app");
+  const container = document.getElementById("booksTableSection");
   container.innerHTML = "";
   container.appendChild(table);
 }
@@ -227,7 +227,7 @@ function showAddBookForm() {
   formContainer.setAttribute("id", "addBookForm");
   formContainer.appendChild(form);
 
-  const tableContainer = document.getElementById("app");
+  const tableContainer = document.getElementById("booksTableSection");
   tableContainer.innerHTML = "";
   tableContainer.appendChild(formContainer);
 }

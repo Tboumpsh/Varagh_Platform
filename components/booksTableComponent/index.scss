@@ -3,16 +3,19 @@
     align-items: center;
     flex-direction: column;
     width: 95%;
-    height: 500px;
+    height: fit-content;
     border-radius: 7px;
     font-size: 16px;
     cursor: pointer;
+    margin: 3%;
 
     // max with
     img {
         max-width: 20px;
     }
-
+    h2{
+        font-size: 40px;
+    }
 
     // size
 
