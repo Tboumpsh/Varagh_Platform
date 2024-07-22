@@ -78,8 +78,8 @@ function categorySectionComponent({
     ],
   });
 
-  // return footer;
-  document.body.append(category);
+  return category;
+  // landing.append(category);
 }
 
 export default categorySectionComponent;
