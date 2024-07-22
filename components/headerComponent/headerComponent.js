@@ -95,8 +95,8 @@ function headerGenerator({
     ],
   });
 
-  // return header;
-  document.body.append(header);
+  return header;
+  // document.body.prepend(header);
 }
 
 export default headerGenerator;
