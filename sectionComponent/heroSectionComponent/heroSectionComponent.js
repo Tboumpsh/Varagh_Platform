@@ -71,7 +71,7 @@ function heroSectionComponent({
   });
 
   return heroSection;
-  // document.body.append(heroSection);
+  // document.body.prepend(heroSection);
 }
 
 export default heroSectionComponent;
