@@ -66,10 +66,10 @@ function createUser(userData) {
 }
 
 function renderUserTable(users) {
-  const table = domGenerator({
+  const tableU = domGenerator({
     tag: "div",
     attributes: {
-      class: "tableSectionWrapper",
+      class: "tableSectionUWrapper",
     },
     children: [
       {
@@ -78,7 +78,7 @@ function renderUserTable(users) {
       },
       {
         tag: "table",
-        attributes: { id: "tableSection" },
+        attributes: { id: "tableUSection" },
         children: [
           {
             tag: "thead",
@@ -152,9 +152,9 @@ function renderUserTable(users) {
     ],
   });
 
-  const container = document.getElementById("app");
-  container.innerHTML = "";
-  container.appendChild(table);
+  const containerU = document.getElementById("userTableSection");
+  containerU.innerHTML = "";
+  containerU.prepend(tableU);
 }
 
 function showAddUserForm() {
@@ -240,11 +240,11 @@ function showAddUserForm() {
 
   const formContainer = document.createElement("div");
   formContainer.setAttribute("id", "addUserForm");
-  formContainer.appendChild(form);
+  formContainer.append(form);
 
-  const tableContainer = document.getElementById("app");
-  tableContainer.innerHTML = "";
-  tableContainer.appendChild(formContainer);
+  const tableContainerU = document.getElementById("userTableSection");
+  tableContainerU.innerHTML = "";
+  tableContainerU.append(formContainer);
 }
 
 /**

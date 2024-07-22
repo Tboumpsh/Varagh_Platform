@@ -1,4 +1,4 @@
-.tableSectionWrapper {
+.tableSectionUWrapper {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -13,12 +13,14 @@
         max-width: 20px;
     }
 
-
+h2{
+    font-size: 40px;
+}
     // size
 
 
 
-    #tableSection {
+    #tableUSection {
         background-color: transparent;
         border: none;
         color: inherit;
