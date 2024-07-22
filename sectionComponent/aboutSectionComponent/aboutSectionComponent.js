@@ -50,7 +50,7 @@ function aboutSectionComponent({
   });
 
   //   return aboutSections;
-  document.body.append(aboutSections);
+  about.append(aboutSections);
 }
 
 export default aboutSectionComponent;
