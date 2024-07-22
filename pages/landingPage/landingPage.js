@@ -1,4 +1,5 @@
 import domGenerator from "dom-generator";
+import "./index.scss";
 
 import cheapestCardSectionComponent from "../../sectionComponent/cheapestCardSectionComponent/CheapestCardSectionComponent";
 import newestCardSectionComponent from "../../sectionComponent/newest‌CardSectionComponent/newestCardsectionComponent";
@@ -83,8 +84,7 @@ function landingPage() {
     ],
   });
 
-  // return header;
-  document.body.append(landing);
+  return landing;
 }
 
 export default landingPage;
