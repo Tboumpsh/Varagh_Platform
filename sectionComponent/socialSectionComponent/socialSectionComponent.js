@@ -1,7 +1,7 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
-import categoryCard from "/components/categoryCardComponent/cardCategoryComponent";
+import categoryCard from "../../components/categoryCardComponent/cardCategoryComponent";
 
 /**
  * Generates a base button element with optional properties.
@@ -88,7 +88,7 @@ function socialSection({
   });
 
   // return footer;
-  document.body.append(social);
+  about.append(social);
 }
 
 export default socialSection;
