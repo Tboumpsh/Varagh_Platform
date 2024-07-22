@@ -19,8 +19,8 @@ import buttonGenerator from "../../components/buttonComponent/buttonComponent";
  * @param {string} [options.iconEnd=""] - The URL of the image icon to display at the end of the button.
  * @returns {HTMLDivElement} - The generated button element.
  */
-
-async function bestSellerSectionComponent({
+// async
+ function bestSellerSectionComponent({
   titleBestSeller,
   size = "medium",
   statues = "primaryFill",
@@ -64,13 +64,15 @@ async function bestSellerSectionComponent({
       },
     ],
   });
+  // landing.append(bestSellerSection)
 
-  document.body.append(bestSellerSection);
-  let card = await fetchBooksAndProcess();
+  // let card = await fetchBooksAndProcess();
 
-  card.forEach((cardElement) => {
-    cardBestSellerList.appendChild(cardElement);
-  });
+  //   card.forEach((cardElement) => {
+  //     cardBestSellerList.appendChild(cardElement);
+  //   });
+
+    return bestSellerSection;
 }
 
 export default bestSellerSectionComponent;
