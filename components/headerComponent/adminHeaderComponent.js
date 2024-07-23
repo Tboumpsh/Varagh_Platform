@@ -1,8 +1,12 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
+import showRegisterForm from "../../src/js/RegisterFormValidation/registerValidationForm";
+import renderLandingPage from "../../pages/landingPage/renderLandingPage";
+import renderAdminPage from "../../pages/adminPage/renderingAdminPage";
 import buttonGenerator from "../buttonComponent/buttonComponent";
-import createLinks from "/src/js/creatLink";
+import renderShopPage from "../../pages/shopPage/renderShopPage";
+import createLinkElements from "./createLinkElements";
 
 /**
  * Generates a base button element with optional properties.
@@ -20,29 +24,26 @@ import createLinks from "/src/js/creatLink";
  * @returns {HTMLDivElement} - The generated button element.
  */
 
-function adminHeaderGenerator({
-  content,
+function headerAdminGenerator({
   size = "medium",
   statues = "primaryFill",
   className = "",
-  //   anchorLink = "#",
   eventListeners = {},
+  eventProfileListeners = {},
   logo = "",
+  boxBuy = "",
 }) {
+  // const number = 4;
+  const linkTexts = ["صفحه اصلی", "داشبورد", "فروشگاه"];
 
-  let links = createLinks(number,linkTexts).map(item =>{
-    return{
-      tag:item
-    }
-  })
+  const links = createLinkElements(linkTexts, handleLinkClick);
 
-  let header = domGenerator({
+  let headerAdmin = domGenerator({
     tag: "div",
     attributes: {
       class: `headerWrapper ${className}`,
     },
     dataAttributes: { size: size, status: statues },
-
     children: [
       {
         tag: "img",
@@ -54,29 +55,59 @@ function adminHeaderGenerator({
           class: `headerSection`,
         },
         children: [
-         ...links,
-        ],
+         ...links
+        ], // Add links here
       },
       {
         tag: "div",
         attributes: {
-          class: `userProfile`,
+          id: `userProfile`,
         },
-
         children: [
           {
-            tag: "p",
-            attributes: {
-              id: `adminName`,
-            },
-            properties: { textContent: content },
+            tag: "img",
+            attributes: { src: boxBuy },
           },
+          {
+            tag: buttonGenerator({
+              content: "ورود/عضویت",
+              size: "medium",
+              status: "signIn_up",
+              eventListeners: { click: showRegisterForm },
+            }),
+          }
+         
         ],
       },
     ],
   });
 
-  return header;
+
+  return headerAdmin;
 }
 
-export default adminHeaderGenerator;
+function handleLinkClick(index) {
+  let main = document.getElementById("main");
+  switch (index) {
+    case 0:
+      main.innerHTML = "";
+      renderLandingPage();
+      console.log("صفحه اصلی کلیک شد");
+      break;
+    case 1:
+      main.innerHTML = "";
+      renderAdminPage()
+      console.log(" ادمین صفحه");
+      break;
+    case 2:
+      main.innerHTML = "";
+      renderShopPage();
+      console.log("فروشگاه کلیک شد");
+      break;
+    default:
+      console.log("لینک کلیک شد");
+      break;
+  }
+}
+
+export default headerAdminGenerator;
