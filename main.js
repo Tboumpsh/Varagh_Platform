@@ -16,6 +16,7 @@ import contactUsComponent from "./sectionComponent/contactUsComponent/contactUsC
 // import fetchUsersAndRenderTable from "./components/UsertableComponent/tableComponent";
 // import fetchUsersAndRenderTable from "./components/UsertableComponent/tableComponent";
 // import contactUsComponent from "./components/contactUsComponent/contactUsComponent";
+// import renderChangeProfilePage from "./pages/changeProfileUser/renderChangeProfile";
 import fetchUsersAndRenderTable from "./components/UsertableComponent/tableComponent";
 // import footerSectionComponent from "./components/footerComponent/footerComponent";
 import searchBoxComponent from "./components/searchBoxComponent/searchBoxComponent";
@@ -28,6 +29,10 @@ import headerGenerator from "./components/headerComponent/headerComponent";
 // import cardGenerator from "./components/cardComponent/cardComponent";
 import renderLandingPage from "./pages/landingPage/renderLandingPage";
 // import fetchBooksAndProcess from "./src/js/createBestSellerCard";
+import renderAdminPage from "./pages/adminPage/renderingAdminPage";
+import renderAboutPage from "./pages/aboutUsPage/renderAboutPage";
+import checkUserAndRender from "./src/renderPage/renderPages";
+import renderShopPage from "./pages/shopPage/renderShopPage";
 import landingPage from "./pages/landingPage/landingPage";
 import aboutPage from "./pages/aboutUsPage/aboutPage";
 import adminPage from "./pages/adminPage/adminPage";
@@ -168,4 +173,11 @@ import shopPage from "./pages/shopPage/shopPage";
 // aboutPage()
 
 
-renderLandingPage()
+// renderLandingPage()
+// renderAdminPage()
+// renderAboutPage()
+// renderShopPage()
+
+// renderChangeProfilePage()
+
+checkUserAndRender()
