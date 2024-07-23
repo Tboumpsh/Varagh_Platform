@@ -1,0 +1,17 @@
+#shopPageSection{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+
+
+#productsContent{
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+}

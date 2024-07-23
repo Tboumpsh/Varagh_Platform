@@ -1,4 +1,5 @@
 import domGenerator from "dom-generator";
+import "./index.scss";
 
 import footerSectionComponent from "../../sectionComponent/footerComponent/footerComponent";
 import searchBoxComponent from "../../components/searchBoxComponent/searchBoxComponent";
@@ -7,7 +8,7 @@ import headerGenerator from "../../components/headerComponent/headerComponent";
 
 function shopPage() {
   let shope = domGenerator({
-    tag: "div",
+    tag: "container",
     attributes: {
       id: "shopPageSection",
     },
@@ -20,11 +21,10 @@ function shopPage() {
           boxBuy: "/public/images/header/vector.png",
         }),
       },
-      {
-        tag: "h2",
-      },
+
       {
         tag: searchBoxComponent({
+          titleSearch:'فروشگاه ورق',
           size: "medium",
           status: "default",
         }),
@@ -43,7 +43,7 @@ function shopPage() {
       {
         tag: footerSectionComponent({
           contentAboutSection: "فروشگاه ورق",
-          size: "medium",
+          size: "large",
           status: "default",
           iconStart: "/public/images/footer/rectangle12.png",
           iconEnd: "/public/images/footer/rectangle13.png",
@@ -53,8 +53,8 @@ function shopPage() {
     ],
   });
 
-  // return header;
-  document.body.append(shope);
+  return shope;
+  // document.body.append(shope);
 }
 
 export default shopPage;
