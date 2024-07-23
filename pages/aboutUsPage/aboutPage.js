@@ -1,4 +1,5 @@
 import domGenerator from "dom-generator";
+import "./index.scss";
 
 import aboutSectionComponent from "../../sectionComponent/aboutSectionComponent/aboutSectionComponent";
 import socialSection from "../../sectionComponent/socialSectionComponent/socialSectionComponent";
@@ -53,7 +54,7 @@ function aboutPage() {
       {
         tag: footerSectionComponent({
           contentAboutSection: "فروشگاه ورق",
-          size: "medium",
+          size: "large",
           status: "default",
           iconStart: "/public/images/footer/rectangle12.png",
           iconEnd: "/public/images/footer/rectangle13.png",
@@ -63,8 +64,8 @@ function aboutPage() {
     ],
   });
 
-  // return header;
-  document.body.append(about);
+  return about;
+  // document.body.append(about);
 }
 
 export default aboutPage;
