@@ -98,8 +98,8 @@ function contactUsComponent({
     ],
   });
 
-  //   return aboutSections;
-  document.body.append(contactUs);
+    return contactUs;
+  // about.append(contactUs);
 }
 
 export default contactUsComponent;
