@@ -35,6 +35,14 @@ function filterComponent({
         children: [
           {
             tag: buttonGenerator({
+              content: "all",
+              size: "medium",
+              status: "filter",
+              eventListeners: { click:() => filterByAllBooks() },
+            }),
+          },
+          {
+            tag: buttonGenerator({
               content: "Price",
               size: "medium",
               status: "filter",
@@ -73,6 +81,7 @@ function filterComponent({
               eventListeners: { click: () => toggleDropdown("dropDownDate") },
             }),
           },
+   
           {
             tag: "div",
             attributes: { id: "dropDownDate", class: "dropdown" },
@@ -97,14 +106,7 @@ function filterComponent({
               },
             ],
           },
-          {
-            tag: buttonGenerator({
-              content: "all",
-              size: "medium",
-              status: "filter",
-              eventListeners: { click: filterByAllBooks() },
-            }),
-          },
+         
         ],
       },
       {
@@ -114,7 +116,7 @@ function filterComponent({
     ],
   });
 
-  document.body.append(filter);
+  // app.append(filter);
 
   function toggleDropdown(dropdownId) {
     const dropdown = document.getElementById(dropdownId);
@@ -124,6 +126,8 @@ function filterComponent({
       dropdown.style.display = "block";
     }
   }
+
+  return filter;
 }
 
 export default filterComponent;
