@@ -1,4 +1,5 @@
 import domGenerator from "dom-generator";
+import "./index.scss";
 
 import changeProfileSection from "../../sectionComponent/changeProfileSection/changeProfileSection";
 import footerSectionComponent from "../../sectionComponent/footerComponent/footerComponent";
@@ -47,8 +48,8 @@ function changeProfileUserSection() {
     ],
   });
 
-  // return header;
-  document.body.append(changeProfileUser);
+  return changeProfileUser;
+  // document.body.append(changeProfileUser);
 }
 
 export default changeProfileUserSection;
