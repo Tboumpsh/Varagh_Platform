@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import renderAdminPage from "../../../pages/adminPage/renderingAdminPage";
+
 function checkUserInformation() {
   const logInButton = document.getElementById("logInButton");
   const registerButton = document.getElementById("registerButton");
@@ -15,7 +17,7 @@ function checkUserInformation() {
         JSON.stringify({ username, role: "admin" })
       );
       alert("Welcome, Admin!");
-      window.location.href = "admin.html"; // Replace with your admin page URL
+      renderAdminPage()
       return;
     }
 
