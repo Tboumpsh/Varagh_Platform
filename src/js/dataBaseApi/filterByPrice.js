@@ -3,12 +3,13 @@ import axios from "axios";
 import cardGenerator from "../../../components/cardComponent/cardComponent";
 
 async function filterByPrice(order) {
+  let productsContent = document.getElementById('productsContent')
   try {
     const { data: books } = await axios.get(
       `http://localhost:3000/books?_sort=price&_order=${order}`
     );
    
-    cardContainer.innerHTML = ""; // Clear existing cards
+    productsContent.innerHTML = ""; // Clear existing cards
 
     const cardElements = books.map((book) => {
       return cardGenerator({
@@ -21,7 +22,7 @@ async function filterByPrice(order) {
     });
 
     cardElements.forEach((cardElement) => {
-      cardContainer.appendChild(cardElement);
+      productsContent.appendChild(cardElement);
     });
   } catch (error) {
     console.error("Error fetching data:", error);
