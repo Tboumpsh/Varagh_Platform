@@ -1,13 +1,20 @@
 .searchBoxWrapper {
     display: flex;
     justify-content: space-around;
-    flex-direction: row;
-
+    flex-direction: column;
+    margin: 10% 0 ;
     cursor: pointer;
+    gap: 50px;
 
     // max with
     img {
         max-width: 20px;
+    }
+
+    h2{
+        font-size: 50px;;
+        width: 30%;
+        text-align: center
     }
 
     #searchSection {
