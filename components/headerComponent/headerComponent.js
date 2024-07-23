@@ -1,9 +1,16 @@
+// import domGenerator from "dom-generator";
 import domGenerator from "dom-generator";
+// import "./index.scss";
 import "./index.scss";
 
+// import showRegisterForm from "../../src/js/RegisterFormValidation/registerValidationForm";
 import showRegisterForm from "../../src/js/RegisterFormValidation/registerValidationForm";
+// import buttonGenerator from "../buttonComponent/buttonComponent";
 import buttonGenerator from "../buttonComponent/buttonComponent";
+import createLinkElements from "./createLinkElements";
+// import createLinks from "/src/js/creatLink";
 import createLinks from "/src/js/creatLink";
+import handleLinkClick from "./pageHandler";
 
 /**
  * Generates a base button element with optional properties.
@@ -25,20 +32,16 @@ function headerGenerator({
   size = "medium",
   statues = "primaryFill",
   className = "",
-  //   anchorLink = "#",
   eventListeners = {},
   eventProfileListeners = {},
   logo = "",
   boxBuy = "",
 }) {
-  const number = 4;
+  // const number = 4;
   const linkTexts = ["صفحه اصلی", "درباره ما", "فروشگاه", "علاقه مندی ها"];
 
-  let links = createLinks(number, linkTexts).map((item) => {
-    return {
-      tag: item,
-    };
-  });
+  // Create link elements with event listeners using the external function
+  const links = createLinkElements(linkTexts, handleLinkClick);
 
   let header = domGenerator({
     tag: "div",
@@ -46,7 +49,6 @@ function headerGenerator({
       class: `headerWrapper ${className}`,
     },
     dataAttributes: { size: size, status: statues },
-
     children: [
       {
         tag: "img",
@@ -58,28 +60,17 @@ function headerGenerator({
           class: `headerSection`,
         },
         children: [
-          //
-          // ...link,
-          ...links,
-        ],
+         ...links
+        ], // Add links here
       },
       {
         tag: "div",
         attributes: {
           id: `userProfile`,
         },
-
         children: [
-          // {
-          //   tag: "div",
-          //   eventProfileListeners,
-          //   attributes: {
-          //     id: `profile`,
-          //   },
-          // },
           {
             tag: "img",
-            eventListeners,
             attributes: { src: boxBuy },
           },
           {
@@ -89,14 +80,17 @@ function headerGenerator({
               status: "signIn_up",
               eventListeners: { click: showRegisterForm },
             }),
-          },
+          }
+         
         ],
       },
     ],
   });
 
+
   return header;
-  // document.body.prepend(header);
 }
+
+handleLinkClick()
 
 export default headerGenerator;
