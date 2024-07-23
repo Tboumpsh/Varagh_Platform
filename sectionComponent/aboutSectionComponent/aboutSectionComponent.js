@@ -49,8 +49,8 @@ function aboutSectionComponent({
     ]
   });
 
-  //   return aboutSections;
-  about.append(aboutSections);
+    return aboutSections;
+  // about.append(aboutSections);
 }
 
 export default aboutSectionComponent;
