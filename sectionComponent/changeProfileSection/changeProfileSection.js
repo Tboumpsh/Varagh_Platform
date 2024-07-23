@@ -22,7 +22,7 @@ import changeProfiles from "../../src/js/changeProfile/changeProfile";
  * @returns {HTMLDivElement} - The generated button element.
  */
 
-async function changeProfileSection({
+function changeProfileSection({
   changeProfileTitle,
   changeProfileParagraph,
   size = "medium",
@@ -83,9 +83,11 @@ async function changeProfileSection({
     ],
   });
  
-  //   return changeProfile;
-  document.body.append(changeProfile);
+
+  main.append(changeProfile);
   changeProfiles()
+
+  return changeProfile;
 
 }
 

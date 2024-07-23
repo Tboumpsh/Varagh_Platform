@@ -5,7 +5,7 @@ import heroSectionComponent from "../../sectionComponent/heroSectionComponent/he
 import fetchBooksAndRenderTable from "../../components/booksTableComponent/booksTableComponent";
 import footerSectionComponent from "../../sectionComponent/footerComponent/footerComponent";
 import fetchUsersAndRenderTable from "../../components/UsertableComponent/tableComponent";
-import headerGenerator from "../../components/headerComponent/headerComponent";
+import headerAdminGenerator from "../../components/headerComponent/adminHeaderComponent";
 
 function adminPage() {
   let admin = domGenerator({
@@ -14,13 +14,12 @@ function adminPage() {
       id: "adminPageSection",
     },
     children: [
-      {
-        tag: headerGenerator({
+      { tag:headerAdminGenerator({
           size: "medium",
           status: "default",
           logo: "/public/images/Logo/logo.svg",
           boxBuy: "/public/images/header/vector.png",
-        }),
+        })
       },
       {
         tag: heroSectionComponent({
@@ -53,10 +52,10 @@ function adminPage() {
     ],
   });
 
-  // return header;
-  main.append(admin);
-  fetchUsersAndRenderTable();
-  fetchBooksAndRenderTable();
+  return admin;
+  // main.append(admin);
+  // fetchUsersAndRenderTable();
+  // fetchBooksAndRenderTable();
 }
 
 export default adminPage;

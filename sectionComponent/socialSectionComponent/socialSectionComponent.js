@@ -87,8 +87,8 @@ function socialSection({
     ],
   });
 
-  // return footer;
-  about.append(social);
+  return social;
+  // about.append(social);
 }
 
 export default socialSection;
