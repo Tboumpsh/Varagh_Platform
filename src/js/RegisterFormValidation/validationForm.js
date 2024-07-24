@@ -1,5 +1,6 @@
 import axios from "axios";
 
+import renderLandingPage from "../../../pages/landingPage/renderLandingPage";
 import renderAdminPage from "../../../pages/adminPage/renderingAdminPage";
 
 function checkUserInformation() {
@@ -17,7 +18,7 @@ function checkUserInformation() {
         JSON.stringify({ username, role: "admin" })
       );
       alert("Welcome, Admin!");
-      renderAdminPage()
+      renderAdminPage();
       return;
     }
 
@@ -28,6 +29,7 @@ function checkUserInformation() {
       if (response.data.length > 0) {
         localStorage.setItem("currentUser", JSON.stringify(response.data[0]));
         alert("Login successful!");
+        renderLandingPage();  // Redirect to the landing page after successful login
       } else {
         alert("Invalid username or password");
       }
@@ -59,6 +61,10 @@ function checkUserInformation() {
       console.error("Error registering user:", error);
     }
   });
+
+
+ 
+
 }
 
 export default checkUserInformation;
