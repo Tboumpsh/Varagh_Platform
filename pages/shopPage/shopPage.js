@@ -2,11 +2,42 @@ import domGenerator from "dom-generator";
 import "./index.scss";
 
 import footerSectionComponent from "../../sectionComponent/footerComponent/footerComponent";
+import headerAdminGenerator from "../../components/headerComponent/adminHeaderComponent";
 import searchBoxComponent from "../../components/searchBoxComponent/searchBoxComponent";
 import filterComponent from "../../components/filterComponent/filterComponent";
 import headerGenerator from "../../components/headerComponent/headerComponent";
+import loggedInHeader from "../../components/headerComponent/loggedInHeader";
 
 function shopPage() {
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+  let headerContent;
+  if (currentUser && currentUser.role === "admin") {
+    headerContent = headerAdminGenerator(
+      {
+        size: "medium",
+        status: "default",
+        logo: "/public/images/Logo/logo.svg",
+        boxBuy: "/public/images/header/vector.png",
+      }
+    );
+  } else if (currentUser) {
+    headerContent = loggedInHeader(
+      {
+        size: "medium",
+        status: "default",
+        logo: "/public/images/Logo/logo.svg",
+        boxBuy: "/public/images/header/vector.png",
+      }
+    );
+  } else {
+    headerContent = headerGenerator({
+      size: "medium",
+      status: "default",
+      logo: "/public/images/Logo/logo.svg",
+      boxBuy: "/public/images/header/vector.png",
+    });
+  }
   let shope = domGenerator({
     tag: "container",
     attributes: {
@@ -14,12 +45,7 @@ function shopPage() {
     },
     children: [
       {
-        tag: headerGenerator({
-          size: "medium",
-          status: "default",
-          logo: "/public/images/Logo/logo.svg",
-          boxBuy: "/public/images/header/vector.png",
-        }),
+       tag:headerContent,
       },
 
       {
