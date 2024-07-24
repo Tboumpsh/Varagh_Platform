@@ -2,6 +2,7 @@ import domGenerator from "dom-generator";
 import "./index.scss";
 
 import showRegisterForm from "../../src/js/RegisterFormValidation/registerValidationForm";
+import addLogoutListener from "../../src/js/RegisterFormValidation/logOut";
 import renderLandingPage from "../../pages/landingPage/renderLandingPage";
 import renderAdminPage from "../../pages/adminPage/renderingAdminPage";
 import buttonGenerator from "../buttonComponent/buttonComponent";
@@ -69,11 +70,15 @@ function headerAdminGenerator({
             attributes: { src: boxBuy },
           },
           {
+            tag: 'div',
+            properties:{textContent:'hello'}
+          },
+          {
             tag: buttonGenerator({
-              content: "ورود/عضویت",
+              content: "خروج از جساب",
               size: "medium",
               status: "signIn_up",
-              eventListeners: { click: showRegisterForm },
+              eventListeners: { click: addLogoutListener },
             }),
           }
          

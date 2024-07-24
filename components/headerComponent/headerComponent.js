@@ -9,8 +9,8 @@ import showRegisterForm from "../../src/js/RegisterFormValidation/registerValida
 import buttonGenerator from "../buttonComponent/buttonComponent";
 import createLinkElements from "./createLinkElements";
 // import createLinks from "/src/js/creatLink";
+// import handleLinkClick from "./pageHandler";
 import createLinks from "/src/js/creatLink";
-import handleLinkClick from "./pageHandler";
 
 /**
  * Generates a base button element with optional properties.
@@ -91,6 +91,34 @@ function headerGenerator({
   return header;
 }
 
-handleLinkClick()
+// handleLinkClick()
+
+function handleLinkClick(index) {
+  let main = document.getElementById("main");
+  switch (index) {
+    case 0:
+      main.innerHTML = "";
+      renderLandingPage();
+      console.log("صفحه اصلی کلیک شد");
+      break;
+    case 1:
+      main.innerHTML = "";
+      renderAboutPage();
+      console.log("درباره ما کلیک شد");
+      break;
+    case 2:
+      main.innerHTML = "";
+      renderShopPage();
+      console.log("فروشگاه کلیک شد");
+      break;
+    case 3:
+      // Handle "علاقه مندی ها" click
+      console.log("علاقه مندی ها کلیک شد");
+      break;
+    default:
+      console.log("لینک کلیک شد");
+      break;
+  }
+}
 
 export default headerGenerator;
