@@ -7,9 +7,42 @@ import bestSellerSectionComponent from "../../sectionComponent/bestSellerSection
 import categorySectionComponent from "../../sectionComponent/categorySectionComponent/categoryComponentSection";
 import heroSectionComponent from "../../sectionComponent/heroSectionComponent/heroSectionComponent";
 import footerSectionComponent from "../../sectionComponent/footerComponent/footerComponent";
+import headerAdminGenerator from "../../components/headerComponent/adminHeaderComponent";
 import headerGenerator from "../../components/headerComponent/headerComponent";
+import loggedInHeader from "../../components/headerComponent/loggedInHeader";
 
 function landingPage() {
+
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+  let headerContent;
+  if (currentUser && currentUser.role === "admin") {
+    headerContent = headerAdminGenerator(
+      {
+        size: "medium",
+        status: "default",
+        logo: "/public/images/Logo/logo.svg",
+        boxBuy: "/public/images/header/vector.png",
+      }
+    );
+  } else if (currentUser) {
+    headerContent = loggedInHeader(
+      {
+        size: "medium",
+        status: "default",
+        logo: "/public/images/Logo/logo.svg",
+        boxBuy: "/public/images/header/vector.png",
+      }
+    );
+  } else {
+    headerContent = headerGenerator({
+      size: "medium",
+      status: "default",
+      logo: "/public/images/Logo/logo.svg",
+      boxBuy: "/public/images/header/vector.png",
+    });
+  }
+
   let landing = domGenerator({
     tag: "div",
     attributes: {
@@ -17,12 +50,7 @@ function landingPage() {
     },
     children: [
       {
-        tag: headerGenerator({
-          size: "medium",
-          status: "default",
-          logo: "/public/images/Logo/logo.svg",
-          boxBuy: "/public/images/header/vector.png",
-        }),
+        tag: headerContent,
       },
       {
         tag: heroSectionComponent({
