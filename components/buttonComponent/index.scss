@@ -98,6 +98,7 @@
     }
   }
 
+
   &[data-status="signIn_up"] {
     background-color: transparent;
     color: #0b0b0b;
@@ -169,22 +170,13 @@
     }
   }
 
-  &[data-status="delete"] {
-    width: 23px;
-    height: 23px;
+  &[data-status="counter"] {
+    width: 20%;
+    height:100%;
+    background-color: rgba(252, 155, 40, 1) ;
 
     &:hover {
-      border: rgba(252, 155, 40, 1);
-    }
-
-    &:focus,
-    &:active {
-      fill: rgba(255, 216, 170, 1);
-      border: rgba(252, 155, 40, 1);
-    }
-
-    &:disabled {
-      color: #8c8c8c;
+      background-color: rgb(247, 136, 0) ;
     }
   }
 
