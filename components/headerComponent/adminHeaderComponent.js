@@ -1,10 +1,11 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
-import showRegisterForm from "../../src/js/RegisterFormValidation/registerValidationForm";
+import renderChangeProfilePage from "../../pages/changeProfileUser/renderChangeProfile";
 import addLogoutListener from "../../src/js/RegisterFormValidation/logOut";
 import renderLandingPage from "../../pages/landingPage/renderLandingPage";
 import renderAdminPage from "../../pages/adminPage/renderingAdminPage";
+import headerEffect from "../../src/js/headerEffect/headerEffect";
 import buttonGenerator from "../buttonComponent/buttonComponent";
 import renderShopPage from "../../pages/shopPage/renderShopPage";
 import createLinkElements from "./createLinkElements";
@@ -66,12 +67,16 @@ function headerAdminGenerator({
         },
         children: [
           {
-            tag: "img",
-            attributes: { src: boxBuy },
+            tag: "p",
+            properties: { textContent: "support" },
           },
           {
-            tag: 'div',
-            properties:{textContent:'hello'}
+            tag: "div",
+            properties: { textContent: "پروفایل" },
+            attributes: {
+              id: `profileImage`,
+            },
+            eventListeners: { click: () => renderChangeProfilePage() },
           },
           {
             tag: buttonGenerator({
@@ -86,7 +91,7 @@ function headerAdminGenerator({
       },
     ],
   });
-
+  headerEffect(header)
 
   return headerAdmin;
 }

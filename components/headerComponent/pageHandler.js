@@ -1,4 +1,5 @@
 import renderLandingPage from "../../pages/landingPage/renderLandingPage";
+import renderBookLoveListPage from "../../pages/lovePage/renderLovePage";
 import renderAboutPage from "../../pages/aboutUsPage/renderAboutPage";
 import renderShopPage from "../../pages/shopPage/renderShopPage";
 
@@ -21,7 +22,8 @@ function handleLinkClick(index) {
       console.log("فروشگاه کلیک شد");
       break;
     case 3:
-      // Handle "علاقه مندی ها" click
+      main.innerHTML = "";
+      renderBookLoveListPage();
       console.log("علاقه مندی ها کلیک شد");
       break;
     default:

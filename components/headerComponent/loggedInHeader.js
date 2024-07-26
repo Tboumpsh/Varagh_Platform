@@ -3,13 +3,11 @@ import domGenerator from "dom-generator";
 // import "./index.scss";
 import "./index.scss";
 
-// import showRegisterForm from "../../src/js/RegisterFormValidation/registerValidationForm";
-import showRegisterForm from "../../src/js/RegisterFormValidation/registerValidationForm";
+import renderChangeProfilePage from "../../pages/changeProfileUser/renderChangeProfile";
 import addLogoutListener from "../../src/js/RegisterFormValidation/logOut";
-// import buttonGenerator from "../buttonComponent/buttonComponent";
+import headerEffect from "../../src/js/headerEffect/headerEffect";
 import buttonGenerator from "../buttonComponent/buttonComponent";
 import createLinkElements from "./createLinkElements";
-// import createLinks from "/src/js/creatLink";
 import createLinks from "/src/js/creatLink";
 import handleLinkClick from "./pageHandler";
 
@@ -60,9 +58,7 @@ function loggedInHeader({
         attributes: {
           class: `headerSection`,
         },
-        children: [
-         ...links
-        ], // Add links here
+        children: [...links], // Add links here
       },
       {
         tag: "div",
@@ -75,27 +71,28 @@ function loggedInHeader({
             attributes: { src: boxBuy },
           },
           {
-            tag:'div',
-            properties:{textContent:'kkkkk'}
+            tag: "div",
+            properties: { textContent: "پروفایل" },
+            attributes: {
+              id: `profileImage`,
+            },
+            eventListeners: { click: () => renderChangeProfilePage() },
           },
           {
             tag: buttonGenerator({
-              content: "خروج از جساب",
-              size: "medium",
-              status: "signIn_up",
+              content: "خروج از حساب",
+              status: "logOut",
               eventListeners: { click: addLogoutListener },
             }),
-          }
-         
+          },
         ],
       },
     ],
   });
-
-
+  headerEffect(header)
   return header;
 }
 
-handleLinkClick()
+handleLinkClick();
 
 export default loggedInHeader;

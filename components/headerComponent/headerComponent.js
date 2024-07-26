@@ -1,16 +1,15 @@
-// import domGenerator from "dom-generator";
 import domGenerator from "dom-generator";
-// import "./index.scss";
 import "./index.scss";
 
-// import showRegisterForm from "../../src/js/RegisterFormValidation/registerValidationForm";
 import showRegisterForm from "../../src/js/RegisterFormValidation/registerValidationForm";
-// import buttonGenerator from "../buttonComponent/buttonComponent";
+import renderLandingPage from "../../pages/landingPage/renderLandingPage";
+import renderBookLoveListPage from "../../pages/lovePage/renderLovePage";
+import renderAboutPage from "../../pages/aboutUsPage/renderAboutPage";
+import headerEffect from "../../src/js/headerEffect/headerEffect";
 import buttonGenerator from "../buttonComponent/buttonComponent";
+import renderShopPage from "../../pages/shopPage/renderShopPage";
 import createLinkElements from "./createLinkElements";
-// import createLinks from "/src/js/creatLink";
-// import handleLinkClick from "./pageHandler";
-import createLinks from "/src/js/creatLink";
+import silverBox from "/Lib/silverBox/silverBox.min";
 
 /**
  * Generates a base button element with optional properties.
@@ -59,9 +58,7 @@ function headerGenerator({
         attributes: {
           class: `headerSection`,
         },
-        children: [
-         ...links
-        ], // Add links here
+        children: [...links], // Add links here
       },
       {
         tag: "div",
@@ -79,15 +76,14 @@ function headerGenerator({
               size: "medium",
               status: "signIn_up",
               eventListeners: { click: showRegisterForm },
+              
             }),
-          }
-         
+          },
         ],
       },
     ],
   });
-
-
+  headerEffect(header);
   return header;
 }
 
@@ -112,7 +108,15 @@ function handleLinkClick(index) {
       console.log("فروشگاه کلیک شد");
       break;
     case 3:
-      // Handle "علاقه مندی ها" click
+      main.innerHTML = "";
+      silverBox({
+        position: "top-right",
+        alertIcon: "info",
+        text: "شما هنوز وارد حساب کاربری خود نشدید",
+        centerContent: true,
+        showCloseButton: true,
+      });
+      renderBookLoveListPage();
       console.log("علاقه مندی ها کلیک شد");
       break;
     default:
