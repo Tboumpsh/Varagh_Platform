@@ -2,6 +2,7 @@ import domGenerator from "dom-generator";
 import "./index.scss";
 
 import categoryCard from "/components/categoryCardComponent/cardCategoryComponent";
+import renderShopPage from "../../pages/shopPage/renderShopPage";
 
 /**
  * Generates a base button element with optional properties.
@@ -35,7 +36,6 @@ function categorySectionComponent({
       class: `categorySectionWrapper ${className}`,
     },
     dataAttributes: { size: size, status: statues },
-    eventListeners,
     children: [
      {
       tag:'h3',
@@ -48,10 +48,10 @@ function categorySectionComponent({
       [
         {
           tag: categoryCard({
-            content: "بزرگسالان",
+            content: "کودکان",
             size: "medium",
             status: "default",
-            anchorLink: "#",
+            eventListeners:{click: ()=> renderShopPage() },
             category: old,
           }),
         },
@@ -60,16 +60,16 @@ function categorySectionComponent({
             content: "نوجوانان",
             size: "medium",
             status: "default",
-            anchorLink: "#",
+            eventListeners:{click: ()=> renderShopPage() },
             category: teenager,
           }),
         },
         {
           tag: categoryCard({
-            content: "کودکان",
+            content: "بزرگسالان",
             size: "medium",
             status: "default",
-            anchorLink: "#",
+            eventListeners:{click: ()=> renderShopPage() },
             category: child,
           }),
         },
