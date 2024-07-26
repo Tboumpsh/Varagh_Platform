@@ -102,7 +102,7 @@ function landingPage() {
       {
         tag: footerSectionComponent({
           contentAboutSection: "فروشگاه ورق",
-          size: "medium",
+          size: "large",
           status: "default",
           iconStart: "/public/images/footer/rectangle12.png",
           iconEnd: "/public/images/footer/rectangle13.png",

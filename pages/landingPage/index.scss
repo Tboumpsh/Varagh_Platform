@@ -1,8 +1,16 @@
 #app{
     height: 0px !important;
 }
-#landing{
+#landingPageSection{
     display: flex;
     flex-direction: column;
-    gap: 175px;
+    gap: 80px;
+
+
+
+    #contentSection{
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+    }
 }
