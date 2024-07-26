@@ -8,40 +8,42 @@ async function showRegisterForm() {
   silverBox({
     customIcon: "/public/images/header/ei_user.svg",
     title: {
-      text: "Login",
+      text: "به پلتفرم ورق خوش آمدید",
     },
     centerContent: true,
-    text: "Enter your account information",
-    footer: "<a href='#'>Forgot your password?</a>",
-    showCloseButton: true,
+    text: "لطفا اطلاعات خود را وارد کنید",
+    footer: "ورق پلتفرم آنلایین کتاب",
     confirmButton: {
-      text: "Login",
+      text: "ورود",
       closeOnClick: false,
       id: "logInButton",
     },
+    showCloseButton: true,
     customButton: {
-      text: "Register",
+      text: "ثبت نام",
       closeOnClick: false,
       id: "registerButton",
     },
+    
 
     input: [
       {
-        label: "Username",
+        label: "نام کاربری",
         type: "text",
-        placeHolder: "Enter your username",
+        placeHolder: "نام خود را وارد کنید",
         maxLength: 30,
         id: "userName",
       },
       {
-        label: "Password",
+        label: "رمز عبور",
         type: "password",
-        placeHolder: "Enter your password",
-        hint: "Pick a strong password.",
+        placeHolder: "رمز خود را وارد کنید",
+        hint: "لطفا رمز قوی را برای امنیت خود انتخاب کنید.",
         id: "password",
       },
     ],
   });
+
 
   checkUserInformation();
 }
