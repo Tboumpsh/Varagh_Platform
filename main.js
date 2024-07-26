@@ -2,7 +2,6 @@
 import "/styles/cssReset.css";
 import "/styles/index.scss";
 
-import renderChangeProfilePage from "./pages/changeProfileUser/renderChangeProfile";
 import renderLandingPage from "./pages/landingPage/renderLandingPage";
 
 // landingPage()
