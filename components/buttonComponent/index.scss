@@ -121,6 +121,31 @@
       color: #8c8c8c;
     }
   }
+  &[data-status="logOut"] {
+    background-color:  rgb(232, 167, 69);
+    color: #ffffff;
+    text-align: center;
+    width: 150px;
+    height: 40px;
+    border-radius: 50px;
+  
+
+
+    &:hover {
+      background-color: transparent;
+      color:rgb(255, 149, 0);
+    }
+
+    &:focus,
+    &:active {
+      background-color: rgba(253, 225, 164, 0.79);
+      color:rgb(255, 149, 0);
+    }
+
+    &:disabled {
+      color: #8c8c8c;
+    }
+  }
 
   &[data-status="love"] {
     background-color: transparent;
