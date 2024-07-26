@@ -11,7 +11,7 @@ function listGenerator(myNumber, myTexts) {
   }
 
   myNumber = 5;
-  myTexts = ["متن اول", "متن دوم", "متن سوم", "متن چهارم", "متن پنجم"];
+  myTexts = ["ضمانت کالا", "پشتیبانی سریع", "ارسال رایگان", "کالای مرجوعی", "تضمین امنیت"];
 
   let myList = createList(myNumber, myTexts);
 

@@ -3,17 +3,35 @@
     justify-content: space-around;
     flex-direction: row;
     align-items: center;
-    cursor: pointer;
     background-color: rgba(250, 251, 241, 1);
     // max with
-    // img {
-    //   max-width: 20px;
-    // }
-  
+    img {
+      max-width: 180px;
+    }
+
     .informationSection {
       border: none;
       color: inherit;
-      cursor: pointer;
+
+    }
+    
+    .aboutSection{
+      margin: 0;
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      ul{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      h2{
+        width: fit-content;
+        margin: 0;
+      }
+
     }
   
     // size

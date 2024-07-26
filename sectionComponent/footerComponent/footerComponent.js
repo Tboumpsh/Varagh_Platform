@@ -49,7 +49,7 @@ function footerSectionComponent({
               content: "درباره فروشگاه ورق",
               size: "medium",
               status: "default",
-              upImage: upImage,
+              category: upImage,
             }),
           },
         ],
