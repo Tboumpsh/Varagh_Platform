@@ -1,0 +1,68 @@
+.buttonGroupComponent {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  
+
+  
+    // max with
+    img {
+      max-width: 20px;
+    }
+  
+    .buttonGroup {
+      background-color: transparent;
+      border: none;
+      color: inherit;
+     text-align: center;
+     color: black;
+     outline: none;
+     cursor: pointer;
+    }
+  
+    // size
+    &[data-size="medium"] {
+      width: 200px;
+      height: 50px;
+      border-radius: 7px;
+      font-size: 20px;
+      align-items: center;
+    }
+  
+    &[data-size="large"] {
+      width: 300px;
+      height: 60px;
+      border-radius: 7px;
+      font-size: 22px;
+    }
+  
+    &[data-size="small"] {
+      // for search box
+      width: 200px;
+      height: 100px;
+      border-radius: 7px;
+      font-size: 16px;
+    }
+
+  
+    // type
+
+    &[data-status="default"] {
+      background-color: rgb(252, 252, 252);
+      color: #ececec;
+      text-align: center;
+      font-size: 25px;
+  
+      &:hover {
+       cursor: pointer;
+      }
+  
+      &:disabled {
+        color: #8c8c8c;
+        background-color: #ececec;
+      }
+    }
+  
+  
+  
+  }
