@@ -2,9 +2,10 @@ import domGenerator from "dom-generator";
 import axios from "axios";
 import "./index.scss";
 
-import showBookDetails from "../../src/js/booksDataList/bookDetaList";
+import renderBookInformationPage from "../../pages/bookInformationPage/renderBookInformation";
 import buttonGenerator from "../buttonComponent/buttonComponent";
 import addToLoveList from "../../src/js/loveList/addToLoveList";
+import seenAction from "../../src/js/seenAction/seenAction";
 
 /**
  * Generates a base button element with optional properties.
@@ -71,7 +72,7 @@ function cardGenerator({
               size: "medium",
               status: "primaryOrang",
               eventListeners: {
-                click: () => showBookDetails(titleContent),
+                click: () => renderBookInformationPage(titleContent),
               },
             }),
           },
@@ -89,6 +90,7 @@ function cardGenerator({
               {
                 tag: buttonGenerator({
                   status: "seen",
+                  eventListeners: { click: () => seenAction(2) },
                   iconStart: "/public/images/shopPage/cards/vector (2).svg",
                 }),
               },
