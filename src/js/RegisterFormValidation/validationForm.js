@@ -1,7 +1,9 @@
+import "/Lib/silverBox/silverBox.min.scss";
 import axios from "axios";
 
 import renderLandingPage from "../../../pages/landingPage/renderLandingPage";
 import renderAdminPage from "../../../pages/adminPage/renderingAdminPage";
+import silverBox from "/Lib/silverBox/silverBox.min";
 
 function checkUserInformation() {
   const logInButton = document.getElementById("logInButton");
@@ -17,7 +19,13 @@ function checkUserInformation() {
         "currentUser",
         JSON.stringify({ username, role: "admin" })
       );
-      alert("Welcome, Admin!");
+      silverBox({
+        title: {
+          text: "سلام مدیر",
+          alertIcon: "success",
+        },
+        text: "شما با موفقیت وارد شدید",
+      });
       renderAdminPage();
       return;
     }
@@ -28,10 +36,23 @@ function checkUserInformation() {
       );
       if (response.data.length > 0) {
         localStorage.setItem("currentUser", JSON.stringify(response.data[0]));
-        alert("Login successful!");
-        renderLandingPage();  // Redirect to the landing page after successful login
+        silverBox({
+          title: {
+            text: "وارد شدید",
+            alertIcon: "success",
+          },
+          text: "شما با موفقیت وارد شدید",
+        });
+        renderLandingPage(); // Redirect to the landing page after successful login
       } else {
-        alert("Invalid username or password");
+        silverBox({
+          alertIcon: "error",
+          text: "رمز یا نام کاربری شما اشتباه است",
+          centerContent: true,
+          cancelButton: {
+                 text: "باشه"
+          }
+   })
       }
     } catch (error) {
       console.error("Error logging in:", error);
@@ -48,23 +69,31 @@ function checkUserInformation() {
         `http://localhost:3000/user?name=${username}`
       );
       if (checkResponse.data.length > 0) {
-        alert("User already registered with this username.");
+        silverBox({
+          position: "top-right",
+          alertIcon: "info",
+          text: "شما قبلا ثبت نام کرده اید",
+          centerContent: true,
+          showCloseButton: true
+   })
       } else {
         const response = await axios.post("http://localhost:3000/user", {
           name: username,
           password: password,
         });
         console.log("User registered successfully:", response.data);
-        alert("Registration successful! Please login.");
+        silverBox({
+          title: {
+            text: "وارد شدید",
+            alertIcon: "success",
+          },
+          text: "اطلاعات شما ثبت شد.",
+        });
       }
     } catch (error) {
       console.error("Error registering user:", error);
     }
   });
-
-
- 
-
 }
 
 export default checkUserInformation;
