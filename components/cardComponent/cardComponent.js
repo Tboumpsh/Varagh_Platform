@@ -2,7 +2,9 @@ import domGenerator from "dom-generator";
 import axios from "axios";
 import "./index.scss";
 
+import showBookDetails from "../../src/js/booksDataList/bookDetaList";
 import buttonGenerator from "../buttonComponent/buttonComponent";
+import addToLoveList from "../../src/js/loveList/addToLoveList";
 
 /**
  * Generates a base button element with optional properties.
@@ -20,32 +22,9 @@ import buttonGenerator from "../buttonComponent/buttonComponent";
  * @returns {HTMLDivElement} - The generated button element.
  */
 
-// (async () => {
-  // let {data: books} = await axios.get("http://localhost:3000/books");
-  // console.log(books);
-  // let {data: book} = await axios.delete("http://localhost:3000/books/2",);
-  //   let {data: user} = await axios.get("http://localhost:3000/user/2");
-  //   user.loveList.push(1)
-  //   console.log(user);
-  //  await axios.put("http://localhost:3000/user/2",user);
-// })();
-
-// let array = [{ id: 1, title: "one" },{ id: 1, title: "two" }];
-// array.forEach(item => {
-//   console.log(item);
-//   cardGenerator({
-//     titleContent:item.title
-//   })
-// });
-
-
-// let dayNow = new Date().toLocaleDateString("fa-IR-u-nu");
-// console.log(dayNow);
-// let final = persianDates.slice(0, 4);
-
-
 
 function cardGenerator({
+  bookId,
   titleContent,
   paragraphContent,
   size = "medium",
@@ -61,7 +40,6 @@ function cardGenerator({
       class: `cardComponentWrapper  ${className}`,
     },
     dataAttributes: { size: size, status: statues },
-    eventListeners,
     children: [
       {
         tag: "img",
@@ -89,9 +67,12 @@ function cardGenerator({
         children: [
           {
             tag: buttonGenerator({
-              content: "fffff",
-              size: "large",
+              content: "بیشتر مشاهده کنید",
+              size: "medium",
               status: "primaryOrang",
+              eventListeners: {
+                click: () => showBookDetails(titleContent),
+              },
             }),
           },
           {
@@ -100,16 +81,15 @@ function cardGenerator({
             children: [
               {
                 tag: buttonGenerator({
-                  content: "fffff",
                   status: "love",
-                  iconStart: "/public/images/footer/rectangle12.png",
+                  eventListeners: { click: () => addToLoveList(bookId) },
+                  iconStart: "/public/images/shopPage/cards/vector (3).svg",
                 }),
               },
               {
                 tag: buttonGenerator({
-                  content: "fffff",
                   status: "seen",
-                  iconStart: "/public/images/footer/rectangle12.png",
+                  iconStart: "/public/images/shopPage/cards/vector (2).svg",
                 }),
               },
             ],

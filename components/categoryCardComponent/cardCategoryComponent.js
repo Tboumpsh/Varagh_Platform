@@ -31,18 +31,17 @@ function categoryCard({
       class: `cardCategoryComponentWrapper  ${className}`,
     },
     dataAttributes: { size: size, status: statues },
-    eventListeners,
     children: [
       {
         tag: "img",
-        attributes: { src: category, href: anchorLink },
+        attributes: { src: category },
       },
       {
         tag: "h4",
         properties: { textContent: content },
         attributes: {
           class: `titleCategory ${className}`,
-          href: anchorLink,
+          eventListeners,
         },
       },
     ],
