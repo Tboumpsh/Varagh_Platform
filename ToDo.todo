@@ -32,6 +32,11 @@
 - [ ] create type script file ✔
 - [ ] create vue file ✔
 - [ ] change header links ✔
+- [ ] change header for page by user rol ✔
+- [ ] change header later log in user ✔
+- [ ] change header later log in admin ✔
+- [ ] log out ✔
+- [ ] Fixed change page ✔
 
 
 
@@ -82,6 +87,8 @@
 - [ ] admin page  ✔
 - [ ] about page  ✔
 - [ ] shop page  ✔
+- [ ] style profile user and link to change profile user
+- [ ] header effect ✔
 
 
 
@@ -94,6 +101,6 @@
 
 
 پیدا نشدن کاربر در loveList >>> پیدا نشدن کاربر
-وقتی هدر ادمین میاد وقتی میزنیم روی صفحه اصلی یهو میره هدر کاربر
+
 
 
