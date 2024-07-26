@@ -7,7 +7,8 @@ async function changeProfiles() {
    
 
     const user = JSON.parse(localStorage.getItem('currentUser'));
-    const userName = user?.username;
+    console.log(user);
+    const userName = user?.name;
 
     if (!userName) {
         alert('کاربر یافت نشد. لطفاً وارد حساب کاربری خود شوید.');
@@ -17,6 +18,7 @@ async function changeProfiles() {
     try {
         const response = await axios.get(`http://localhost:3000/user?name=${userName}`);
         const users = response.data;
+      
 
         if (users.length === 0) {
             alert('کاربر یافت نشد');
@@ -24,6 +26,7 @@ async function changeProfiles() {
         }
         const user = users[0];
         const userId = user.id;
+        console.log(userId);
      
 
         if (user.profile) {
@@ -61,6 +64,7 @@ async function changeProfiles() {
                     console.log('PATCH request successful', patchResponse);
                     alert('پروفایل با موفقیت ثبت شد');
                 } catch (error) {
+                    console.log(error);
                     alert('خطایی در ذخیره‌سازی پروفایل رخ داد');
                 }
             } else {

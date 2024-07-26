@@ -84,8 +84,8 @@ function changeProfileSection({
   });
  
 
-  main.append(changeProfile);
-  changeProfiles()
+  // main.append(changeProfile);
+  // changeProfiles()
 
   return changeProfile;
 
