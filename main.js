@@ -2,41 +2,8 @@
 import "/styles/cssReset.css";
 import "/styles/index.scss";
 
-import cheapestCardSectionComponent from "./sectionComponent/cheapestCardSectionComponent/CheapestCardSectionComponent";
-import newestCardSectionComponent from "./sectionComponent/newest‌CardSectionComponent/newestCardsectionComponent";
-import bestSellerSectionComponent from "./sectionComponent/bestSellerSectionComponent/bestSellerSectionComponent";
-import categorySectionComponent from "./sectionComponent/categorySectionComponent/categoryComponentSection";
-import aboutSectionComponent from "./sectionComponent/aboutSectionComponent/aboutSectionComponent";
-// import contactUsSection from "./sectionComponent/socialSectionComponent/socialSectionComponent";
-import heroSectionComponent from "./sectionComponent/heroSectionComponent/heroSectionComponent";
-// import aboutSectionComponent from "./components/aboutSectionComponent/aboutSectionComponent";
-import changeProfileSection from "./sectionComponent/changeProfileSection/changeProfileSection";
-import fetchBooksAndRenderTable from "./components/booksTableComponent/booksTableComponent";
-import contactUsComponent from "./sectionComponent/contactUsComponent/contactUsComponent";
-// import fetchUsersAndRenderTable from "./components/UsertableComponent/tableComponent";
-// import fetchUsersAndRenderTable from "./components/UsertableComponent/tableComponent";
-// import contactUsComponent from "./components/contactUsComponent/contactUsComponent";
-// import renderChangeProfilePage from "./pages/changeProfileUser/renderChangeProfile";
-import fetchUsersAndRenderTable from "./components/UsertableComponent/tableComponent";
-// import footerSectionComponent from "./components/footerComponent/footerComponent";
-import searchBoxComponent from "./components/searchBoxComponent/searchBoxComponent";
-import changeProfileUserSection from "./pages/changeProfileUser/changeProfileUser";
-// import headerGenerator from "./components/headerComponent/headerComponent";
-import filterComponent from "./components/filterComponent/filterComponent";
-// import tableComponent from "./components/tableComponent/tableComponent";
-import headerGenerator from "./components/headerComponent/headerComponent";
-// import createUserTable from "./sectionComponent/usersTable/usersTable";
-// import cardGenerator from "./components/cardComponent/cardComponent";
+import renderChangeProfilePage from "./pages/changeProfileUser/renderChangeProfile";
 import renderLandingPage from "./pages/landingPage/renderLandingPage";
-// import fetchBooksAndProcess from "./src/js/createBestSellerCard";
-import renderAdminPage from "./pages/adminPage/renderingAdminPage";
-import renderAboutPage from "./pages/aboutUsPage/renderAboutPage";
-import checkUserAndRender from "./src/renderPage/renderPages";
-import renderShopPage from "./pages/shopPage/renderShopPage";
-import landingPage from "./pages/landingPage/landingPage";
-import aboutPage from "./pages/aboutUsPage/aboutPage";
-import adminPage from "./pages/adminPage/adminPage";
-import shopPage from "./pages/shopPage/shopPage";
 
 // landingPage()
 // headerGenerator({
@@ -173,11 +140,11 @@ import shopPage from "./pages/shopPage/shopPage";
 // aboutPage()
 
 
-// renderLandingPage()
+renderLandingPage()
 // renderAdminPage()
 // renderAboutPage()
 // renderShopPage()
-
 // renderChangeProfilePage()
 
-checkUserAndRender()
+// checkUserAndRender()
+// renderChangeProfilePage()
