@@ -33,12 +33,12 @@
             text-align: justify;
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 15px;
             justify-content: center;
 
             h2 {
                 font-size: 48px;
-                margin-bottom: 1%;
+                margin-bottom: 10px;
             }
 
             p {
@@ -46,15 +46,21 @@
             }
 
             a {
-                margin-top: 3%;
-                width: 45%;
+                width: 69%;
+                text-decoration: none;
                 height: 48px;
                 border-radius: 8px;
-                background-color: aliceblue;
+                background-color: rgb(246, 247, 245);
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                flex-direction: row-reverse;
+                gap: 18px;
 
                 img {
-                    width: 50px;
-                    height: 50px;
+                    width: 40px;
+                    height: 40px;
+                    padding: 1%;
                 }
             }
         }

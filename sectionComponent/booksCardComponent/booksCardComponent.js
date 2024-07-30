@@ -3,6 +3,7 @@ import "./index.scss";
 
 import groupButtonGenerator from "../../components/groupButtonComponent/groupButtonComponent";
 import buttonGenerator from "../../components/buttonComponent/buttonComponent";
+import buyBook from "../../src/js/buyBooks/byBook";
 
 /**
  * Generates a base button element with optional properties.
@@ -21,16 +22,17 @@ import buttonGenerator from "../../components/buttonComponent/buttonComponent";
  */
 
 function bookCardGenerator({
+  bookId,
   titleBook,
   bookDescription,
-  previewLink,
+  previewLink = ' پیش نمایش این کتاب را از اینجا دانلود کنید',
   size = "medium",
   statues = "primary",
   className = "",
   eventListeners = {},
-  pdf = "#",
+  pdf = "https://drive.google.com/file/d/1WD8Qfumdnj9hQWihmg0WGLT4yQv2cxhw/view?usp=sharing",
   bannerSrc = "",
-  imgLink = "",
+  imgLink = "/public/images/bookInfo/pdf.svg",
   bookPrice
 }) {
   let bookComponent = domGenerator({
@@ -110,7 +112,7 @@ function bookCardGenerator({
               content:'خرید کتاب',
               size:'medium',
               status:'primaryOrang',
-              eventListeners:{},
+              eventListeners:{click:()=> buyBook(bookId)},
               iconStart:'',
               iconEnd:''
             })
@@ -120,8 +122,8 @@ function bookCardGenerator({
     ],
   });
 
-  // return bookComponent;
-  document.body.append(bookComponent);
+  return bookComponent;
+  // document.body.append(bookComponent);
 }
 
 export default bookCardGenerator;
