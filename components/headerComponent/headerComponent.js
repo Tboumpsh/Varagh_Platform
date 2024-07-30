@@ -9,6 +9,7 @@ import renderAboutPage from "../../pages/aboutUsPage/renderAboutPage";
 import headerEffect from "../../src/js/headerEffect/headerEffect";
 import buttonGenerator from "../buttonComponent/buttonComponent";
 import renderShopPage from "../../pages/shopPage/renderShopPage";
+import renderPlanPage from "../../pages/planPage/renderPlanPage";
 import createLinkElements from "./createLinkElements";
 import silverBox from "/Lib/silverBox/silverBox.min";
 
@@ -32,13 +33,10 @@ function headerGenerator({
   size = "medium",
   statues = "primaryFill",
   className = "",
-  eventListeners = {},
-  eventProfileListeners = {},
   logo = "",
-  boxBuy = "",
 }) {
   // const number = 4;
-  const linkTexts = ["صفحه اصلی", "درباره ما", "فروشگاه", "علاقه مندی ها"];
+  const linkTexts = ["صفحه اصلی", "درباره ما", "فروشگاه", "علاقه مندی ها" , 'خرید پلن'];
 
   // Create link elements with event listeners using the external function
   const links = createLinkElements(linkTexts, handleLinkClick);
@@ -67,10 +65,6 @@ function headerGenerator({
           id: `userProfile`,
         },
         children: [
-          {
-            tag: "img",
-            attributes: { src: boxBuy },
-          },
           {
             tag: buttonGenerator({
               content: "ورود/عضویت",
@@ -118,6 +112,18 @@ function handleLinkClick(index) {
         showCloseButton: true,
       });
       renderBookLoveListPage();
+      console.log("علاقه مندی ها کلیک شد");
+      break;
+    case 4:
+      main.innerHTML = "";
+      silverBox({
+        position: "top-right",
+        alertIcon: "info",
+        text: "شما هنوز وارد حساب کاربری خود نشدید",
+        centerContent: true,
+        showCloseButton: true,
+      });
+      renderPlanPage();
       console.log("علاقه مندی ها کلیک شد");
       break;
     default:

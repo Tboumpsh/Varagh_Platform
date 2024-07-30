@@ -80,9 +80,9 @@ function headerAdminGenerator({
           },
           {
             tag: buttonGenerator({
-              content: "خروج از جساب",
+              content: "خروج از حساب",
               size: "medium",
-              status: "signIn_up",
+              status: "logOut",
               eventListeners: { click: addLogoutListener },
             }),
           }
@@ -91,7 +91,7 @@ function headerAdminGenerator({
       },
     ],
   });
-  headerEffect(header)
+  headerEffect(headerAdmin)
 
   return headerAdmin;
 }

@@ -4,11 +4,12 @@ import domGenerator from "dom-generator";
 import "./index.scss";
 
 import renderChangeProfilePage from "../../pages/changeProfileUser/renderChangeProfile";
+import renderBuyBookListPage from "../../pages/buyBookListPage/renderBuyBookListPage";
 import addLogoutListener from "../../src/js/RegisterFormValidation/logOut";
+import renderLandingPage from "../../pages/landingPage/renderLandingPage";
 import headerEffect from "../../src/js/headerEffect/headerEffect";
 import buttonGenerator from "../buttonComponent/buttonComponent";
 import createLinkElements from "./createLinkElements";
-import createLinks from "/src/js/creatLink";
 import handleLinkClick from "./pageHandler";
 
 /**
@@ -37,7 +38,7 @@ function loggedInHeader({
   boxBuy = "",
 }) {
   // const number = 4;
-  const linkTexts = ["صفحه اصلی", "درباره ما", "فروشگاه", "علاقه مندی ها"];
+  const linkTexts = ["صفحه اصلی", "درباره ما", "فروشگاه", "علاقه مندی ها" , "خرید پلن"];
 
   // Create link elements with event listeners using the external function
   const links = createLinkElements(linkTexts, handleLinkClick);
@@ -52,6 +53,7 @@ function loggedInHeader({
       {
         tag: "img",
         attributes: { src: logo },
+        eventListeners: { click: () => renderLandingPage() },
       },
       {
         tag: "div",
@@ -69,6 +71,7 @@ function loggedInHeader({
           {
             tag: "img",
             attributes: { src: boxBuy },
+            eventListeners: { click: () => renderBuyBookListPage() },
           },
           {
             tag: "div",
@@ -89,7 +92,7 @@ function loggedInHeader({
       },
     ],
   });
-  headerEffect(header)
+  headerEffect(header);
   return header;
 }
 

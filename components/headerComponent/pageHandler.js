@@ -2,6 +2,7 @@ import renderLandingPage from "../../pages/landingPage/renderLandingPage";
 import renderBookLoveListPage from "../../pages/lovePage/renderLovePage";
 import renderAboutPage from "../../pages/aboutUsPage/renderAboutPage";
 import renderShopPage from "../../pages/shopPage/renderShopPage";
+import renderPlanPage from "../../pages/planPage/renderPlanPage";
 
 function handleLinkClick(index) {
   let main = document.getElementById("main");
@@ -25,6 +26,11 @@ function handleLinkClick(index) {
       main.innerHTML = "";
       renderBookLoveListPage();
       console.log("علاقه مندی ها کلیک شد");
+      break;
+    case 4:
+      main.innerHTML = "";
+      renderPlanPage();
+      console.log("پلن کلیک شد");
       break;
     default:
       console.log("لینک کلیک شد");
