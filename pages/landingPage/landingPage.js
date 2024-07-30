@@ -10,6 +10,7 @@ import footerSectionComponent from "../../sectionComponent/footerComponent/foote
 import headerAdminGenerator from "../../components/headerComponent/adminHeaderComponent";
 import headerGenerator from "../../components/headerComponent/headerComponent";
 import loggedInHeader from "../../components/headerComponent/loggedInHeader";
+import renderLandingPage from "./renderLandingPage";
 
 function landingPage() {
 
@@ -107,6 +108,7 @@ function landingPage() {
           iconStart: "/public/images/footer/rectangle12.png",
           iconEnd: "/public/images/footer/rectangle13.png",
           upImage: "/public/images/footer/boy.png",
+          eventListeners:{click: ()=> renderLandingPage()}
         }),
       },
     ],
