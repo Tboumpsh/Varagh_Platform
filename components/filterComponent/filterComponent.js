@@ -35,7 +35,7 @@ function filterComponent({
         children: [
           {
             tag: buttonGenerator({
-              content: "all",
+              content: "همه",
               size: "medium",
               status: "filter",
               eventListeners: { click:() => filterByAllBooks() },
@@ -43,7 +43,7 @@ function filterComponent({
           },
           {
             tag: buttonGenerator({
-              content: "Price",
+              content: "براساس قیمت",
               size: "medium",
               status: "filter",
               eventListeners: { click: () => toggleDropdown("dropDownPrice") },
@@ -55,7 +55,7 @@ function filterComponent({
             children: [
               {
                 tag: buttonGenerator({
-                  content: "Cheapest",
+                  content: "ارزان ترین",
                   size: "extraSmall",
                   status: "filter",
                   className: "dropdown-item",
@@ -64,7 +64,7 @@ function filterComponent({
               },
               {
                 tag: buttonGenerator({
-                  content: "Most Expensive",
+                  content: "گران ترین",
                   size: "extraSmall",
                   status: "filter",
                   className: "dropdown-item",
@@ -75,7 +75,7 @@ function filterComponent({
           },
           {
             tag: buttonGenerator({
-              content: "Date",
+              content: "زمان انتشار",
               size: "medium",
               status: "filter",
               eventListeners: { click: () => toggleDropdown("dropDownDate") },
@@ -88,7 +88,7 @@ function filterComponent({
             children: [
               {
                 tag: buttonGenerator({
-                  content: "Newest",
+                  content: "جدیدترین",
                   size: "extraSmall",
                   status: "filter",
                   className: "dropdown-item",
@@ -97,7 +97,7 @@ function filterComponent({
               },
               {
                 tag: buttonGenerator({
-                  content: "Oldest",
+                  content: "قدیمی ترین",
                   size: "extraSmall",
                   status: "filter",
                   className: "dropdown-item",

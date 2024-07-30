@@ -13,26 +13,30 @@
         cursor: pointer;
         display: flex;
         justify-content: right;
-        width: 98%;
+        width: 86%;
 
 
         .dropdown {
             display: none;
             position: absolute;
-            background-color: #fff;
-            border: 1px solid #ccc;
+            background-color: #fcfef6;
+            // border: 1px solid #ccc;
             z-index: 1;
-            top: 408px;
-            right: 360px;
+            top: 790px;
+            right: 468px;
+            width: fit-content;
+            border-radius: 6px;
         }
-
+   
+  
 
         .dropdown-item {
             padding: 10px 20px;
             cursor: pointer;
-
+            width: auto;
             &:hover {
-                background-color: #f0f0f0;
+                background-color: rgba(155, 189, 3, 1);
+                color: rgb(255, 255, 255) ;
             }
         }
 
