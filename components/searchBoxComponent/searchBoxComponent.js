@@ -46,7 +46,7 @@ function searchBoxComponent({
               {
                 tag: inputGenerator({
                   inputId: "search",
-                  placeholder: "",
+                  placeholder: " ",
                   type: "text",
                   eventListeners: { input: searchFunction },
                   fontSize: "medium",
@@ -57,11 +57,11 @@ function searchBoxComponent({
               },
               {
                 tag: buttonGenerator({
-                  content: "S",
+                  // content: "S",
                   size: "small",
                   status: "primaryGreen",
                   eventListeners: {},
-                  iconStart: "",
+                  iconCenter: "/public/images/shopPage/heroSection/search.svg",
                 }),
               },
             ],
