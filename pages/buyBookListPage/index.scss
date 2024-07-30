@@ -1,0 +1,14 @@
+#buyBookListSection {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+margin: 15% 0 0;
+
+    #buyList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        height: fit-content;
+        align-items: center;
+    }
+}
