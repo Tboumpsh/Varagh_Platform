@@ -20,11 +20,13 @@ function buttonGenerator({
   content,
   size = "medium",
   status = "primaryOrang",
+  color = 'orang',
   type = "button",
   className = "",
   anchorLink = "#",
   eventListeners = {},
   disabled,
+  iconCenter = "",
   iconStart = "",
   iconEnd = "",
 }) {
@@ -33,7 +35,7 @@ function buttonGenerator({
     attributes: {
       class: `buttonComponentInsurance  ${className}`,
     },
-    dataAttributes: { size: size, status: status },
+    dataAttributes: { size: size, status: status , color: color },
     eventListeners,
     children: [
       {
@@ -47,6 +49,13 @@ function buttonGenerator({
           class: `buttonCarInsurance`,
           href: anchorLink,
         },
+        children:
+        [
+          {
+            tag:'img',
+            attributes:{ src:iconCenter}
+          }
+        ]
       },
       {
         tag: "img",

@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'dana-medium';
+  src: url('/public/fonts/dana/dana\ medium.ttf');
+}
+
+
 .buttonComponentInsurance {
   display: flex;
   justify-content: space-around;
@@ -15,6 +21,8 @@
     border: none;
     color: inherit;
     cursor: pointer;
+    font-family: 'dana-medium';
+
   }
 
   // size
@@ -22,8 +30,6 @@
     width: 200px;
     height: 50px;
     border-radius: 7px;
-    font-size: 20px;
-    align-items: center;
   }
 
   &[data-size="large"] {
@@ -54,6 +60,16 @@
     height: 49px;
     border-radius: 7px;
     font-size: 17px;
+  }
+
+  &[data-color="orange"] {
+    background-color: rgba(252, 155, 40, 1);
+    color: rgb(255, 255, 255);
+  }
+
+  &[data-color="white"] {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgb(0, 0, 0);
   }
 
   // type
@@ -122,25 +138,26 @@
       color: #8c8c8c;
     }
   }
+
   &[data-status="logOut"] {
-    background-color:  rgb(232, 167, 69);
+    background-color: rgb(232, 167, 69);
     color: #ffffff;
     text-align: center;
     width: 150px;
     height: 40px;
     border-radius: 50px;
-  
+
 
 
     &:hover {
       background-color: transparent;
-      color:rgb(255, 149, 0);
+      color: rgb(255, 149, 0);
     }
 
     &:focus,
     &:active {
       background-color: rgba(253, 225, 164, 0.79);
-      color:rgb(255, 149, 0);
+      color: rgb(255, 149, 0);
     }
 
     &:disabled {
@@ -156,15 +173,6 @@
     text-align: center;
     align-self: center;
 
-    // &:hover {
-    //   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    // }
-
-    // &:focus,
-    // &:active {
-    //   background-color: transparent;
-    // }
-
     &:disabled {
       color: #8c8c8c;
     }
@@ -172,11 +180,11 @@
 
   &[data-status="counter"] {
     width: 20%;
-    height:100%;
-    background-color: rgba(252, 155, 40, 1) ;
+    height: 100%;
+    background-color: rgba(252, 155, 40, 1);
 
     &:hover {
-      background-color: rgb(247, 136, 0) ;
+      background-color: rgb(247, 136, 0);
     }
   }
 
@@ -222,18 +230,32 @@
   }
 
   &[data-status="filter"] {
-    border-radius: 0;
+    border-radius: 2;
     background-color: transparent;
-    border: 1px solid rgb(148, 193, 34);
+    border: 1.5px solid rgba(155, 189, 3, 1);
+    color: rgb(0, 0, 0);
+    font-family: 'dana-medium';
 
     &:hover {
-      background-color: rgb(235, 248, 209);
+      background-color: rgba(155, 189, 3, 1);
+      color: rgb(255, 255, 255);
     }
 
     &:focus,
     &:active {
-      background-color: rgb(224, 252, 165);
+      background-color: rgba(155, 189, 3, 1);
+      color: rgb(255, 255, 255);
     }
+
+    &:disabled {
+      color: #8c8c8c;
+    }
+  }
+
+  &[data-status="plan"] {
+    border-radius: 50px;
+    font-family: 'dana-medium';
+
 
     &:disabled {
       color: #8c8c8c;
