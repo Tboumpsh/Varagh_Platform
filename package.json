@@ -16,8 +16,11 @@
     "axios": "^1.7.2",
     "concurrently": "^8.2.2",
     "dom-generator": "^1.1.7",
+    "express": "^4.19.2",
     "json-server": "^1.0.0-beta.1",
     "sass": "^1.77.6",
+    "script": "^0.1.4",
+    "stripe": "^16.5.0",
     "typescript": "^5.5.3"
   }
 }
