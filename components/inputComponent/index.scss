@@ -1,4 +1,9 @@
 .inputInsurance {
+
+::placeholder{
+  font-size: 30px;
+}
+
   &[data-size="medium"] {
     width: 800px;
     height: 100px;
