@@ -14,20 +14,22 @@ import createLinkElements from "./createLinkElements";
 import silverBox from "/Lib/silverBox/silverBox.min";
 
 /**
- * Generates a base button element with optional properties.
- * @param {Object} options - The options for generating the button.
- * @param {string} options.content - The text content of the button.
- * @param {string} [options.size="medium"] - The size of the button ("small", "medium", "large").
- * @param {string} [options.status="primaryFill"] - The status of the button ("primaryFill", "secondaryFill", "tertiaryFill", "quaternaryFill").
- * @param {string} [options.type="button"] - The type of the button ("button", "submit", "reset").
- * @param {string} [options.className=""] - Additional class names for the button.
- * @param {string} [options.anchorLink="#"] - The href link for the button if it acts as an anchor.
- * @param {Object} [options.eventListeners={}] - Event listeners to attach to the button.
- * @param {boolean} [options.disabled] - Whether the button should be disabled.
- * @param {string} [options.iconStart=""] - The URL of the image icon to display at the start of the button.
- * @param {string} [options.iconEnd=""] - The URL of the image icon to display at the end of the button.
- * @returns {HTMLDivElement} - The generated button element.
+ * Generates a header component with navigation links and user profile options.
+ *
+ * This function creates a header section with a logo, navigation links, and a user profile button.
+ * The links are dynamically generated and assigned click handlers. When clicked, they render different pages or display alerts.
+ *
+ * @function headerGenerator
+ * @param {Object} params - The configuration parameters for the header.
+ * @param {string} [params.size="medium"] - The size of the header component.
+ * @param {string} [params.statues="primaryFill"] - The status of the header component, determining its styling.
+ * @param {string} [params.className=""] - Additional CSS class names to apply to the header component.
+ * @param {string} [params.logo=""] - The URL of the logo image to display in the header.
+ * 
+ * @returns {HTMLElement} The generated header component as an HTML element.
+ * 
  */
+
 
 function headerGenerator({
   size = "medium",
@@ -82,7 +84,6 @@ function headerGenerator({
   return header;
 }
 
-// handleLinkClick()
 
 function handleLinkClick(index) {
   let main = document.getElementById("main");

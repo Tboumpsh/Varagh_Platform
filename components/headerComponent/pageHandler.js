@@ -4,6 +4,24 @@ import renderAboutPage from "../../pages/aboutUsPage/renderAboutPage";
 import renderShopPage from "../../pages/shopPage/renderShopPage";
 import renderPlanPage from "../../pages/planPage/renderPlanPage";
 
+/**
+ * Handles the click events for navigation links.
+ *
+ * This function determines which page to render based on the index of the clicked navigation link. 
+ * It clears the main content area and then calls the appropriate render function based on the index.
+ * 
+ * @function handleLinkClick
+ * @param {number} index - The index of the clicked navigation link. It determines which page to render:
+ *   - `0` for the landing page
+ *   - `1` for the about page
+ *   - `2` for the shop page
+ *   - `3` for the book love list page
+ *   - `4` for the plan page
+ * 
+ * @returns {void}
+ * handleLinkClick(2); // This will clear the main content and render the shop page
+ */
+
 function handleLinkClick(index) {
   let main = document.getElementById("main");
   switch (index) {

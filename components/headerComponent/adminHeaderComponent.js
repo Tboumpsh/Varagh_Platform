@@ -11,29 +11,28 @@ import renderShopPage from "../../pages/shopPage/renderShopPage";
 import createLinkElements from "./createLinkElements";
 
 /**
- * Generates a base button element with optional properties.
- * @param {Object} options - The options for generating the button.
- * @param {string} options.content - The text content of the button.
- * @param {string} [options.size="medium"] - The size of the button ("small", "medium", "large").
- * @param {string} [options.status="primaryFill"] - The status of the button ("primaryFill", "secondaryFill", "tertiaryFill", "quaternaryFill").
- * @param {string} [options.type="button"] - The type of the button ("button", "submit", "reset").
- * @param {string} [options.className=""] - Additional class names for the button.
- * @param {string} [options.anchorLink="#"] - The href link for the button if it acts as an anchor.
- * @param {Object} [options.eventListeners={}] - Event listeners to attach to the button.
- * @param {boolean} [options.disabled] - Whether the button should be disabled.
- * @param {string} [options.iconStart=""] - The URL of the image icon to display at the start of the button.
- * @param {string} [options.iconEnd=""] - The URL of the image icon to display at the end of the button.
- * @returns {HTMLDivElement} - The generated button element.
+ * Generates an admin header component with a logo, navigation links, user profile section, and logout button.
+ * 
+ * @function headerAdminGenerator
+ * @param {Object} options - Configuration object for the header.
+ * @param {string} [options.size="medium"] - The size of the header component. Defaults to `"medium"`.
+ * @param {string} [options.statues="primaryFill"] - The status/style of the header component. Defaults to `"primaryFill"`.
+ * @param {string} [options.className=""] - Additional class names to apply to the header container. Defaults to an empty string.
+ * @param {Object} [options.eventListeners={}] - Event listeners to attach to the header component. Defaults to an empty object.
+ * @param {string} [options.logo=""] - The URL of the logo image to be displayed in the header. Defaults to an empty string.
+ * 
+ * @returns {HTMLElement} The generated header element containing the logo, navigation links, user profile section, and logout button.
+ * ;
  */
+
+
 
 function headerAdminGenerator({
   size = "medium",
   statues = "primaryFill",
   className = "",
   eventListeners = {},
-  eventProfileListeners = {},
   logo = "",
-  boxBuy = "",
 }) {
   // const number = 4;
   const linkTexts = ["صفحه اصلی", "داشبورد", "فروشگاه"];

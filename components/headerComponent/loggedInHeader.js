@@ -1,6 +1,4 @@
-// import domGenerator from "dom-generator";
 import domGenerator from "dom-generator";
-// import "./index.scss";
 import "./index.scss";
 
 import renderChangeProfilePage from "../../pages/changeProfileUser/renderChangeProfile";
@@ -13,20 +11,26 @@ import createLinkElements from "./createLinkElements";
 import handleLinkClick from "./pageHandler";
 
 /**
- * Generates a base button element with optional properties.
- * @param {Object} options - The options for generating the button.
- * @param {string} options.content - The text content of the button.
- * @param {string} [options.size="medium"] - The size of the button ("small", "medium", "large").
- * @param {string} [options.status="primaryFill"] - The status of the button ("primaryFill", "secondaryFill", "tertiaryFill", "quaternaryFill").
- * @param {string} [options.type="button"] - The type of the button ("button", "submit", "reset").
- * @param {string} [options.className=""] - Additional class names for the button.
- * @param {string} [options.anchorLink="#"] - The href link for the button if it acts as an anchor.
- * @param {Object} [options.eventListeners={}] - Event listeners to attach to the button.
- * @param {boolean} [options.disabled] - Whether the button should be disabled.
- * @param {string} [options.iconStart=""] - The URL of the image icon to display at the start of the button.
- * @param {string} [options.iconEnd=""] - The URL of the image icon to display at the end of the button.
- * @returns {HTMLDivElement} - The generated button element.
+ * Generates a header component for logged-in users with navigation links, profile options, and a logout button.
+ *
+ * This function creates a header section that includes a logo, navigation links, a profile image, and a logout button.
+ * The navigation links are dynamically generated and assigned click handlers. The profile image and logout button also have
+ * specific event listeners for user interactions.
+ *
+ * @function loggedInHeader
+ * @param {Object} params - Configuration parameters for the header.
+ * @param {string} [params.size="medium"] - The size of the header component.
+ * @param {string} [params.statues="primaryFill"] - The status of the header component, affecting its styling.
+ * @param {string} [params.className=""] - Additional CSS class names to apply to the header component.
+ * @param {Object} [params.eventListeners={}] - Event listeners to attach to the header element.
+ * @param {Object} [params.eventProfileListeners={}] - Event listeners to attach to the profile-related elements.
+ * @param {string} [params.logo=""] - The URL of the logo image to display in the header.
+ * @param {string} [params.boxBuy=""] - The URL of the image for the buy box.
+ * 
+ * @returns {HTMLElement} The generated header component as an HTML element.
+ * 
  */
+
 
 function loggedInHeader({
   size = "medium",
