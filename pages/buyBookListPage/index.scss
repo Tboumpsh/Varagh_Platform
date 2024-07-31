@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
-margin: 15% 0 0;
+    margin: 15% 0 0;
 
     #buyList {
         display: flex;
@@ -10,5 +10,17 @@ margin: 15% 0 0;
         justify-content: space-around;
         height: fit-content;
         align-items: center;
+    }
+
+    #totalPrice {
+        display: flex;
+        align-items: center;
+        gap: 2%;
+        flex-direction: column-reverse;
+
+
+        h3 {
+            font-size: 30px;
+        }
     }
 }
