@@ -1,5 +1,31 @@
 import axios from "axios";
 
+/**
+ * Handles the process of updating a user's profile image.
+ * 
+ * This asynchronous function performs the following actions:
+ * 1. Retrieves the current user's name from local storage.
+ * 2. Fetches the user data from the server based on the retrieved username.
+ * 3. Sets up event listeners for:
+ *    - Clicking on the profile div to trigger a file input dialog.
+ *    - Changing the file input to preview the selected image.
+ *    - Clicking the save button to upload the selected image as the new profile image.
+ * 4. Updates the profile image of the user on the server and handles success and error responses.
+ * 
+ * The function assumes that the following DOM elements exist:
+ * - A div with ID 'profileDiv' for displaying and selecting the profile image.
+ * - An input element with ID 'fileInput' for selecting the image file.
+ * - A button with class 'saveButton' for saving the updated profile image.
+ * 
+ * @async
+ * @function changeProfiles
+ * @returns {Promise<void>} A promise that resolves when the profile update process is completed, 
+ *     or rejects if an error occurs during fetching or saving profile data.
+ * 
+ * @throws {Error} Throws an error if there is an issue with fetching user data from the server,
+ *     or if there is a problem saving the updated profile image.
+ */
+
 async function changeProfiles() {
     const profileDiv = document.getElementById('profileDiv');
     const fileInput = document.getElementById('fileInput');
