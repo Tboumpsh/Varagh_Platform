@@ -6,19 +6,29 @@ import buttonGenerator from "../../components/buttonComponent/buttonComponent";
 import buyBook from "../../src/js/buyBooks/byBook";
 
 /**
- * Generates a base button element with optional properties.
- * @param {Object} options - The options for generating the button.
- * @param {string} options.content - The text content of the button.
- * @param {string} [options.size="medium"] - The size of the button ("small", "medium", "large").
- * @param {string} [options.status="primaryFill"] - The status of the button ("primaryFill", "secondaryFill", "tertiaryFill", "quaternaryFill").
- * @param {string} [options.type="button"] - The type of the button ("button", "submit", "reset").
- * @param {string} [options.className=""] - Additional class names for the button.
- * @param {string} [options.anchorLink="#"] - The href link for the button if it acts as an anchor.
- * @param {Object} [options.eventListeners={}] - Event listeners to attach to the button.
- * @param {boolean} [options.disabled] - Whether the button should be disabled.
- * @param {string} [options.iconStart=""] - The URL of the image icon to display at the start of the button.
- * @param {string} [options.iconEnd=""] - The URL of the image icon to display at the end of the button.
- * @returns {HTMLDivElement} - The generated button element.
+ * Generates a card element for displaying book information.
+ * 
+ * This function creates a DOM element that represents a book card, including the book's image, description, preview link, and purchase button. The card is styled and configured according to the provided options.
+ * 
+ * @param {Object} options - The options for generating the book card.
+ * @param {string} options.bookId - The unique identifier for the book. Used for purchasing the book.
+ * @param {string} options.titleBook - The title of the book.
+ * @param {string} options.bookDescription - A brief description of the book.
+ * @param {string} [options.previewLink='پیش نمایش این کتاب را از اینجا دانلود کنید'] - The text for the preview link. Defaults to 'پیش نمایش این کتاب را از اینجا دانلود کنید'.
+ * @param {string} [options.size="medium"] - The size of the card ("small", "medium", "large"). Defaults to "medium".
+ * @param {string} [options.statues="primary"] - The status of the card ("primary", "secondary", etc.). Defaults to "primary".
+ * @param {string} [options.className=""] - Additional CSS class names to be applied to the card. Defaults to an empty string.
+ * @param {Object} [options.eventListeners={}] - An object containing event listeners to attach to the card's elements. The object keys are event types (e.g., "click"), and the values are handler functions.
+ * @param {string} [options.pdf="https://drive.google.com/file/d/1WD8Qfumdnj9hQWihmg0WGLT4yQv2cxhw/view?usp=sharing"] - The URL to the PDF file for previewing the book. Defaults to a specific Google Drive link.
+ * @param {string} [options.bannerSrc=""] - The URL of the image banner for the book. Defaults to an empty string.
+ * @param {string} [options.imgLink="/public/images/bookInfo/pdf.svg"] - The URL of the image icon displayed in the preview link. Defaults to a specific SVG file path.
+ * @param {string} [options.bookPrice] - The price of the book.
+ * 
+ * @returns {HTMLDivElement} The DOM element representing the book card.
+ * 
+ * @see {@link ../../components/groupButtonComponent/groupButtonComponent|groupButtonGenerator}
+ * @see {@link ../../components/buttonComponent/buttonComponent|buttonGenerator}
+ * @see {@link ../../src/js/buyBooks/byBook|buyBook}
  */
 
 function bookCardGenerator({
@@ -35,6 +45,16 @@ function bookCardGenerator({
   imgLink = "/public/images/bookInfo/pdf.svg",
   bookPrice
 }) {
+
+
+  const updateTotalPrice = (quantity) => {
+    const totalPrice = bookPrice * quantity;
+    const totalPriceElement = bookComponent.querySelector("#totalPrice");
+    if (totalPriceElement) {
+      totalPriceElement.textContent = `قیمت کل: ${totalPrice} تومان`;
+    }
+  };
+
   let bookComponent = domGenerator({
     tag: "div",
     attributes: {
@@ -93,11 +113,16 @@ function bookCardGenerator({
             children: [
               {
                 tag: "h3",
-                properties: {textContent: "قیمت کتاب"},
+                properties: {textContent: "قیمت کتاب :"},
               },
               {
                 tag: "p",
                 properties: {textContent: bookPrice},
+              },
+              {
+                tag: "p",
+                attributes: { id: "totalPrice" },
+                properties: { textContent: `قیمت کل: ${bookPrice} تومان` },
               },
             ],
           },
@@ -105,6 +130,7 @@ function bookCardGenerator({
             tag:groupButtonGenerator({
               size:'large',
               status:'default',
+              onValueChange: updateTotalPrice
             })
           },
           {
@@ -123,7 +149,6 @@ function bookCardGenerator({
   });
 
   return bookComponent;
-  // document.body.append(bookComponent);
 }
 
 export default bookCardGenerator;
