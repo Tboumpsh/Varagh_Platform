@@ -6,20 +6,27 @@ import { Address } from "../../constants/informationUS";
 import { Mobile } from "../../constants/informationUS";
 
 /**
- * Generates a base button element with optional properties.
- * @param {Object} options - The options for generating the button.
- * @param {string} options.content - The text content of the button.
- * @param {string} [options.size="medium"] - The size of the button ("small", "medium", "large").
- * @param {string} [options.status="primaryFill"] - The status of the button ("primaryFill", "secondaryFill", "tertiaryFill", "quaternaryFill").
- * @param {string} [options.type="button"] - The type of the button ("button", "submit", "reset").
- * @param {string} [options.className=""] - Additional class names for the button.
- * @param {string} [options.anchorLink="#"] - The href link for the button if it acts as an anchor.
- * @param {Object} [options.eventListeners={}] - Event listeners to attach to the button.
- * @param {boolean} [options.disabled] - Whether the button should be disabled.
- * @param {string} [options.iconStart=""] - The URL of the image icon to display at the start of the button.
- * @param {string} [options.iconEnd=""] - The URL of the image icon to display at the end of the button.
- * @returns {HTMLDivElement} - The generated button element.
+ * Generates a contact us section with title and contact information.
+ * 
+ * This function creates a DOM element for a "Contact Us" section. It includes a title, contact information (mobile, telephone, address), and an optional image. The section is styled and configured based on the provided options.
+ * 
+ * @param {Object} options - The options for generating the contact us section.
+ * @param {string} options.contactTitle - The title of the contact us section.
+ * @param {string} options.mobileTitle - The title for the mobile contact information.
+ * @param {string} options.addressTitle - The title for the address contact information.
+ * @param {string} options.telephoneTitle - The title for the telephone contact information.
+ * @param {string} [options.size="medium"] - The size of the section ("small", "medium", "large"). Defaults to "medium".
+ * @param {string} [options.statues="primary"] - The status of the section ("primary", "secondary", etc.). Defaults to "primary".
+ * @param {string} [options.className=""] - Additional CSS class names to be applied to the section. Defaults to an empty string.
+ * @param {Object} [options.eventListeners={}] - An object containing event listeners to attach to the section's elements. The object keys are event types (e.g., "click"), and the values are handler functions.
+ * @param {string} [options.imageSrc=""] - The URL of the image to be displayed in the contact section. Defaults to an empty string.
+ * 
+ * @returns {HTMLDivElement} The DOM element representing the contact us section.
+ * 
+ * @see {@link ../../constants/informationUS|Telephone, Mobile, Address}
  */
+
+
 function contactUsComponent({
   contactTitle,
   mobileTitle,
@@ -99,7 +106,6 @@ function contactUsComponent({
   });
 
     return contactUs;
-  // about.append(contactUs);
 }
 
 export default contactUsComponent;
