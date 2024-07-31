@@ -2,7 +2,7 @@
 
 For me it is like a child I grew up with love.
 
-![|banner](https://cdn.discordapp.com/attachments/1127704748116684863/1258746805391200407/cover.png?ex=66892ad0&is=6687d950&hm=98ea87ce6a71c65efc6adfa9a4f379c2e7b5091606f3be9f64bdb7216a24de24&)
+![|banner](/public/images/github/cover.png)
 
 
 ## developer :
@@ -17,6 +17,33 @@ For me it is like a child I grew up with love.
 This is a book store project, which uses a variety of libraries and frameworks.
 The project has a back and a small database working with JSON-Server.
 The Bundle used in this project is called Vite and is widely used for the use of multiple frameworks along with Vanilla JavaScript in this project.
+
+
+### Landing page
+Landing Page Sheet Project.
+
+![|landing](/public/images/github/landingpage.png)
+
+This page is designed for users, whether or not they entered. It shows general information about the project.
+
+
+### Admin page
+Admin page or sheet project management.
+
+![|landing](/public/images/github/مدیریت.png)
+
+This page shows complete information on existing books and complete information from subscribed users. The manager has the editing, deletion and adding access and can manage the data.
+
+One of the best points of the online library is to have a member of the Plan.
+You can read books by preparing a monthly, annual or weekly bite.
+|
+|
+|
+ـ ـ ـ 
+
+![|landing](/public/images/github/تصویرزمینه%20(1).png)
+
+
 
 ## about me :
 Hi i am Fatemeh Satouri .
