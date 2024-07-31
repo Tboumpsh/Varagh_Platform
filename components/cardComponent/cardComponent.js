@@ -8,20 +8,29 @@ import addToLoveList from "../../src/js/loveList/addToLoveList";
 import seenAction from "../../src/js/seenAction/seenAction";
 
 /**
- * Generates a base button element with optional properties.
- * @param {Object} options - The options for generating the button.
- * @param {string} options.content - The text content of the button.
- * @param {string} [options.size="medium"] - The size of the button ("small", "medium", "large").
- * @param {string} [options.status="primaryFill"] - The status of the button ("primaryFill", "secondaryFill", "tertiaryFill", "quaternaryFill").
- * @param {string} [options.type="button"] - The type of the button ("button", "submit", "reset").
- * @param {string} [options.className=""] - Additional class names for the button.
- * @param {string} [options.anchorLink="#"] - The href link for the button if it acts as an anchor.
- * @param {Object} [options.eventListeners={}] - Event listeners to attach to the button.
- * @param {boolean} [options.disabled] - Whether the button should be disabled.
- * @param {string} [options.iconStart=""] - The URL of the image icon to display at the start of the button.
- * @param {string} [options.iconEnd=""] - The URL of the image icon to display at the end of the button.
- * @returns {HTMLDivElement} - The generated button element.
+ * Generates a card component with various elements including an image, title, paragraph, and buttons.
+ * 
+ * This function creates a card component that displays a book's title, a description, and includes
+ * buttons for more information, adding to a love list, and marking as seen. The card can be customized
+ * with additional attributes and event listeners.
+ * 
+ * @function cardGenerator
+ * @param {Object} options - Configuration object for the card component.
+ * @param {number|string} options.bookId - The unique identifier for the book, used for actions such as adding to the love list.
+ * @param {string} options.titleContent - The title text to display in the card.
+ * @param {string} options.paragraphContent - The paragraph text to display in the card.
+ * @param {string} [options.size="medium"] - The size of the card, affecting its styling.
+ * @param {string} [options.statues="primary"] - The status of the card, which affects its appearance.
+ * @param {string} [options.className=""] - Additional CSS class names to apply to the card component.
+ * @param {string} [options.anchorLink="#"] - The anchor link for the card, typically used for navigation.
+ * @param {Object} [options.eventListeners={}] - An object containing event listeners to attach to the card's elements.
+ * @param {string} [options.upImage=""] - The URL of the image to display at the top of the card.
+ * 
+ * @returns {HTMLElement} The generated card component element.
+ * 
+ * document.getElementById('cardContainer').appendChild(card);
  */
+
 
 
 function cardGenerator({
@@ -102,7 +111,6 @@ function cardGenerator({
   });
 
   return cardComponent;
-  // document.body.append(cardComponent);
 }
 
 export default cardGenerator;
