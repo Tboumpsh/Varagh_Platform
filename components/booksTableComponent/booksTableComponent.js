@@ -4,7 +4,24 @@ import "./index.scss";
 
 import buttonGenerator from "../buttonComponent/buttonComponent";
 
+/**
+ * Fetches books data from the API and renders it in a table.
+ * 
+ * This function makes a GET request to the API endpoint to retrieve the list of books,
+ * and then calls the `renderBookTable` function to display the books in a table format.
+ * 
+ * @async
+ * @function fetchBooksAndRenderTable
+ * @returns {Promise<void>} A promise that resolves when the table has been rendered.
+ * @throws {Error} Throws an error if the API request fails.
+ */
+
+
+
 const apiUrl = "http://localhost:3000/books";
+
+
+
 
 async function fetchBooksAndRenderTable() {
   try {
