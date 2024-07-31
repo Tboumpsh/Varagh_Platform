@@ -6,6 +6,15 @@ import headerAdminGenerator from "../../components/headerComponent/adminHeaderCo
 import headerGenerator from "../../components/headerComponent/headerComponent";
 import loggedInHeader from "../../components/headerComponent/loggedInHeader";
 
+/**
+ * Generates the book information page with appropriate header and footer.
+ * Depending on the role of the current user (admin, logged in, or guest), 
+ * it generates different headers.
+ * 
+ * @function bookInformationPage
+ * @returns {HTMLDivElement} - The generated book information page element.
+ */
+
 function bookInformationPage() {
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
