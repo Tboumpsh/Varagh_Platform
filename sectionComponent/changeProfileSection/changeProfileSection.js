@@ -4,22 +4,25 @@ import "./index.scss";
 
 import buttonGenerator from "../../components/buttonComponent/buttonComponent";
 import inputGenerator from "../../components/inputComponent/inputComponent";
-import changeProfiles from "../../src/js/changeProfile/changeProfile";
 
 /**
- * Generates a base button element with optional properties.
- * @param {Object} options - The options for generating the button.
- * @param {string} options.content - The text content of the button.
- * @param {string} [options.size="medium"] - The size of the button ("small", "medium", "large").
- * @param {string} [options.status="primaryFill"] - The status of the button ("primaryFill", "secondaryFill", "tertiaryFill", "quaternaryFill").
- * @param {string} [options.type="button"] - The type of the button ("button", "submit", "reset").
- * @param {string} [options.className=""] - Additional class names for the button.
- * @param {string} [options.anchorLink="#"] - The href link for the button if it acts as an anchor.
- * @param {Object} [options.eventListeners={}] - Event listeners to attach to the button.
- * @param {boolean} [options.disabled] - Whether the button should be disabled.
- * @param {string} [options.iconStart=""] - The URL of the image icon to display at the start of the button.
- * @param {string} [options.iconEnd=""] - The URL of the image icon to display at the end of the button.
- * @returns {HTMLDivElement} - The generated button element.
+ * Generates a section for changing user profile information.
+ * 
+ * This function creates a DOM element that represents a profile change section. It includes a title, a paragraph for instructions, a file input for uploading profile images, and a button for saving changes. The section is styled and configured according to the provided options.
+ * 
+ * @param {Object} options - The options for generating the profile change section.
+ * @param {string} options.changeProfileTitle - The title of the profile change section.
+ * @param {string} options.changeProfileParagraph - The paragraph describing the profile change instructions or information.
+ * @param {string} [options.size="medium"] - The size of the section ("small", "medium", "large"). Defaults to "medium".
+ * @param {string} [options.statues="primaryFill"] - The status of the section ("primaryFill", "secondaryFill", etc.). Defaults to "primaryFill".
+ * @param {string} [options.className=""] - Additional CSS class names to be applied to the section. Defaults to an empty string.
+ * @param {Object} [options.eventListeners={}] - An object containing event listeners to attach to the section's elements. The object keys are event types (e.g., "click"), and the values are handler functions.
+ * 
+ * @returns {HTMLDivElement} The DOM element representing the profile change section.
+ * 
+ * 
+ * @see {@link ../../components/buttonComponent/buttonComponent|buttonGenerator}
+ * @see {@link ../../components/inputComponent/inputComponent|inputGenerator}
  */
 
 function changeProfileSection({
@@ -84,8 +87,6 @@ function changeProfileSection({
   });
  
 
-  // main.append(changeProfile);
-  // changeProfiles()
 
   return changeProfile;
 
