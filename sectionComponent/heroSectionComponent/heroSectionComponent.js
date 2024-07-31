@@ -2,19 +2,22 @@ import domGenerator from "dom-generator";
 import "./index.scss";
 
 /**
- * Generates a base button element with optional properties.
- * @param {Object} options - The options for generating the button.
- * @param {string} options.content - The text content of the button.
- * @param {string} [options.size="medium"] - The size of the button ("small", "medium", "large").
- * @param {string} [options.status="primaryFill"] - The status of the button ("primaryFill", "secondaryFill", "tertiaryFill", "quaternaryFill").
- * @param {string} [options.type="button"] - The type of the button ("button", "submit", "reset").
- * @param {string} [options.className=""] - Additional class names for the button.
- * @param {string} [options.anchorLink="#"] - The href link for the button if it acts as an anchor.
- * @param {Object} [options.eventListeners={}] - Event listeners to attach to the button.
- * @param {boolean} [options.disabled] - Whether the button should be disabled.
- * @param {string} [options.iconStart=""] - The URL of the image icon to display at the start of the button.
- * @param {string} [options.iconEnd=""] - The URL of the image icon to display at the end of the button.
- * @returns {HTMLDivElement} - The generated button element.
+ * Generates a hero section element with a title, content, and an image.
+ * 
+ * This function creates a hero section DOM element which includes a title, descriptive content, and an image. It allows customization of the section's size, status, and additional styles through class names.
+ * 
+ * @param {Object} options - The options for generating the hero section.
+ * @param {string} options.titleHero - The title text to display in the hero section.
+ * @param {string} options.contentHero - The content text to display in the hero section.
+ * @param {string} [options.size="medium"] - The size of the hero section ("small", "medium", "large"). Defaults to "medium".
+ * @param {string} [options.statues="primaryFill"] - The status of the hero section ("primaryFill", "secondaryFill", etc.). Defaults to "primaryFill".
+ * @param {string} [options.className=""] - Additional CSS class names to apply to the hero section. Defaults to an empty string.
+ * @param {Object} [options.eventListeners={}] - An object containing event listeners to attach to the hero section's elements. Keys are event types (e.g., "click") and values are handler functions.
+ * @param {string} [options.srcHero=""] - The URL of the image to display in the hero section. Defaults to an empty string.
+ * 
+ * @returns {HTMLDivElement} The DOM element representing the hero section.
+ * 
+ * @see {@link domGenerator}
  */
 
 function heroSectionComponent({
@@ -71,7 +74,6 @@ function heroSectionComponent({
   });
 
   return heroSection;
-  // document.body.prepend(heroSection);
 }
 
 export default heroSectionComponent;
