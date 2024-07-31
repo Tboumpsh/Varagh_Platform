@@ -12,6 +12,29 @@ import headerGenerator from "../../components/headerComponent/headerComponent";
 import loggedInHeader from "../../components/headerComponent/loggedInHeader";
 import renderLandingPage from "./renderLandingPage";
 
+/**
+ * Generates the landing page content with a dynamic header based on the current user's role.
+ * The landing page includes a hero section, category section, content sections for best sellers,
+ * newest items, and cheapest items, and a footer section. The footer section also includes an event
+ * listener to render the landing page again on click.
+ *
+ * @function landingPage
+ * @returns {HTMLDivElement} - The generated landing page element.
+ *
+ * @description
+ * - Retrieves the current user from local storage and determines the header to display based on the user's role.
+ * - Creates a `div` element with the ID `"landingPageSection"` using `domGenerator`.
+ * - Includes the following child components:
+ *   - Header component (`headerAdminGenerator`, `loggedInHeader`, or `headerGenerator`).
+ *   - Hero section component with a title, content, and image.
+ *   - Category section component with titles and images for different categories.
+ *   - Content section containing:
+ *     - Best seller section component.
+ *     - Newest section component.
+ *     - Cheapest section component.
+ *   - Footer section component with a click event listener that triggers `renderLandingPage`.
+ */
+
 function landingPage() {
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
