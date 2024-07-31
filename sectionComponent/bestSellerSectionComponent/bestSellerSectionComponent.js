@@ -1,25 +1,40 @@
 import domGenerator from "dom-generator";
 import "./index.scss";
 
-import fetchBooksAndProcess from "../../src/js/dataBaseApi/createBestSellerCard";
 import buttonGenerator from "../../components/buttonComponent/buttonComponent";
+import renderShopPage from "../../pages/shopPage/renderShopPage";
 
 /**
- * Generates a base button element with optional properties.
- * @param {Object} options - The options for generating the button.
- * @param {string} options.content - The text content of the button.
- * @param {string} [options.size="medium"] - The size of the button ("small", "medium", "large").
- * @param {string} [options.status="primaryFill"] - The status of the button ("primaryFill", "secondaryFill", "tertiaryFill", "quaternaryFill").
- * @param {string} [options.type="button"] - The type of the button ("button", "submit", "reset").
- * @param {string} [options.className=""] - Additional class names for the button.
- * @param {string} [options.anchorLink="#"] - The href link for the button if it acts as an anchor.
- * @param {Object} [options.eventListeners={}] - Event listeners to attach to the button.
- * @param {boolean} [options.disabled] - Whether the button should be disabled.
- * @param {string} [options.iconStart=""] - The URL of the image icon to display at the start of the button.
- * @param {string} [options.iconEnd=""] - The URL of the image icon to display at the end of the button.
- * @returns {HTMLDivElement} - The generated button element.
+ * Generates a section for displaying the best-selling books.
+ * 
+ * This function creates a DOM element that includes a title, a container for best-selling book cards, and a button to navigate to the shop page.
+ * The section is styled and configured according to the provided options.
+ * 
+ * @param {Object} params - The parameters for configuring the best-seller section.
+ * @param {string} params.titleBestSeller - The title text for the best-seller section.
+ * @param {string} [params.size="medium"] - The size of the section. This is passed as a data attribute. Defaults to "medium".
+ * @param {string} [params.statues="primaryFill"] - The status of the section. This is passed as a data attribute. Defaults to "primaryFill".
+ * @param {string} [params.className=""] - Additional CSS class names to be applied to the section. Defaults to an empty string.
+ * @param {Object} [params.eventListeners={}] - An object containing event listeners to be attached to the section's elements. The object keys are event types (e.g., "click"), and the values are handler functions.
+ * 
+ * @returns {HTMLElement} The DOM element representing the best-seller section.
+ * 
+ * @example
+ * const bestSellerSection = bestSellerSectionComponent({
+ *   titleBestSeller: "پر فروش‌ترین کتاب‌ها",
+ *   size: "large",
+ *   statues: "secondaryFill",
+ *   className: "custom-class",
+ *   eventListeners: {
+ *     click: () => console.log('Section clicked!')
+ *   }
+ * });
+ * document.body.appendChild(bestSellerSection);
+ * 
+ * @see {@link ../../components/buttonComponent/buttonComponent|buttonGenerator}
+ * @see {@link ../../pages/shopPage/renderShopPage|renderShopPage}
  */
-// async
+
  function bestSellerSectionComponent({
   titleBestSeller,
   size = "medium",
@@ -57,20 +72,14 @@ import buttonGenerator from "../../components/buttonComponent/buttonComponent";
               size: "medium",
               status: "primaryGreen",
               anchorLink: "",
-              eventListeners: {},
+              eventListeners: {click: ()=> renderShopPage()},
             }),
           },
         ],
       },
     ],
   });
-  // landing.append(bestSellerSection)
 
-  // let card = await fetchBooksAndProcess();
-
-  //   card.forEach((cardElement) => {
-  //     cardBestSellerList.appendChild(cardElement);
-  //   });
 
     return bestSellerSection;
 }
