@@ -7,6 +7,23 @@ import headerAdminGenerator from "../../components/headerComponent/adminHeaderCo
 import headerGenerator from "../../components/headerComponent/headerComponent";
 import loggedInHeader from "../../components/headerComponent/loggedInHeader";
 
+/**
+ * Generates a section for changing the user's profile.
+ * This function:
+ * 1. Retrieves the current user from localStorage.
+ * 2. Selects the appropriate header based on the user's role.
+ * 3. Creates a section with a profile change form and a footer.
+ *
+ * @function changeProfileUserSection
+ * @returns {HTMLDivElement} - The generated profile change section.
+ *
+ * @description
+ * - If the current user is an admin, an admin header is generated.
+ * - If the current user is logged in but not an admin, a logged-in header is generated.
+ * - If the user is not logged in, a default header is generated.
+ * - The section includes a profile change form with a title and description, as well as a footer.
+ */
+
 function changeProfileUserSection() {
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
