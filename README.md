@@ -47,6 +47,8 @@ The project has various franz wonders, all of which have been introduced in the 
 
 ![|landing](/public/images/github/stra.png)
 
+You can download and view all the information of this project in the PDF site in the Book Information section.
+
 
 ## about me :
 Hi i am Fatemeh Satouri .
