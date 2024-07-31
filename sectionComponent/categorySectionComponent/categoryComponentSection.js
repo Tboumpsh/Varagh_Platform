@@ -5,19 +5,24 @@ import categoryCard from "/components/categoryCardComponent/cardCategoryComponen
 import renderShopPage from "../../pages/shopPage/renderShopPage";
 
 /**
- * Generates a base button element with optional properties.
- * @param {Object} options - The options for generating the button.
- * @param {string} options.content - The text content of the button.
- * @param {string} [options.size="medium"] - The size of the button ("small", "medium", "large").
- * @param {string} [options.status="primaryFill"] - The status of the button ("primaryFill", "secondaryFill", "tertiaryFill", "quaternaryFill").
- * @param {string} [options.type="button"] - The type of the button ("button", "submit", "reset").
- * @param {string} [options.className=""] - Additional class names for the button.
- * @param {string} [options.anchorLink="#"] - The href link for the button if it acts as an anchor.
- * @param {Object} [options.eventListeners={}] - Event listeners to attach to the button.
- * @param {boolean} [options.disabled] - Whether the button should be disabled.
- * @param {string} [options.iconStart=""] - The URL of the image icon to display at the start of the button.
- * @param {string} [options.iconEnd=""] - The URL of the image icon to display at the end of the button.
- * @returns {HTMLDivElement} - The generated button element.
+ * Generates a section component for displaying categories of books.
+ * 
+ * This function creates a DOM element that represents a section containing multiple category cards. Each card corresponds to a different category of books (e.g., children, teenagers, adults). The section is styled and configured according to the provided options.
+ * 
+ * @param {Object} options - The options for generating the category section.
+ * @param {string} options.titleCategory - The title of the category section.
+ * @param {string} [options.size="medium"] - The size of the section ("small", "medium", "large"). Defaults to "medium".
+ * @param {string} [options.statues="primaryFill"] - The status of the section ("primaryFill", "secondaryFill", etc.). Defaults to "primaryFill".
+ * @param {string} [options.className=""] - Additional CSS class names to be applied to the section. Defaults to an empty string.
+ * @param {Object} [options.eventListeners={}] - An object containing event listeners to attach to the section's elements. The object keys are event types (e.g., "click"), and the values are handler functions.
+ * @param {string} [options.old=""] - The identifier or URL for the "Children" category. Defaults to an empty string.
+ * @param {string} [options.child=""] - The identifier or URL for the "Adults" category. Defaults to an empty string.
+ * @param {string} [options.teenager=""] - The identifier or URL for the "Teenagers" category. Defaults to an empty string.
+ * 
+ * @returns {HTMLDivElement} The DOM element representing the category section.
+ *
+ * @see {@link /components/categoryCardComponent/cardCategoryComponent|categoryCard}
+ * @see {@link ../../pages/shopPage/renderShopPage|renderShopPage}
  */
 
 function categorySectionComponent({
@@ -79,7 +84,7 @@ function categorySectionComponent({
   });
 
   return category;
-  // landing.append(category);
+
 }
 
 export default categorySectionComponent;
