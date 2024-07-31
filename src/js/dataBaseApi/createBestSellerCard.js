@@ -1,8 +1,27 @@
-// import axios from "axios";
-// import axios from "axios";
 import axios from "axios";
 
 import cardGenerator from "../../../components/cardComponent/cardComponent";
+
+/**
+ * Fetches a list of books from a server and generates card elements for each book.
+ * 
+ * This asynchronous function performs the following actions:
+ * 1. Sends a GET request to the server to retrieve a list of books, limiting the results to 3 books.
+ * 2. Maps the retrieved books to card elements using the `cardGenerator` function.
+ * 3. Returns an array of card elements.
+ * 
+ * If there is an error during the fetch operation, the error is logged to the console,
+ * and an empty array is returned.
+ * 
+ * @async
+ * @function fetchBooksAndProcess
+ * @returns {Promise<Array<HTMLElement>>} A promise that resolves to an array of card elements,
+ *     each representing a book. If an error occurs, an empty array is returned.
+ * 
+ * @throws {Error} Throws an error if the GET request fails or if there is a problem processing
+ *     the response data.
+ * 
+ */
 
 async function fetchBooksAndProcess() {
   try {
