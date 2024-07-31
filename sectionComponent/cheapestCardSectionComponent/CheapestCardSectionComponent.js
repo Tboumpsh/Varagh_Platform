@@ -2,24 +2,27 @@ import domGenerator from "dom-generator";
 import "./index.scss";
 
 import buttonGenerator from "../../components/buttonComponent/buttonComponent";
-import fetchBooksCheapest from "../../src/js/dataBaseApi/createCheapestCard";
+import renderShopPage from "../../pages/shopPage/renderShopPage";
 
 /**
- * Generates a base button element with optional properties.
- * @param {Object} options - The options for generating the button.
- * @param {string} options.content - The text content of the button.
- * @param {string} [options.size="medium"] - The size of the button ("small", "medium", "large").
- * @param {string} [options.status="primaryFill"] - The status of the button ("primaryFill", "secondaryFill", "tertiaryFill", "quaternaryFill").
- * @param {string} [options.type="button"] - The type of the button ("button", "submit", "reset").
- * @param {string} [options.className=""] - Additional class names for the button.
- * @param {string} [options.anchorLink="#"] - The href link for the button if it acts as an anchor.
- * @param {Object} [options.eventListeners={}] - Event listeners to attach to the button.
- * @param {boolean} [options.disabled] - Whether the button should be disabled.
- * @param {string} [options.iconStart=""] - The URL of the image icon to display at the start of the button.
- * @param {string} [options.iconEnd=""] - The URL of the image icon to display at the end of the button.
- * @returns {HTMLDivElement} - The generated button element.
+ * Generates a section displaying the cheapest products.
+ * 
+ * This function creates a DOM element representing a section that lists the cheapest products. It includes a title, a placeholder for the list of cheapest products, and a button that redirects to the shop page. The section is styled and configured based on the provided options.
+ * 
+ * @param {Object} options - The options for generating the cheapest card section.
+ * @param {string} options.titleCheapest - The title of the cheapest products section.
+ * @param {string} [options.size="medium"] - The size of the section ("small", "medium", "large"). Defaults to "medium".
+ * @param {string} [options.statues="primaryFill"] - The status of the section ("primaryFill", "secondaryFill", etc.). Defaults to "primaryFill".
+ * @param {string} [options.className=""] - Additional CSS class names to be applied to the section. Defaults to an empty string.
+ * @param {Object} [options.eventListeners={}] - An object containing event listeners to attach to the section's elements. The object keys are event types (e.g., "click"), and the values are handler functions.
+ * 
+ * @returns {HTMLDivElement} The DOM element representing the cheapest card section.
+ * 
+ * 
+ * @see {@link ../../components/buttonComponent/buttonComponent|buttonGenerator}
+ * @see {@link ../../pages/shopPage/renderShopPage|renderShopPage}
  */
-// async
+
  function cheapestCardSectionComponent({
   titleCheapest,
   size = "medium",
@@ -57,7 +60,7 @@ import fetchBooksCheapest from "../../src/js/dataBaseApi/createCheapestCard";
               size: "medium",
               status: "primaryGreen",
               anchorLink: "",
-              eventListeners: {},
+              eventListeners:{click: ()=> renderShopPage()},
             }),
           },
         ],
