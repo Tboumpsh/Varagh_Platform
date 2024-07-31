@@ -2,6 +2,27 @@ import axios from 'axios';
 
 import cardGenerator from '../../../components/cardComponent/cardComponent';
 
+/**
+ * Retrieves the list of books that the current user has marked as loved.
+ * 
+ * This function performs the following actions:
+ * 1. Retrieves the username of the currently logged-in user from `localStorage`.
+ * 2. Fetches the user data from the server based on the retrieved username.
+ * 3. Checks if the user exists and retrieves the list of loved books for that user.
+ * 4. Fetches all books from the server.
+ * 5. Filters the books to include only those that are in the user's love list.
+ * 6. Displays the filtered list of loved books using the `displayLovedBooks` function.
+ * 
+ * @async
+ * @function getLoveList
+ * 
+ * @returns {Promise<void>} This function does not return any value. It performs actions and updates the DOM.
+ * 
+ * @throws {Error} Throws an error if there is a problem with fetching user or book data.
+ * 
+ */
+
+
 async function getLoveList() {
     const {name:userName} = JSON.parse(localStorage.getItem("currentUser"));
 
