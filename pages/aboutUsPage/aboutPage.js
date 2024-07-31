@@ -9,6 +9,12 @@ import headerAdminGenerator from "../../components/headerComponent/adminHeaderCo
 import headerGenerator from "../../components/headerComponent/headerComponent";
 import loggedInHeader from "../../components/headerComponent/loggedInHeader";
 
+/**
+ * Generates the About Page content based on the current user's role.
+ * If the user is an admin, it shows the admin header. If the user is logged in, it shows the logged-in header. Otherwise, it shows the default header.
+ * The About Page includes sections like About Us, Contact Us, Social Media, and Footer.
+ * @returns {HTMLDivElement} - The generated About Page element.
+ */
 function aboutPage() {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
