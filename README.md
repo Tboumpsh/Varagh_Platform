@@ -36,13 +36,16 @@ This page shows complete information on existing books and complete information 
 
 One of the best points of the online library is to have a member of the Plan.
 You can read books by preparing a monthly, annual or weekly bite.
-|
-|
-|
-ـ ـ ـ 
+
 
 ![|landing](/public/images/github/تصویرزمینه%20(1).png)
 
+
+All the information and lamps used in the project are here. The project has used Bit.
+The project has various franz wonders, all of which have been introduced in the project.
+
+
+![|landing](/public/images/github/stra.png)
 
 
 ## about me :
@@ -59,7 +62,7 @@ Hope you follow most of my work in the future.
 
 ## How to use it?
 Oh comrade! It was a good question.
-This project cannot be kept in the Github Run (but with trouble) because of its small server and database, so download it first and then open the terminal and by `npm i` until all the files And install the packages on your location, then drive the project by writing the `npm run dev` command.
+This project cannot be kept in the Github Run (but with trouble) because of its small server and database, so download it first and then open the terminal and by `npm i` until all the files And install the packages on your location, then drive the project by writing the `npm run dev` command and `npm run db`.
 Hope to work with it for you to enjoy
 
 > In fact, one of my goals in this project has been to launch a **micro-frontend** project.😎
