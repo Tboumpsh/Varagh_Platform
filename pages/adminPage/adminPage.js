@@ -8,6 +8,13 @@ import fetchUsersAndRenderTable from "../../components/UsertableComponent/tableC
 import headerAdminGenerator from "../../components/headerComponent/adminHeaderComponent";
 import loggedInHeader from "../../components/headerComponent/loggedInHeader";
 
+/**
+ * Generates the Admin Page content based on the current user's role.
+ * If the user is an admin, it shows the admin header. If the user is logged in, it shows the logged-in header. Otherwise, it shows the default header.
+ * The Admin Page includes sections like Hero, User Table, Books Table, and Footer.
+ * @returns {HTMLDivElement} - The generated Admin Page element.
+ */
+
 function adminPage() {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
