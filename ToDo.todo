@@ -15,7 +15,7 @@
 #TODO
 
 #FOOTER
-- [ ] dynamic text list in footer >>> createList
+- [ ] dynamic text list in footer >>> createList ✔
 #CATEGORYSECTION
 - [ ] check catgory section ✔
 - [x] Table component  ✔
@@ -24,10 +24,9 @@
 
 
 @memory
-"start": "concurrently \"npm run dev\" \"npm run json-server\"",
-- [ ] better search component
-- [ ] comment all section edit
-- [ ] commite 
+- [ ] better search component ✔
+- [ ] comment all section edit ✔
+- [ ] commite ✔
 - [ ] change preview repository
 - [ ] create type script file ✔
 - [ ] create vue file ✔
@@ -40,7 +39,7 @@
 
 
 
-#landinPage
+#landinPage ✔
 - [ ] create bestSeller section ✔
 - [ ] create newest section ✔
 - [ ] create cheapest section ✔
@@ -53,23 +52,24 @@
 - [ ] Table component  ✔
 - [ ] footer section ✔
 - [ ] hearo section ✔
-- [ ] change menu by login admin
+- [ ] change menu by login admin ✔
+- [ ] Linked category ✔
 
 
-#Log or Sign
+#Log or Sign ✔
 - [x] sign in or sign up ✔
 
 
-#shop page
-- [x] filter products ✔
-- [✔] search component by gener and name books
+#shop page ✔
+- [ ] filter products ✔
+- [ ] search component by gener and name books ✔
 - [ ] show products  ✔
 - [ ] footer section ✔
-- [ ] add books to favorate list
-- [ ] add books to sell(سبد خرید)
+- [ ] add books to favorate list ✔
+- [ ] add books to sell(سبد خرید) ✔
 
 
-#comment edite
+#comment edite ✔
 - [ ] button component ✔
 - [ ] input component ✔
 - [ ] search Box component ✔
@@ -77,30 +77,24 @@
 - [ ] fetch Users And Render Table ✔
 
 
-#dataBase
-- [ ] picture books
+#dataBase ✔
+- [ ] picture books ✔
 
 
 
-#UI
+#UI ✔
 - [ ] landingPage  ✔
 - [ ] admin page  ✔
 - [ ] about page  ✔
 - [ ] shop page  ✔
 - [ ] style profile user and link to change profile user
 - [ ] header effect ✔
+- [ ] love list page ✔
+- [ ] show books information ✔
 
 
+#bookInformation
+- [ ] by change input number, price number is change too ✔
 
-
-
-
-
-
-
-
-
-پیدا نشدن کاربر در loveList >>> پیدا نشدن کاربر
-
-
-
+# linked paypal
+- [x] paypal script.js  
