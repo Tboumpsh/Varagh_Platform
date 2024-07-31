@@ -8,6 +8,40 @@ import filterComponent from "../../components/filterComponent/filterComponent";
 import headerGenerator from "../../components/headerComponent/headerComponent";
 import loggedInHeader from "../../components/headerComponent/loggedInHeader";
 
+/**
+ * Generates the HTML structure for the shop page.
+ * 
+ * This function performs the following steps:
+ * 1. Retrieves the current user from local storage and parses it.
+ * 2. Determines the appropriate header content based on the user's role:
+ *    - If the user is an admin, it generates an admin header.
+ *    - If the user is logged in but not an admin, it generates a logged-in header.
+ *    - If no user is logged in, it generates a default header.
+ * 3. Uses the `domGenerator` utility to create a container element for the shop page.
+ * 4. Adds the following sections to the shop page:
+ *    - The header content (based on the user role).
+ *    - A search box component with a title and default size and status.
+ *    - A filter component with default size and status.
+ *    - An empty `div` element with an id of `productsContent` for displaying products.
+ *    - A footer section component with specific content and image sources.
+ * 
+ * @function shopPage
+ * 
+ * @returns {HTMLElement} The HTML element representing the shop page. This includes the header, search box, filter, products container, and footer.
+ * 
+ * @example
+ * // Usage
+ * const shopPageElement = shopPage();
+ * document.body.appendChild(shopPageElement);
+ * 
+ * @see {@link ../../components/headerComponent/adminHeaderComponent|headerAdminGenerator}
+ * @see {@link ../../components/headerComponent/headerComponent|headerGenerator}
+ * @see {@link ../../components/headerComponent/loggedInHeader|loggedInHeader}
+ * @see {@link ../../components/searchBoxComponent/searchBoxComponent|searchBoxComponent}
+ * @see {@link ../../components/filterComponent/filterComponent|filterComponent}
+ * @see {@link ../../sectionComponent/footerComponent/footerComponent|footerSectionComponent}
+ */
+
 function shopPage() {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
