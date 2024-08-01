@@ -3,7 +3,7 @@
     justify-content: space-around;
     flex-direction: row;
     align-items: center;
-    margin: 0 auto;
+    margin: 0px auto 0;
 
     .heroSection {
         border: none;
@@ -18,20 +18,20 @@
     // size
     &[data-size="medium"] {
         width: 96%;
-        height: 865px;
+        height: 840px;
         font-size: 20px;
     }
 
     &[data-size="large"] {
         width: 100%;
-        height: 865px;
+        height: 335px;
         font-size: 20px;
     }
 
     &[data-size="small"] {
         width:96%;
-        height: 240px;
-        font-size: 16px;
+        height:610px;
+        font-size: 20px;
     }
 
 
