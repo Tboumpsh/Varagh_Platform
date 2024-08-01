@@ -2,6 +2,7 @@ import domGenerator from "dom-generator";
 import "./index.scss";
 
 import categoryCard from "../../components/categoryCardComponent/cardCategoryComponent";
+import funAction from "../../src/js/funAction/funAction";
 import listGenerator from "../../src/js/creatList";
 
 /**
@@ -55,7 +56,7 @@ function footerSectionComponent({
               size: "medium",
               status: "default",
               category: upImage,
-              eventListeners,
+              eventListeners:{click:()=> funAction(2)}
             }),
           },
         ],
