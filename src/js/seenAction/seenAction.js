@@ -1,70 +1,44 @@
 import "/Lib/silverBox/silverBox.min.scss";
+import axios from "axios";
 
 import silverBox from "/Lib/silverBox/silverBox.min";
 
 /**
- * Displays a notification using silverBox and plays an audio file a specified number of times.
+ * Fetches details of a book by its ID and displays them using SilverBox.
  * 
- * This function uses the `silverBox` library to show a notification with a custom message and icon. It also 
- * plays a specified audio file a certain number of times. The notification will be displayed for 5 seconds.
+ * This function performs an asynchronous HTTP GET request to fetch book details based on the provided ID. 
+ * If the book is found, it displays the book details in a SilverBox modal. 
+ * If no book is found or if an error occurs, it logs an appropriate message to the console.
  * 
- * **Notification Details:**
- * - **Icon:** Custom GIF icon (`/public/images/mobile-girl-mim.gif`).
- * - **Title Text:** A message expressing the designers' reluctance to track user interactions on the page.
- * - **Duration:** The notification will be displayed for 5 seconds.
- * 
- * **Audio Playback:**
- * - The audio file (`/public/music/khandeh.mp3`) will be played repeatedly up to the specified count.
- * - The playback is managed by a counter (`playCount`) to track the number of times the audio has been played.
- * 
- * **Event Handling:**
- * - An `ended` event listener is used to increment the play count and trigger the next playback if the count 
- *   limit has not been reached.
- * 
- * **Error Handling:**
- * - If there is an error while playing the audio, it is logged to the console.
- * 
+ * @async
  * @function seenAction
- * @param {number} count - The number of times the audio should be played.
  * 
- * @returns {void} This function does not return a value. It performs side effects such as displaying a notification
- * and playing audio.
+ * @param {number} bookId - The ID of the book to fetch details for.
+ * 
+ * @returns {Promise<void>} A promise that resolves when the book details have been successfully fetched and 
+ *     displayed, or rejects if an error occurs during the fetch operation.
+ * 
+ * @throws {Error} Throws an error if the HTTP request fails or if the book cannot be found.
  */
+async function seenAction(bookId) {
 
-
-function seenAction(count) {
-  silverBox({
-    timer: 5000,
-    customIcon: "/public/images/mobile-girl-mim.gif",
-    title: {
-      text: "کاربر عزیز، ما طراح‌ها شما رو دوست نداریم.لطفا روی هر دکمه که میبینید کلیک نکنید. ما برای طرح های خودمونم برنامه نداریم؛پس نمیتونیم به فکر روند حرکتی شما در صفحه باشیم.",
-    },
-    centerContent: true,
-  });
-
-  const audio = new Audio("/public/music/khandeh.mp3");
-
-  // شمارنده برای تعداد دفعات پخش
-  let playCount = 0;
-
-  // تعریف یک فانکشن برای پخش صدا و افزایش شمارنده
-  function playAudio() {
-    if (playCount < count) {
-      audio.play().catch(error => {
-        console.error("Error playing the audio:", error);
+  try {
+    let { data: book } = await axios.get(
+      `http://localhost:3000/books/${bookId}`
+    );
+    if (book) {
+      silverBox({
+        timer: 2000,
+        customIcon: `${book.banner}`,
+        text: `${book.description}`,
+        title: `قیمت: ${book.price} تومان`,
+        centerContent: true,
       });
+    } else {
+      console.error("Book not found.");
     }
+  } catch (error) {
+    console.error("Error fetching book details:", error);
   }
-
-  // رویداد برای زمان اتمام پخش صدا
-  audio.addEventListener('ended', () => {
-    playCount++;
-    if (playCount < count) {
-      playAudio();
-    }
-  });
-
-  // شروع پخش صدا
-  playAudio();
 }
-export default seenAction
+export default seenAction;
