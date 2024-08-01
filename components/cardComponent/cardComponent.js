@@ -99,7 +99,7 @@ function cardGenerator({
               {
                 tag: buttonGenerator({
                   status: "seen",
-                  eventListeners: { click: () => seenAction(2) },
+                  eventListeners: { click: () => seenAction(bookId) },
                   iconStart: "/public/images/shopPage/cards/vector (2).svg",
                 }),
               },
