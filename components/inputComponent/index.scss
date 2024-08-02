@@ -18,8 +18,8 @@
 
   &[data-size="small"] {
     width: 250px;
-    height: 60px;
-    border-radius: 2px;
+    height: 52px;
+    border-radius: 5px;
   }
   &[data-size="extraSmall"] {
     width: 50px;
@@ -47,7 +47,7 @@
     cursor: pointer;
 
     &:hover {
-      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      box-shadow: rgba(250, 255, 239, 0.2) 0px 2px 8px 0px;
     }
 
     &:disabled {
