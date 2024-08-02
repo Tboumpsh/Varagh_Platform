@@ -7,29 +7,29 @@ import silverBox from "/Lib/silverBox/silverBox.min";
 
 /**
  * Sets up event listeners for the login and register buttons on a registration form.
- * 
+ *
  * This function adds event listeners to the login and register buttons. When the login button is clicked,
- * it checks if the credentials match a hardcoded admin user or if they match any user in the database. 
+ * it checks if the credentials match a hardcoded admin user or if they match any user in the database.
  * If the credentials are correct, it stores the user information in `localStorage` and redirects to the appropriate page.
  * When the register button is clicked, it checks if the username is already registered. If not, it registers
  * the new user and displays a confirmation message.
- * 
+ *
  * **Login Behavior:**
  * - If the username is "support" and the password is "vara_1382", the user is considered an admin.
  * - Admin users are redirected to the admin page.
  * - Regular users are redirected to the landing page after successful login.
  * - Displays an error message if the credentials are incorrect.
- * 
+ *
  * **Registration Behavior:**
  * - Checks if the username is already registered.
  * - Registers the new user if the username is not taken and displays a success message.
  * - Displays an information message if the username is already registered.
- * 
+ *
  * @function checkUserInformation
- * 
+ *
  * @returns {void} This function does not return a value. It performs side effects such as adding event listeners
  * and interacting with the DOM and external services.
- * 
+ *
  */
 
 function checkUserInformation() {
@@ -53,6 +53,9 @@ function checkUserInformation() {
         },
         text: "شما با موفقیت وارد شدید",
       });
+      setTimeout(() => {
+        silverBox({ removeSilverBox: "all" });
+      }, 3000);
       renderAdminPage();
       return;
     }
@@ -70,6 +73,9 @@ function checkUserInformation() {
           },
           text: "شما با موفقیت وارد شدید",
         });
+        setTimeout(() => {
+          silverBox({ removeSilverBox: "all" });
+        }, 3000);
         renderLandingPage(); // Redirect to the landing page after successful login
       } else {
         silverBox({
@@ -77,9 +83,9 @@ function checkUserInformation() {
           text: "رمز یا نام کاربری شما اشتباه است",
           centerContent: true,
           cancelButton: {
-                 text: "باشه"
-          }
-   })
+            text: "باشه",
+          },
+        });
       }
     } catch (error) {
       console.error("Error logging in:", error);
@@ -101,8 +107,8 @@ function checkUserInformation() {
           alertIcon: "info",
           text: "شما قبلا ثبت نام کرده اید",
           centerContent: true,
-          showCloseButton: true
-   })
+          showCloseButton: true,
+        });
       } else {
         const response = await axios.post("http://localhost:3000/user", {
           name: username,
@@ -121,6 +127,7 @@ function checkUserInformation() {
       console.error("Error registering user:", error);
     }
   });
+
 }
 
 export default checkUserInformation;

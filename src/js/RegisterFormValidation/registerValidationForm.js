@@ -1,15 +1,16 @@
 import "/Lib/silverBox/silverBox.min.scss";
+import "./index.scss";
 
 import silverBox from "/Lib/silverBox/silverBox.min";
 import checkUserInformation from "./validationForm";
 
 /**
  * Displays a registration form using the `silverBox` library and sets up user validation.
- * 
+ *
  * This function uses `silverBox` to show a modal dialog with a custom registration form.
  * The form includes input fields for username and password, and buttons for logging in and registering.
  * After displaying the form, it calls `checkUserInformation()` to set up validation for the input fields.
- * 
+ *
  * The registration form includes the following components:
  * - **Custom Icon**: A custom icon is displayed at the top of the modal.
  * - **Title**: The main title of the modal.
@@ -18,17 +19,16 @@ import checkUserInformation from "./validationForm";
  * - **Confirm Button**: A button labeled "ورود" (Login), which does not close the modal on click.
  * - **Custom Button**: A button labeled "ثبت نام" (Register), which does not close the modal on click.
  * - **Input Fields**: Includes fields for username and password with respective labels, placeholders, and hints.
- * 
+ *
  * @async
  * @function showRegisterForm
- * 
+ *
  * @returns {void} This function does not return any value. It performs side effects such as displaying a modal and setting up validation.
  */
 
-
 async function showRegisterForm() {
   silverBox({
-    customIcon: "/public/images/header/ei_user.svg",
+    customIcon: "/public/images/header/varagh.svg",
     title: {
       text: "به پلتفرم ورق خوش آمدید",
     },
@@ -46,7 +46,6 @@ async function showRegisterForm() {
       closeOnClick: false,
       id: "registerButton",
     },
-    
 
     input: [
       {
@@ -65,7 +64,6 @@ async function showRegisterForm() {
       },
     ],
   });
-
 
   checkUserInformation();
 }
