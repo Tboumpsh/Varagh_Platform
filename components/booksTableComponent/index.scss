@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'dana-medium';
+    src: url('/public/fonts/dana/dana\ medium.ttf');
+}
+
 .tableSectionWrapper {
     display: flex;
     align-items: center;
@@ -6,14 +11,15 @@
     height: fit-content;
     border-radius: 7px;
     font-size: 16px;
-    cursor: pointer;
     margin: 3%;
+    font-family: 'dana-medium';
 
     // max with
     img {
         max-width: 20px;
     }
-    h2{
+
+    h2 {
         font-size: 40px;
     }
 
@@ -25,7 +31,6 @@
         background-color: transparent;
         border: none;
         color: inherit;
-        cursor: pointer;
         background-color: rgba(250, 251, 241, 1);
 
 
@@ -40,11 +45,20 @@
         tbody {
             tr {
                 border-bottom: 1px solid #dddddd;
+
+                td:nth-child(8) {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    margin: 15% 0 0;
+                }
             }
 
             tr:last-of-type {
                 border-bottom: 2px solid #ffffff;
             }
+
+
         }
 
         th,
@@ -56,4 +70,14 @@
     }
 
 
+}
+
+#booksTableSection{
+height: max-content;
+    #booksForm{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 50px;
+    }
 }

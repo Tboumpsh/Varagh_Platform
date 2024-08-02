@@ -3,6 +3,7 @@ import axios from "axios";
 import "./index.scss";
 
 import buttonGenerator from "../buttonComponent/buttonComponent";
+import inputGenerator from "../inputComponent/inputComponent";
 
 /**
  * Fetches books data from the API and renders it in a table.
@@ -79,8 +80,8 @@ function renderBookTable(books) {
                       {
                         tag: buttonGenerator({
                           content: "+",
-                          size: "extraSmall",
                           status: "primaryOrange",
+                          color:'orange',
                           eventListeners: {
                             click: () => showAddBookForm(),
                           },
@@ -109,8 +110,9 @@ function renderBookTable(books) {
                   children: [
                     {
                       tag: buttonGenerator({
-                        content: "Edit",
+                        content: "",
                         status: "edit",
+                        iconStart:'/public/images/adminPage/edit_2.svg',
                         eventListeners: {
                           click: () => handleEditBook(book),
                         },
@@ -118,8 +120,9 @@ function renderBookTable(books) {
                     },
                     {
                       tag: buttonGenerator({
-                        content: "Delete",
-                        status: "delete",
+                        content: "",
+                        status: "deleted",
+                        iconStart:'/public/images/adminPage/trash_2.svg',
                         eventListeners: {
                           click: () => handleDeleteBook(book.id),
                         },
@@ -144,14 +147,21 @@ function renderBookTable(books) {
 function showAddBookForm() {
   const form = domGenerator({
     tag: "form",
+    attributes:{id:'booksForm'},
     children: [
       {
         tag: "label",
         properties: { textContent: "Name:" },
         children: [
           {
-            tag: "input",
-            attributes: { type: "text", id: "bookName" },
+            tag: inputGenerator({
+              inputId:'bookName',
+              placeholder:'',
+              type:'text',
+              size:'small',
+              statues:'primary'
+            }),
+            attributes: { type: "text"},
           },
         ],
       },
@@ -160,8 +170,14 @@ function showAddBookForm() {
         properties: { textContent: "Description:" },
         children: [
           {
-            tag: "input",
-            attributes: { type: "text", id: "bookDescription" },
+            tag: inputGenerator({
+              inputId:'bookDescription',
+              placeholder:'',
+              type:'text',
+              size:'small',
+              statues:'primary'
+            }),
+            attributes: { type: "text"},
           },
         ],
       },
@@ -170,8 +186,14 @@ function showAddBookForm() {
         properties: { textContent: "Price:" },
         children: [
           {
-            tag: "input",
-            attributes: { type: "number", id: "bookPrice" },
+            tag: inputGenerator({
+              inputId:'bookPrice',
+              placeholder:'',
+              type:'number',
+              size:'small',
+              statues:'primary'
+            }),
+            attributes: { type: "number" },
           },
         ],
       },
@@ -180,8 +202,14 @@ function showAddBookForm() {
         properties: { textContent: "Banner:" },
         children: [
           {
-            tag: "input",
-            attributes: { type: "text", id: "bookBanner" },
+            tag: inputGenerator({
+              inputId:'bookBanner',
+              placeholder:'',
+              type:'text',
+              size:'small',
+              statues:'primary'
+            }),
+            attributes: { type: "text"},
           },
         ],
       },
@@ -190,8 +218,14 @@ function showAddBookForm() {
         properties: { textContent: "Date:" },
         children: [
           {
-            tag: "input",
-            attributes: { type: "date", id: "bookDate" },
+            tag: inputGenerator({
+              inputId:'bookDate',
+              placeholder:'',
+              type:'date',
+              size:'small',
+              statues:'primary'
+            }),
+            attributes: { type: "date" },
           },
         ],
       },
@@ -200,8 +234,14 @@ function showAddBookForm() {
         properties: { textContent: "Genre:" },
         children: [
           {
-            tag: "input",
-            attributes: { type: "text", id: "bookGenre" },
+            tag: inputGenerator({
+              inputId:'bookGenre',
+              placeholder:'',
+              type:'text',
+              size:'small',
+              statues:'primary'
+            }),
+            attributes: { type: "text" },
           },
         ],
       },
@@ -209,7 +249,8 @@ function showAddBookForm() {
         tag: buttonGenerator({
           content: "Add Book",
           size: "medium",
-          status: "primaryBlue",
+          status: "primaryOrang",
+          color:'orange',
           eventListeners: {
             click: (e) => {
               e.preventDefault();
