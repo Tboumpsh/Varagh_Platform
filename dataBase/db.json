@@ -39,7 +39,8 @@
       "banner": "/public/images/bannerBooks/ترسناک۳.jpg",
       "price": 99000,
       "date": 1389,
-      "genre": "scary"
+      "genre": "scary",
+      "pdf": "https://drive.google.com/file/d/1Ua5Q2KtxE_heHw7MeVGnEDH2QWXKgXA1/view?usp=drive_link"
     },
     {
       "id": "d565",
@@ -48,7 +49,8 @@
       "banner": "/public/images/bannerBooks/خندهددار۲.jpg",
       "price": 100000,
       "date": 1400,
-      "genre": "funny"
+      "genre": "funny",
+      "pdf": "https://drive.google.com/file/d/1RAX3DzSAI4giN75FZdJs5DwzBcFEKVsM/view?usp=drive_link"
     },
     {
       "id": "eaec",
@@ -57,7 +59,8 @@
       "banner": "/public/images/bannerBooks/عمگین۲.jpg",
       "price": 150000,
       "date": 1403,
-      "genre": "adventure"
+      "genre": "adventure",
+      "pdf": "https://drive.google.com/file/d/1PxD1uG1PpNcj3FfBHyfgTjbogmWnUIQ8/view?usp=drive_link"
     },
     {
       "id": "f60b",
@@ -66,7 +69,8 @@
       "banner": "/public/images/bannerBooks/ترسناک۱.webp",
       "price": 150000,
       "date": 1399,
-      "genre": "scary"
+      "genre": "scary",
+      "pdf": "https://drive.google.com/file/d/1o0GLcbXFw8xlBuhuCZzzXOxrRTfwHZ_j/view?usp=drive_link"
     },
     {
       "id": "bec0",
@@ -75,7 +79,8 @@
       "banner": "/public/images/bannerBooks/۱عمگین.webp",
       "price": 250000,
       "date": 1382,
-      "genre": "Depressed"
+      "genre": "Depressed",
+      "pdf": "https://drive.google.com/file/d/1cCaR9C5A13zl3SxW31TAuhLlu0tL7X5W/view?usp=drive_link"
     },
     {
       "id": "ad7e",
@@ -84,7 +89,8 @@
       "banner": "/public/images/bannerBooks/ماجارجویی۳.jpg",
       "price": 87000,
       "date": 1395,
-      "genre": "adventure"
+      "genre": "adventure",
+      "pdf": "https://drive.google.com/file/d/1ZTltNhgRxqMoTNwrxYCJMBiQ6QcjwBwN/view?usp=drive_link"
     },
     {
       "id": "28ba",
@@ -93,7 +99,8 @@
       "banner": "/public/images/bannerBooks/عمگین.jpg",
       "price": 300000,
       "date": 1399,
-      "genre": "Depressed"
+      "genre": "Depressed",
+      "pdf": "https://drive.google.com/file/d/134BFs6WXqLm-9k98vcaGBDm_tjsftAwb/view?usp=drive_link"
     },
     {
       "id": "d702",
@@ -102,7 +109,8 @@
       "banner": "/public/images/bannerBooks/غمگین3.jpg",
       "price": 250000,
       "date": 1402,
-      "genre": "Depressed"
+      "genre": "Depressed",
+      "pdf": "https://drive.google.com/file/d/17qpElbJAp3aHtA3_dVrZe_1YgS43zngo/view?usp=drive_link"
     },
     {
       "id": "67fd",
@@ -111,7 +119,8 @@
       "banner": "/public/images/bannerBooks/ترسناک۲.webp",
       "price": 50000,
       "date": 1396,
-      "genre": "scary"
+      "genre": "scary",
+      "pdf": "https://drive.google.com/file/d/13lWorGBG5dbB-s7j7KBmUM813oaHQS0U/view?usp=drive_link"
     },
     {
       "id": "f3e6",
@@ -120,7 +129,8 @@
       "banner": "/public/images/bannerBooks/ماجراجویی4.jpg",
       "price": 85000,
       "date": 1402,
-      "genre": "adventure"
+      "genre": "adventure",
+      "pdf": "https://drive.google.com/file/d/1mpHgSdl2oQnTuxfWrR42ncxUu728ipLb/view?usp=drive_link"
     }
   ]
 }
