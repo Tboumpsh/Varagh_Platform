@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'dana-medium';
+    src: url('/public/fonts/dana/dana\ medium.ttf');
+}
+
+.silverBox {
+    font-family: 'dana-medium';
+    line-height: normal;
+
+    img{
+        max-width: 70px;
+    }
+
+    #logInButton {
+        background-color: rgba(155, 189, 3, 1);
+        outline: none;
+        border: none
+    }
+
+    #registerButton {
+        background-color: rgba(252, 155, 40, 1);
+        color: white;
+        outline: none;
+        border: none
+    }
+
+}
