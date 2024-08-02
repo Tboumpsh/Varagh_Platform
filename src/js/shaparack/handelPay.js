@@ -17,7 +17,7 @@ async function handlePayment(userName) {
     }
   } catch (error) {
     console.error("Error handling payment:", error);
-    alert('خطایی در فرآیند پرداخت رخ داده است.');
+    alert("خطایی در فرآیند پرداخت رخ داده است.");
   }
 }
 
