@@ -176,6 +176,11 @@
     &:disabled {
       color: #8c8c8c;
     }
+
+    &:hover{
+      transform: rotate(360deg);
+      transition: transform 1s ease-in-out; 
+    }
   }
 
   &[data-status="counter"] {
@@ -261,6 +266,23 @@
       color: #8c8c8c;
     }
   }
+  &[data-status="deleted"] {
+    width: 20px;
+    height: 20px;
 
+    &:hover {
+      border: rgba(252, 155, 40, 1);
+    }
+
+    &:focus,
+    &:active {
+      fill: rgba(255, 216, 170, 1);
+      border: rgba(252, 155, 40, 1);
+    }
+
+    &:disabled {
+      color: #8c8c8c;
+    }
+  }
 
 }
