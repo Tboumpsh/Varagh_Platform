@@ -3,6 +3,7 @@ import axios from "axios";
 import "./index.scss";
 
 import buttonGenerator from "../buttonComponent/buttonComponent";
+import inputGenerator from "../inputComponent/inputComponent";
 
 const apiUrl = "http://localhost:3000/user";
 
@@ -97,8 +98,8 @@ function renderUserTable(users) {
                       {
                         tag: buttonGenerator({
                           content: "+",
-                          size: "extraSmall",
                           status: "primaryOrange",
+                          color:'orange',
                           eventListeners: {
                             click: () => showAddUserForm(),
                           },
@@ -125,8 +126,9 @@ function renderUserTable(users) {
                   children: [
                     {
                       tag: buttonGenerator({
-                        content: "Edit",
+                        content: "",
                         status: "edit",
+                        iconStart:'/public/images/adminPage/edit_2.svg',
                         eventListeners: {
                           click: () => handleEditUser(user),
                         },
@@ -134,8 +136,9 @@ function renderUserTable(users) {
                     },
                     {
                       tag: buttonGenerator({
-                        content: "Delete",
-                        status: "delete",
+                        content: "",
+                        status: "deleted",
+                        iconStart:'/public/images/adminPage/trash_2.svg',
                         eventListeners: {
                           click: () => handleDeleteUser(user.id),
                         },
@@ -160,14 +163,21 @@ function renderUserTable(users) {
 function showAddUserForm() {
   const form = domGenerator({
     tag: "form",
+    attributes:{id:'formUser'},
     children: [
       {
         tag: "label",
         properties: { textContent: "Name:" },
         children: [
           {
-            tag: "input",
-            attributes: { type: "text", id: "userName" },
+            tag: inputGenerator({
+              inputId:'userName',
+              placeholder:'',
+              type:'text',
+              size:'small',
+              statues:'primary'
+            }),
+            attributes: { type: "text" },
           },
         ],
       },
@@ -176,8 +186,14 @@ function showAddUserForm() {
         properties: { textContent: "Password:" },
         children: [
           {
-            tag: "input",
-            attributes: { type: "password", id: "userPassword" },
+            tag: inputGenerator({
+              inputId:'userPassword',
+              placeholder:'',
+              type:'password',
+              size:'small',
+              statues:'primary'
+            }),
+            attributes: { type: "password"},
           },
         ],
       },
@@ -186,8 +202,14 @@ function showAddUserForm() {
         properties: { textContent: "Profile:" },
         children: [
           {
-            tag: "input",
-            attributes: { type: "text", id: "userProfile" },
+            tag: inputGenerator({
+              inputId:'userProfile',
+              placeholder:'',
+              type:'text',
+              size:'small',
+              statues:'primary'
+            }),
+            attributes: { type: "text" },
           },
         ],
       },
@@ -196,8 +218,14 @@ function showAddUserForm() {
         properties: { textContent: "Membership:" },
         children: [
           {
-            tag: "input",
-            attributes: { type: "text", id: "userMembership" },
+            tag: inputGenerator({
+              inputId:'userMembership',
+              placeholder:'',
+              type:'text',
+              size:'small',
+              statues:'primary'
+            }),
+            attributes: { type: "text"},
           },
         ],
       },
@@ -205,7 +233,8 @@ function showAddUserForm() {
         tag: buttonGenerator({
           content: "Add User",
           size: "medium",
-          status: "primaryBlue",
+          status: "primaryOrange",
+          color:'orange',
           eventListeners: {
             click: (e) => {
               e.preventDefault();
@@ -215,7 +244,7 @@ function showAddUserForm() {
                 .value.trim();
               const userProfile = document
                 .getElementById("userProfile")
-                .value.trim();
+              
               const userMembership = document
                 .getElementById("userMembership")
                 .value.trim();
