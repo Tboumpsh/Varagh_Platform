@@ -34,6 +34,7 @@ async function filterByDate(order) {
 
     const cardElements = books.map(book => {
       return cardGenerator({
+        bookId:book.id,
         titleContent: book.name,
         paragraphContent: book.description,
         size: "medium",
