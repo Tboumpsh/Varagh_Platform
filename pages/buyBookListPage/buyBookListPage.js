@@ -6,6 +6,7 @@ import headerAdminGenerator from "../../components/headerComponent/adminHeaderCo
 import headerGenerator from "../../components/headerComponent/headerComponent";
 import buttonGenerator from "../../components/buttonComponent/buttonComponent";
 import loggedInHeader from "../../components/headerComponent/loggedInHeader";
+import processPaymentSuccess from "../../src/js/buyBooks/downloadBooks";
 import handlePayment from "../../src/js/shaparack/handelPay";
 
 /**
@@ -64,25 +65,29 @@ function buyBookListPage() {
       {
         tag: "div",
         attributes: { id: "totalPrice" },
-        children:
-        [
+        children: [
           {
             tag: buttonGenerator({
               content: "پرداخت سبد خرید",
               size: "medium",
               status: "primaryOrang",
-              eventListeners: { 
+              eventListeners: {
                 click: () => {
-                const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+                  const currentUser = JSON.parse(
+                    localStorage.getItem("currentUser")
+                  );
                   if (currentUser) {
                     handlePayment(currentUser.name);
+                    processPaymentSuccess();
+                   
                   } else {
                     alert("لطفا ابتدا وارد شوید.");
                   }
-              } },
+                },
+              },
             }),
-        },
-        ]
+          },
+        ],
       },
       {
         tag: footerSectionComponent({
