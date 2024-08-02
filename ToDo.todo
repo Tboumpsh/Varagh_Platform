@@ -47,7 +47,7 @@
 - [ ] create footer section ✔
 
 
-#adminPage
+#adminPage ✔ 
 - [x] isert information on table   user ✔     books✔
 - [ ] Table component  ✔
 - [ ] footer section ✔
@@ -96,5 +96,5 @@
 #bookInformation
 - [ ] by change input number, price number is change too ✔
 
-# linked paypal
+# linked paypal ✔
 - [x] paypal script.js  
