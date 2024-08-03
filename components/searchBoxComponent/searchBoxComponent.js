@@ -1,7 +1,7 @@
 import domGenerator from "dom-generator";
-import axios from "axios";
 import "./index.scss";
 
+import searchFunction from "../../src/js/searchFunction/searchFunction";
 import buttonGenerator from "../buttonComponent/buttonComponent";
 import inputGenerator from "../inputComponent/inputComponent";
 
@@ -46,7 +46,7 @@ function searchBoxComponent({
               {
                 tag: inputGenerator({
                   inputId: "search",
-                  placeholder: " ",
+                  placeholder: "دنبال چی میگردی؟",
                   type: "text",
                   eventListeners: { input: searchFunction },
                   fontSize: "medium",
@@ -77,53 +77,8 @@ function searchBoxComponent({
   });
 
 
+ 
 
-  async function searchFunction() {
-    let search = document.getElementById("search");
-    const query = search.value;
-    const resultsContainer = document.getElementById("results");
-
-    if (query.length < 3) {
-      resultsContainer.innerHTML = "";
-      resultsContainer.style.display = "none";
-      return;
-    }
-
-    try {
-      const response = await axios.get(
-        `http://localhost:3000/books?name_like=${query}&genre_like=${query}`
-      );
-      const books = response.data;
-
-      resultsContainer.innerHTML = "";
-      if (books.length > 0) {
-        books.forEach((book) => {
-          const listItem = document.createElement("li");
-          listItem.textContent = `${book.name} - ${book.genre}`;
-          listItem.addEventListener("click", () => {
-            alert(`You selected ${book.name}`);
-          });
-          resultsContainer.appendChild(listItem);
-        });
-        resultsContainer.style.display = "block";
-      } else {
-        resultsContainer.style.display = "none";
-      }
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      resultsContainer.style.display = "none";
-    }
-  }
-
-  document.addEventListener("click", function (event) {
-    const searchContainer = document.getElementById("searchSection");
-    if (!searchContainer.contains(event.target)) {
-      document.getElementById("results").style.display = "none";
-    }
-  });
-
-  // app.append(searchBox);
   return searchBox;
 }
-
 export default searchBoxComponent;

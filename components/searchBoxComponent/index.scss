@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    margin: 10% 0 ;
+    margin: 10% 0  5%;
     cursor: pointer;
     gap: 50px;
 
@@ -13,8 +13,8 @@
     }
 
     h2{
-        font-size: 50px;;
-        width: 30%;
+        font-size: 63px;;
+        width: 33%;
         text-align: center
     }
 
@@ -33,8 +33,8 @@
             width: 100%;
             max-height: 200px;
             overflow-y: auto;
-            background: #fff;
-            border: 1px solid #ddd;
+            background: #ffffff00;
+            // border: 1px solid #ddd;
             border-top: none;
             list-style-type: none;
             padding: 0;
@@ -45,13 +45,15 @@
             li {
                 padding: 10px;
                 margin: 0;
-                background: #f4f4f4;
+                background: #f5ffe0;
                 border-bottom: 1px solid #ddd;
                 cursor: pointer;
 
 
                 &:hover {
-                    background: #ddd;
+                    padding: 1% 2%;
+                    transition: padding 1s ease-out;
+                    background-color: #eaffb2;
                 }
 
                 &:last-child {
@@ -67,6 +69,7 @@
             flex-direction: row-reverse;
             gap: 10px;
             align-items: center;
+            width: 84%;
         }
     }
 
@@ -78,7 +81,7 @@
     }
 
     &[data-size="large"] {
-        width: 90%;
+        width: 100%;
         height: 70px;
     }
 
