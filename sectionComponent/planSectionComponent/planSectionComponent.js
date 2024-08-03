@@ -59,7 +59,7 @@ function planSectionCard({
         children: [
           {
             tag: cardPlanGenerator({
-              titlePlan: "پلن هفتگی",
+              titlePlan: "پلن ماهانه",
               titlePlanDescription: "این پلن ها برای راحتی شما قرار داده شده است و قیمت های ان به ریال است",
               priceText: monthlyPrice,
               priceTextDescription: "برای تمدید این پلن فقط 50٪ از قیمت حقیقی آن را پرداخت کنید",
