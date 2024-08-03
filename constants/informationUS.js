@@ -9,7 +9,7 @@ export const Mobile = 2154658;
  * The address of the contact.
  * @type {string}
  */
-export const Address = "تهرانـ و برای شرایط فعلی تکنولوژی مورد نیازوع با هاشدی";
+export const Address = "تهران خیابان پاییز در انتهای خرداد ساختمان آذر پاییزی ها";
 /**
  * The weekly price for the service.
  * @type {number}
