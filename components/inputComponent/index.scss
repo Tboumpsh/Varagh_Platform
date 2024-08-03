@@ -1,8 +1,6 @@
 .inputInsurance {
 
-::placeholder{
-  font-size: 30px;
-}
+
 
   &[data-size="medium"] {
     width: 800px;
@@ -11,9 +9,11 @@
   }
 
   &[data-size="large"] {
-    width: 950px;
+    width: 100%;
     height: 100px;
     border-radius: 10px;
+    padding: 0 2% 0;
+    font-size: 22px;
   }
 
   &[data-size="small"] {
@@ -28,7 +28,7 @@
   }
 
   &[data-fontSize="medium"] {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   &[data-fontSize="small"] {
@@ -45,6 +45,8 @@
     text-align: right;
     outline: none;
     cursor: pointer;
+
+
 
     &:hover {
       box-shadow: rgba(250, 255, 239, 0.2) 0px 2px 8px 0px;
