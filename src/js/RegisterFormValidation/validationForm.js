@@ -4,6 +4,7 @@ import axios from "axios";
 import renderLandingPage from "../../../pages/landingPage/renderLandingPage";
 import renderAdminPage from "../../../pages/adminPage/renderingAdminPage";
 import silverBox from "/Lib/silverBox/silverBox.min";
+import removeMassage from "./removeMassage";
 
 /**
  * Sets up event listeners for the login and register buttons on a registration form.
@@ -53,9 +54,7 @@ function checkUserInformation() {
         },
         text: "شما با موفقیت وارد شدید",
       });
-      setTimeout(() => {
-        silverBox({ removeSilverBox: "all" });
-      }, 3000);
+      removeMassage()
       renderAdminPage();
       return;
     }
@@ -73,10 +72,8 @@ function checkUserInformation() {
           },
           text: "شما با موفقیت وارد شدید",
         });
-        setTimeout(() => {
-          silverBox({ removeSilverBox: "all" });
-        }, 3000);
-        renderLandingPage(); // Redirect to the landing page after successful login
+        removeMassage()
+        renderLandingPage(); 
       } else {
         silverBox({
           alertIcon: "error",
@@ -86,6 +83,7 @@ function checkUserInformation() {
             text: "باشه",
           },
         });
+        removeMassage()
       }
     } catch (error) {
       console.error("Error logging in:", error);
@@ -109,19 +107,22 @@ function checkUserInformation() {
           centerContent: true,
           showCloseButton: true,
         });
+        removeMassage()
       } else {
         const response = await axios.post("http://localhost:3000/user", {
           name: username,
           password: password,
         });
-        console.log("User registered successfully:", response.data);
+        localStorage.setItem("currentUser", JSON.stringify(response.data));
         silverBox({
           title: {
-            text: "وارد شدید",
+            text: "به ورق خوش آمدید",
             alertIcon: "success",
           },
-          text: "اطلاعات شما ثبت شد.",
+          text: "ثبت نام شما موفق بود",
         });
+        removeMassage()
+        renderLandingPage();
       }
     } catch (error) {
       console.error("Error registering user:", error);
