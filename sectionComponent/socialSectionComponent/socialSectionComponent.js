@@ -44,7 +44,7 @@ function socialSection({
     eventListeners,
     children: [
       {
-        tag: "h3",
+        tag: "h2",
         properties: { textContent: titleCategory },
       },
       {
