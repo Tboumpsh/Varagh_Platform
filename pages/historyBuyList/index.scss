@@ -1,0 +1,22 @@
+#historyBuyListSection {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+margin: 15% 0 0;
+
+    #historyListSection {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        height: fit-content;
+        align-items: center;
+    }
+    #downloadPdfBooks{
+        width: 300px;
+        border-radius: 8px;
+        background-color: rgb(132, 249, 35);
+        text-decoration: none;
+    }
+
+}
+
