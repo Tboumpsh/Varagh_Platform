@@ -6,6 +6,6 @@ function removeMassage()
 {
     setTimeout(() => {
         silverBox({ removeSilverBox: "all" });
-      }, 3000);
+      }, 2000);
 }
 export default removeMassage

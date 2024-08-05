@@ -42,6 +42,19 @@ function checkUserInformation() {
     const username = document.getElementById("userName").value;
     const password = document.getElementById("password").value;
 
+    if (!username || !password) {
+      silverBox({
+        alertIcon: "error",
+        text: "لطفاً نام کاربری و رمز عبور خود را وارد کنید.",
+        centerContent: true,
+        cancelButton: {
+          text: "باشه",
+        },
+      });
+      removeMassage();
+      return;
+    }
+
     if (username === "support" && password === "vara_1382") {
       localStorage.setItem(
         "currentUser",
@@ -54,7 +67,7 @@ function checkUserInformation() {
         },
         text: "شما با موفقیت وارد شدید",
       });
-      removeMassage()
+      removeMassage();
       renderAdminPage();
       return;
     }
@@ -72,8 +85,8 @@ function checkUserInformation() {
           },
           text: "شما با موفقیت وارد شدید",
         });
-        removeMassage()
-        renderLandingPage(); 
+        removeMassage();
+        renderLandingPage();
       } else {
         silverBox({
           alertIcon: "error",
@@ -83,7 +96,7 @@ function checkUserInformation() {
             text: "باشه",
           },
         });
-        removeMassage()
+        removeMassage();
       }
     } catch (error) {
       console.error("Error logging in:", error);
@@ -94,6 +107,19 @@ function checkUserInformation() {
     e.preventDefault();
     const username = document.getElementById("userName").value;
     const password = document.getElementById("password").value;
+
+    if (!username || !password) {
+      silverBox({
+        alertIcon: "error",
+        text: "لطفاً نام کاربری و رمز عبور خود را وارد کنید.",
+        centerContent: true,
+        cancelButton: {
+          text: "باشه",
+        },
+      });
+      removeMassage();
+      return;
+    }
 
     try {
       const checkResponse = await axios.get(
@@ -107,7 +133,7 @@ function checkUserInformation() {
           centerContent: true,
           showCloseButton: true,
         });
-        removeMassage()
+        removeMassage();
       } else {
         const response = await axios.post("http://localhost:3000/user", {
           name: username,
@@ -121,14 +147,13 @@ function checkUserInformation() {
           },
           text: "ثبت نام شما موفق بود",
         });
-        removeMassage()
+        removeMassage();
         renderLandingPage();
       }
     } catch (error) {
       console.error("Error registering user:", error);
     }
   });
-
 }
 
 export default checkUserInformation;
