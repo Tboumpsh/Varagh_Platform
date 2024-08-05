@@ -57,7 +57,7 @@ async function buyBook(bookId) {
 
       silverBox({
         title: {
-          text: "خرید انجام شد",
+          text: "ثبت شد",
           alertIcon: "success",
         },
         text: "کتاب مورد نظر شما به لیست خریدها اضافه شد",

@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import updateUserHistory from "./updateHistoryList";
+
 /**
  * Processes successful payment, downloads purchased PDF files, and updates the user's purchase list.
  *
@@ -15,6 +17,11 @@ import axios from "axios";
  * @throws {Error} If downloading the PDF file or updating the purchase list in the database fails.
  *
  */
+
+/**
+ * Processes the payment success, downloads the books, and updates the user's purchase history.
+ * @returns {Promise<void>}
+ */
 async function processPaymentSuccess() {
   try {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -29,9 +36,7 @@ async function processPaymentSuccess() {
 
     for (const bookId of boughtBooks) {
       try {
-        let bookResponse = await axios.get(
-          `http://localhost:3000/books/${bookId}`
-        );
+        let bookResponse = await axios.get(`http://localhost:3000/books/${bookId}`);
         let book = bookResponse.data;
 
         let pdfUrl = book.pdf;
@@ -43,9 +48,14 @@ async function processPaymentSuccess() {
       }
     }
 
+    // Update the user's boughtList in the database
     await axios.patch(`http://localhost:3000/user/${userId}`, {
       boughtList: boughtBooks,
     });
+
+    // Update user history after successful download and boughtList clearing
+    await updateUserHistory(user.boughtList);
+
   } catch (error) {
     console.error("Error fetching user data:", error);
   }
