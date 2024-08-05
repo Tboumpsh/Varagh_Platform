@@ -7,12 +7,12 @@
 
     h2 {
         font-size: 50px;
-        margin-bottom: 0;
+       margin: 0;
     }
 
     &[data-size="medium"] {
-        width: 85vw;
-        height: 610px;
+        width: 82vw;
+        height: 490px;
     }
 
     &[data-size="large"] {
@@ -79,12 +79,7 @@
             flex-direction: row;
             align-items: end;
             width: 50%;
-            height: 100%;
-
-            img {
-                width: 480px;
-                height: 500px;
-            }
+    
         }
 
     }

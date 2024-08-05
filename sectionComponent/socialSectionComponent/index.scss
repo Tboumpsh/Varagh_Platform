@@ -6,10 +6,12 @@
   gap: 70px;
 
 
-  h3 {
-    font-size: 36px;
+  h2 {
+    font-size: 45px;
     width: 36%;
     text-align: center;
+    margin: 0;
+    margin-bottom: 50px;
   }
 
   // max with
@@ -19,7 +21,7 @@
 
   // size
   &[data-size="medium"] {
-    width: 98%;
+    width: 96%;
     height: 450px;
     font-size: 20px;
   }
@@ -30,8 +32,7 @@
   }
 
   &[data-size="small"] {
-    width: 95%;
-    // height: 300px;
+    width: 90%;
     font-size: 16px;
   }
 
