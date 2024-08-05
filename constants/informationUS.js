@@ -1,15 +1,15 @@
-export const Telephone = 2154658;
+export const Telephone = 33444568;
 
 /**
  * The mobile number of the contact.
  * @type {number}
  */
-export const Mobile = 2154658;
+export const Mobile = 9368975489;
 /**
  * The address of the contact.
  * @type {string}
  */
-export const Address = "تهران خیابان پاییز در انتهای خرداد ساختمان آذر پاییزی ها";
+export const Address = "تهران خیابان پاییز در انتهای خرداد ساختمان پاییزی ها";
 /**
  * The weekly price for the service.
  * @type {number}
