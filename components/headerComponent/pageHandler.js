@@ -1,3 +1,4 @@
+import renderHistoryBuyListPage from "../../pages/historyBuyList/renderHistoryBuyList";
 import renderLandingPage from "../../pages/landingPage/renderLandingPage";
 import renderBookLoveListPage from "../../pages/lovePage/renderLovePage";
 import renderAboutPage from "../../pages/aboutUsPage/renderAboutPage";
@@ -50,8 +51,13 @@ function handleLinkClick(index) {
       renderPlanPage();
       console.log("پلن کلیک شد");
       break;
+    case 5:
+      main.innerHTML = "";
+      renderHistoryBuyListPage();
+      console.log("history کلیک شد");
+      break;
     default:
-      console.log("لینک کلیک شد");
+      console.log("خرید کلیک شد");
       break;
   }
 }

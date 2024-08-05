@@ -42,7 +42,7 @@ function loggedInHeader({
   boxBuy = "",
 }) {
   // const number = 4;
-  const linkTexts = ["صفحه اصلی", "درباره ما", "فروشگاه", "علاقه مندی ها" , "خرید پلن"];
+  const linkTexts = ["صفحه اصلی", "درباره ما", "فروشگاه", "علاقه مندی ها" , "خرید پلن" , "حساب من"];
 
   // Create link elements with event listeners using the external function
   const links = createLinkElements(linkTexts, handleLinkClick);
