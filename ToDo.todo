@@ -1,11 +1,4 @@
-- [ ] Do something
-- [x] Something I've done
-
-#Use:
-
-- Box: - ❍ ❑ ■ ⬜ □ ☐ ▪ ▫ – — ≡ → › [] [ ]
-- Done: ✔ ✓ ☑ + [x] [X] [+]
-- Cancelled: ✘ x X [-]
+⬜ Varagh check list
 
 
 
@@ -79,6 +72,9 @@
 
 #dataBase ✔
 - [ ] picture books ✔
+- [ ] links books ✔
+- [ ] save on datebase plan ✔
+- [ ] save on datebase history list ✔
 
 
 
@@ -91,10 +87,30 @@
 - [ ] header effect ✔
 - [ ] love list page ✔
 - [ ] show books information ✔
+- [ ] history list ✔
+- [ ] preveiw books✔
+- [ ] nuy books page ✔
+- [ ] plan page ✔
 
 
-#bookInformation
+#bookInformation ✔
 - [ ] by change input number, price number is change too ✔
 
 # linked paypal ✔
-- [x] paypal script.js  
+- [ ] paypal script.js  
+
+
+#final checkd
+- [ ] sign in  ✔
+- [ ] sign out  ✔
+- [ ] button link  ✔
+- [ ] description section ✔
+- [ ] checked prosses buy books ✔
+- [ ] checked prosses paypal ✔
+- [ ] checked run music ✔
+- [ ] checked table list ✔
+- [ ] checked edit delete add buttons ✔
+- [ ] checked prosses buy plan ✔
+- [ ] checked prosses history list ✔
+- [ ] checked prosses download book ✔
+- [ ] checked prosses love list ✔
